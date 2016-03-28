@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Site Care 1.0</string>
+
+    <string-array name="regions">
+        <item>CWJ</item>
+        <item>CWJ 2</item>
+        <item>CWJ 3</item>
+    </string-array>
+
+    <string-array name="regions_sub">
+        <item>CENTRAL JAVA</item>
+        <item>WEST JAVA</item>
+        <item>WEST SUMATERA</item>
+    </string-array>
+
+    <string-array name="regions_sub_cluster">
+        <item>KUDUS</item>
+        <item>CILACAP</item>
+        <item>KUNINGAN</item>
+    </string-array>
+
+    <string-array name="weather_condition">
+        <item>Sunny</item>
+        <item>Cloudy</item>
+        <item>Rainy</item>
+        <item>Storm</item>
+        <item>Haze</item>
+    </string-array>
+</resources>
