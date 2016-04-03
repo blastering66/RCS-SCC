@@ -34,7 +34,7 @@ public class SiteDetail extends AppCompatActivity{
                 finish();
                 break;
             case R.id.action_next:
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), MainActivity_Button.class));
                 break;
 
         }

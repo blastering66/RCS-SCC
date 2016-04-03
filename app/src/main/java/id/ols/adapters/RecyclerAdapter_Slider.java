@@ -15,7 +15,6 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import id.ols.fragment.Generator;
 import id.ols.models.RowData_Slider;
 import id.ols.sitecare.R;
 
@@ -45,13 +44,6 @@ public class RecyclerAdapter_Slider extends RecyclerView.Adapter<RecyclerAdapter
             holder.img.setImageResource(R.drawable.img_checkbox_false);
         }
         holder.tv.setText(item.title);
-        holder.wrapper.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fm.beginTransaction().addToBackStack("0").replace(R.id.frame_container, new Generator()).commit();
-                drawer.closeDrawer(Gravity.START);
-            }
-        });
     }
 
     @Override

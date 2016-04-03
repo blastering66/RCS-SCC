@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
         ac.setDisplayShowHomeEnabled(true);
         ac.setHomeButtonEnabled(true);
         ac.setTitle("  Site Care 1.0");
-        ac.setIcon(R.mipmap.ic_launcher);
-        ac.setLogo(R.mipmap.ic_launcher);
+//        ac.setIcon(R.mipmap.ic_launcher);
+//        ac.setLogo(R.mipmap.ic_launcher);
 
         rv_slider = (RecyclerView) findViewById(R.id.slider_content);
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -26,4 +26,96 @@
         <item>Storm</item>
         <item>Haze</item>
     </string-array>
+
+    <string-array name="maufacturer">
+        <item>HUAWEI</item>
+        <item>ZTE</item>
+        <item>ERICSSON</item>
+        <item>NOKIA</item>
+    </string-array>
+
+    <string-array name="model">
+        <item>MA5600T</item>
+        <item>ZTE0009</item>
+    </string-array>
+
+    <string-array name="maufacturer_midi">
+        <item>MIDI 1</item>
+        <item>MIDI 2</item>
+    </string-array>
+
+    <string-array name="model_midi">
+        <item>3000</item>
+        <item>4009</item>
+    </string-array>
+
+    <string-array name="maufacturer_vsat">
+        <item>VSAT 1</item>
+        <item>VSAT 2</item>
+    </string-array>
+
+    <string-array name="model_vsat">
+        <item>3000</item>
+        <item>4009</item>
+    </string-array>
+
+    <string-array name="maufacturer_mpls">
+        <item>CISCO 1</item>
+        <item>CISCO 2</item>
+    </string-array>
+
+    <string-array name="model_mpls">
+        <item>3000</item>
+        <item>4009</item>
+    </string-array>
+
+    <string-array name="maufacturer_superwifi">
+        <item>CISCO 1</item>
+        <item>CISCO 2</item>
+    </string-array>
+
+    <string-array name="model_superwifi">
+        <item>3000</item>
+        <item>4009</item>
+    </string-array>
+
+    <string-array name="maufacturer_dwdm">
+        <item>HUAWEI 1</item>
+        <item>NOKIA 2</item>
+    </string-array>
+
+    <string-array name="model_dwdm">
+        <item>3000</item>
+        <item>4009</item>
+    </string-array>
+
+    <string-array name="maufacturer_ip">
+        <item>HUAWEI 1</item>
+        <item>NOKIA 2</item>
+    </string-array>
+
+    <string-array name="model_ip">
+        <item>NE5000E</item>
+        <item>NE5000Z</item>
+    </string-array>
+
+    <string-array name="maufacturer_microwave">
+        <item>HUAWEI 1</item>
+        <item>NOKIA 2</item>
+    </string-array>
+
+    <string-array name="model_microwave">
+        <item>NE5000E</item>
+        <item>NE5000Z</item>
+    </string-array>
+
+    <string-array name="maufacturer_ran">
+        <item>ERICSSON</item>
+        <item>NOKIA 2</item>
+    </string-array>
+
+    <string-array name="model_ran">
+        <item>RBS2106</item>
+        <item>RBS2106</item>
+    </string-array>
 </resources>

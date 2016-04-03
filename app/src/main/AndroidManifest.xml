@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -27,9 +27,62 @@
         <activity android:name=".MainActivity"
             android:screenOrientation="portrait"
             />
+        <activity android:name=".MainActivity_Button"
+            android:screenOrientation="portrait"
+            />
         <activity android:name=".SiteDetail"
             android:screenOrientation="portrait"
             />
+
+
+
+        <activity android:name=".Tech_AdditionalLoads"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Tech_Battery"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Tech_Cooling"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Tech_DCPower"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Tech_DWDM"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Tech_Earthing"
+        android:screenOrientation="portrait"
+        />
+        <activity android:name=".Tech_Generators"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Tech_Gpon"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Tech_IP"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Tech_Microwave"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Tech_Midi"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Tech_Mpls"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Tech_RAN"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Tech_SuperWifi"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Tech_Vsat"
+            android:screenOrientation="portrait"
+            />
+
+
     </application>
 
 </manifest>
