@@ -9,144 +9,420 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <RelativeLayout
+            android:layout_height="100dp"
+            android:layout_width="match_parent">
 
-        <Button
-            android:id="@+id/btn_generator"
-            android:text="Generator"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:textColor="@color/color_text_light"
-            android:background="@drawable/selector_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <ImageView
+                android:src="@drawable/img_tech_generator"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
 
-        <Button
-            android:id="@+id/btn_battery"
-            android:text="Battery"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:textColor="@color/color_text_light"
-            android:background="@drawable/selector_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/btn_earthing"
-            android:text="Earthing and Groudning"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:textColor="@color/color_text_light"
-            android:background="@drawable/selector_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/btn_dc_power"
-            android:text="DC Power"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:textColor="@color/color_text_light"
-            android:background="@drawable/selector_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/btn_ran"
-            android:text="RAN"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:textColor="@color/color_text_light"
-            android:background="@drawable/selector_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/btn_microwave"
-            android:text="Microwave"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:textColor="@color/color_text_light"
-            android:background="@drawable/selector_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/btn_ip"
-            android:text="IP"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:textColor="@color/color_text_light"
-            android:background="@drawable/selector_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/btn_dwdm"
-            android:text="DWDM"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:textColor="@color/color_text_light"
-            android:background="@drawable/selector_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/btn_superwifi"
-            android:text="SuperWifi"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:textColor="@color/color_text_light"
-            android:background="@drawable/selector_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/btn_mpls"
-            android:text="MPLS"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:textColor="@color/color_text_light"
-            android:background="@drawable/selector_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/btn_vsat"
-            android:text="VSAT"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:textColor="@color/color_text_light"
-            android:background="@drawable/selector_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/btn_midi"
-            android:text="MIDI"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:textColor="@color/color_text_light"
-            android:background="@drawable/selector_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/btn_gpon"
-            android:text="GPON"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:textColor="@color/color_text_light"
-            android:background="@drawable/selector_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <View
+                android:background="@drawable/bg_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
 
-        <Button
-            android:id="@+id/btn_coolingcabinet"
-            android:text="Coolong Cabinet"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:textColor="@color/color_text_light"
-            android:background="@drawable/selector_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/btn_additional"
-            android:text="Additional Loads"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:textColor="@color/color_text_light"
-            android:background="@drawable/selector_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <Button
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/btn_generator"
+                android:text="Generator"
+                android:textSize="@dimen/big"
+                android:textColor="@color/color_text_light"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_height="100dp"
+            android:layout_width="match_parent">
+
+            <ImageView
+                android:src="@drawable/img_tech_battery"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <View
+                android:background="@drawable/bg_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+            <Button
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/btn_battery"
+                android:text="Battery"
+                android:textSize="@dimen/big"
+                android:textColor="@color/color_text_light"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_height="100dp"
+            android:layout_width="match_parent">
+
+            <ImageView
+                android:src="@drawable/img_tech_earthing"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <View
+                android:background="@drawable/bg_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+            <Button
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/btn_earthing"
+                android:text="Earthing and Groudning"
+                android:textSize="@dimen/big"
+                android:textColor="@color/color_text_light"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_height="100dp"
+            android:layout_width="match_parent">
+
+            <ImageView
+                android:src="@drawable/img_tech_dc"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <View
+                android:background="@drawable/bg_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+            <Button
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/btn_dc_power"
+                android:text="DC Power"
+                android:textSize="@dimen/big"
+                android:textColor="@color/color_text_light"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_height="100dp"
+            android:layout_width="match_parent">
+
+            <ImageView
+                android:src="@drawable/img_tech_ran"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <View
+                android:background="@drawable/bg_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+            <Button
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/btn_ran"
+                android:text="RAN"
+                android:textSize="@dimen/big"
+                android:textColor="@color/color_text_light"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_height="100dp"
+            android:layout_width="match_parent">
+
+            <ImageView
+                android:src="@drawable/img_tech_microwave"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <View
+                android:background="@drawable/bg_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+            <Button
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/btn_microwave"
+                android:text="Microwave"
+                android:textSize="@dimen/big"
+                android:textColor="@color/color_text_light"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_height="100dp"
+            android:layout_width="match_parent">
+
+            <ImageView
+                android:src="@drawable/img_tech_ip"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <View
+                android:background="@drawable/bg_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+            <Button
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/btn_ip"
+                android:text="IP"
+                android:textSize="@dimen/big"
+                android:textColor="@color/color_text_light"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_height="100dp"
+            android:layout_width="match_parent">
+
+            <ImageView
+                android:src="@drawable/img_tech_dwdm"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <View
+                android:background="@drawable/bg_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+            <Button
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/btn_dwdm"
+                android:text="DWDM"
+                android:textSize="@dimen/big"
+                android:textColor="@color/color_text_light"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_height="100dp"
+            android:layout_width="match_parent">
+
+            <ImageView
+                android:src="@drawable/img_tech_superwifi"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <View
+                android:background="@drawable/bg_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+            <Button
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/btn_superwifi"
+                android:text="SuperWifi"
+                android:textSize="@dimen/big"
+                android:textColor="@color/color_text_light"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_height="100dp"
+            android:layout_width="match_parent">
+
+            <ImageView
+                android:src="@drawable/img_tech_mpls"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <View
+                android:background="@drawable/bg_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+            <Button
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/btn_mpls"
+                android:text="MPLS"
+                android:textSize="@dimen/big"
+                android:textColor="@color/color_text_light"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_height="100dp"
+            android:layout_width="match_parent">
+
+            <ImageView
+                android:src="@drawable/img_tech_vsat"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <View
+                android:background="@drawable/bg_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+            <Button
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/btn_vsat"
+                android:text="VSAT"
+                android:textSize="@dimen/big"
+                android:textColor="@color/color_text_light"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_height="100dp"
+            android:layout_width="match_parent">
+
+            <ImageView
+                android:src="@drawable/img_tech_midi"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <View
+                android:background="@drawable/bg_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+            <Button
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/btn_midi"
+                android:text="MIDI"
+                android:textSize="@dimen/big"
+                android:textColor="@color/color_text_light"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_height="100dp"
+            android:layout_width="match_parent">
+
+            <ImageView
+                android:src="@drawable/img_tech_gpon"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <View
+                android:background="@drawable/bg_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+            <Button
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/btn_gpon"
+                android:text="GPON"
+                android:textSize="@dimen/big"
+                android:textColor="@color/color_text_light"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_height="100dp"
+            android:layout_width="match_parent">
+
+            <ImageView
+                android:src="@drawable/img_tech_ac"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <View
+                android:background="@drawable/bg_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+            <Button
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/btn_coolingcabinet"
+                android:text="Coolong Cabinet"
+                android:textSize="@dimen/big"
+                android:textColor="@color/color_text_light"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_height="100dp"
+            android:layout_width="match_parent">
+
+            <ImageView
+                android:src="@drawable/img_tech_additional"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <View
+                android:background="@drawable/bg_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+            <Button
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/btn_additional"
+                android:text="Additional Loads"
+                android:textSize="@dimen/big"
+                android:textColor="@color/color_text_light"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
 
     </LinearLayout>
 
