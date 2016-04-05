@@ -5,9 +5,11 @@
     android:layout_height="match_parent"
     android:background="@color/colorBgDark">
 
-    <ImageView
-        android:src="@drawable/ic_launcher"
-        android:layout_width="350dp"
-        android:layout_height="150dp"
+    <TextView
+        android:text="SITE CARE"
+        android:textSize="@dimen/gigantic"
+        android:textColor="@color/color_text_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true" />
 </RelativeLayout>

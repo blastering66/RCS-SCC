@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Site Care 1.0</string>
 
+    <string name="label_earthing">Earthing &amp; Grounding</string>
+
     <string-array name="regions">
         <item>CWJ</item>
         <item>CWJ 2</item>

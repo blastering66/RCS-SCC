@@ -11,7 +11,7 @@ import android.widget.Toast;
  * Created by macbook on 4/3/16.
  */
 public class MainActivity_Button extends AppCompatActivity implements View.OnClickListener {
-    Button btn_generator, btn_battery, btn_earthing, btn_dc_power, btn_ran, btn_microwave, btn_ip,
+    View btn_generator, btn_battery, btn_earthing, btn_dc_power, btn_ran, btn_microwave, btn_ip,
             btn_dwdm, btn_superwifi, btn_mpls, btn_vsat, btn_midi, btn_gpon, btn_coolingcabinet, btn_additional;
 
     @Override
@@ -19,21 +19,23 @@ public class MainActivity_Button extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menuutama);
 
-        btn_generator = (Button) findViewById(R.id.btn_generator);
-        btn_battery = (Button) findViewById(R.id.btn_battery);
-        btn_earthing = (Button) findViewById(R.id.btn_earthing);
-        btn_dc_power = (Button) findViewById(R.id.btn_dc_power);
-        btn_ran = (Button) findViewById(R.id.btn_ran);
-        btn_microwave = (Button) findViewById(R.id.btn_microwave);
-        btn_ip = (Button) findViewById(R.id.btn_ip);
-        btn_dwdm = (Button) findViewById(R.id.btn_dwdm);
-        btn_superwifi = (Button) findViewById(R.id.btn_superwifi);
-        btn_mpls = (Button) findViewById(R.id.btn_mpls);
-        btn_vsat = (Button) findViewById(R.id.btn_vsat);
-        btn_midi = (Button) findViewById(R.id.btn_midi);
-        btn_gpon = (Button) findViewById(R.id.btn_gpon);
-        btn_coolingcabinet = (Button) findViewById(R.id.btn_coolingcabinet);
-        btn_additional = (Button) findViewById(R.id.btn_additional);
+        getSupportActionBar().hide();
+
+        btn_generator = (View) findViewById(R.id.btn_generator);
+        btn_battery = (View) findViewById(R.id.btn_battery);
+        btn_earthing = (View) findViewById(R.id.btn_earthing);
+        btn_dc_power = (View) findViewById(R.id.btn_dc_power);
+        btn_ran = (View) findViewById(R.id.btn_ran);
+        btn_microwave = (View) findViewById(R.id.btn_microwave);
+        btn_ip = (View) findViewById(R.id.btn_ip);
+        btn_dwdm = (View) findViewById(R.id.btn_dwdm);
+        btn_superwifi = (View) findViewById(R.id.btn_superwifi);
+        btn_mpls = (View) findViewById(R.id.btn_mpls);
+        btn_vsat = (View) findViewById(R.id.btn_vsat);
+        btn_midi = (View) findViewById(R.id.btn_midi);
+        btn_gpon = (View) findViewById(R.id.btn_gpon);
+        btn_coolingcabinet = (View) findViewById(R.id.btn_coolingcabinet);
+        btn_additional = (View) findViewById(R.id.btn_additional);
 
         btn_generator.setOnClickListener(this);
         btn_battery.setOnClickListener(this);
