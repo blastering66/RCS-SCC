@@ -34,6 +34,17 @@
                 android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/img_done_generator"
+                android:visibility="invisible"
+                android:src="@drawable/img_done"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -62,6 +73,17 @@
                 android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/img_done_grid"
+                android:visibility="invisible"
+                android:src="@drawable/img_done"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -90,6 +112,16 @@
                 android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/img_done_battery"
+                android:visibility="invisible"
+                android:src="@drawable/img_done"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp" />
         </RelativeLayout>
 
 
@@ -119,6 +151,17 @@
                 android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/img_done_earthing"
+                android:visibility="invisible"
+                android:src="@drawable/img_done"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp" />
         </RelativeLayout>
 
 
@@ -148,6 +191,17 @@
                 android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/img_done_dc"
+                android:visibility="invisible"
+                android:src="@drawable/img_done"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp" />
         </RelativeLayout>
 
 
@@ -177,6 +231,17 @@
                 android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/img_done_ran"
+                android:visibility="invisible"
+                android:src="@drawable/img_done"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp" />
         </RelativeLayout>
 
 
@@ -206,6 +271,17 @@
                 android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/img_done_microwave"
+                android:visibility="invisible"
+                android:src="@drawable/img_done"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp" />
         </RelativeLayout>
 
 
@@ -235,6 +311,16 @@
                 android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/img_done_ip"
+                android:visibility="invisible"
+                android:src="@drawable/img_done"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp" />
         </RelativeLayout>
 
 
@@ -264,6 +350,17 @@
                 android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/img_done_dwdm"
+                android:visibility="invisible"
+                android:src="@drawable/img_done"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -292,6 +389,17 @@
                 android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/img_done_superwifi"
+                android:visibility="invisible"
+                android:src="@drawable/img_done"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -320,6 +428,17 @@
                 android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/img_done_mpls"
+                android:visibility="invisible"
+                android:src="@drawable/img_done"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp" />
         </RelativeLayout>
 
 
@@ -349,6 +468,17 @@
                 android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/img_done_vsat"
+                android:visibility="invisible"
+                android:src="@drawable/img_done"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp" />
         </RelativeLayout>
 
 
@@ -378,6 +508,16 @@
                 android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/img_done_midi"
+                android:visibility="invisible"
+                android:src="@drawable/img_done"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp" />
         </RelativeLayout>
 
 
@@ -407,6 +547,17 @@
                 android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/img_done_gpon"
+                android:visibility="invisible"
+                android:src="@drawable/img_done"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp" />
         </RelativeLayout>
 
 
@@ -436,6 +587,16 @@
                 android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/img_done_cooling"
+                android:visibility="invisible"
+                android:src="@drawable/img_done"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -464,6 +625,17 @@
                 android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/img_done_additional"
+                android:visibility="invisible"
+                android:src="@drawable/img_done"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp" />
         </RelativeLayout>
 
     </LinearLayout>

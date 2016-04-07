@@ -2,7 +2,9 @@ package id.ols.sitecare;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.widget.Button;
 
 import butterknife.Bind;
@@ -26,5 +28,18 @@ public class Tech_Generators extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_generator);
         ButterKnife.bind(this);
+        ActionBar ac = getSupportActionBar();
+        ac.setTitle("Generator Detail");
+        ac.setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return true;
     }
 }
