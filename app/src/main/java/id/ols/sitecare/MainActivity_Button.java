@@ -11,7 +11,7 @@ import android.widget.Toast;
  * Created by macbook on 4/3/16.
  */
 public class MainActivity_Button extends AppCompatActivity implements View.OnClickListener {
-    View btn_generator, btn_battery, btn_earthing, btn_dc_power, btn_ran, btn_microwave, btn_ip,
+    View btn_generator,btn_grid, btn_battery, btn_earthing, btn_dc_power, btn_ran, btn_microwave, btn_ip,
             btn_dwdm, btn_superwifi, btn_mpls, btn_vsat, btn_midi, btn_gpon, btn_coolingcabinet, btn_additional;
 
     @Override
@@ -22,6 +22,7 @@ public class MainActivity_Button extends AppCompatActivity implements View.OnCli
         getSupportActionBar().hide();
 
         btn_generator = (View) findViewById(R.id.btn_generator);
+        btn_grid = (View) findViewById(R.id.btn_grid);
         btn_battery = (View) findViewById(R.id.btn_battery);
         btn_earthing = (View) findViewById(R.id.btn_earthing);
         btn_dc_power = (View) findViewById(R.id.btn_dc_power);
@@ -38,6 +39,7 @@ public class MainActivity_Button extends AppCompatActivity implements View.OnCli
         btn_additional = (View) findViewById(R.id.btn_additional);
 
         btn_generator.setOnClickListener(this);
+        btn_grid.setOnClickListener(this);
         btn_battery.setOnClickListener(this);
         btn_earthing.setOnClickListener(this);
         btn_dc_power.setOnClickListener(this);
@@ -60,6 +62,10 @@ public class MainActivity_Button extends AppCompatActivity implements View.OnCli
             case R.id.btn_generator:
                 Intent intentTech_Generators = new Intent(getApplicationContext(), Tech_Generators.class);
                 startActivity(intentTech_Generators);
+                break;
+            case R.id.btn_grid:
+                Intent intentTech_Grid = new Intent(getApplicationContext(), Tech_Grid.class);
+                startActivity(intentTech_Grid);
                 break;
             case R.id.btn_battery:
                 Intent intentTech_Battery = new Intent(getApplicationContext(), Tech_Battery.class);

@@ -8,4 +8,6 @@
     <dimen name="medium">18sp</dimen>
     <dimen name="small">15sp</dimen>
     <dimen name="tiny">10sp</dimen>
+
+    <dimen name="item_menuutama_heihgt">200dp</dimen>
 </resources>

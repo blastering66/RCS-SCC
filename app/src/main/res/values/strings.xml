@@ -111,6 +111,16 @@
         <item>NE5000Z</item>
     </string-array>
 
+    <string-array name="maufacturer_dc">
+        <item>ELTEK</item>
+        <item>ELTEK 2</item>
+    </string-array>
+
+    <string-array name="model_dc">
+        <item>ORION</item>
+        <item>ORION 2</item>
+    </string-array>
+
     <string-array name="maufacturer_ran">
         <item>ERICSSON</item>
         <item>NOKIA 2</item>

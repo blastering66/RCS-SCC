@@ -12,19 +12,19 @@ import butterknife.OnClick;
 /**
  * Created by macbook on 4/3/16.
  */
-public class Tech_Generators extends AppCompatActivity {
+public class Tech_Generators_Detail_1_Controller extends AppCompatActivity {
     @Bind(R.id.btn)
     Button btn;
 
     @OnClick(R.id.btn) void onClick(){
-        startActivity(new Intent(getApplicationContext(), Tech_Generators_Detail_1_Controller.class));
+        startActivity(new Intent(getApplicationContext(), Tech_Generators_Detail_2_General.class));
         finish();
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_generator);
+        setContentView(R.layout.fragment_generator_detail_controller);
         ButterKnife.bind(this);
     }
 }

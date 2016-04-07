@@ -5,25 +5,24 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:padding="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <RelativeLayout
             android:id="@+id/btn_generator"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/item_menuutama_heihgt"
             android:layout_width="match_parent">
 
             <ImageView
                 android:src="@drawable/img_tech_generator"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
-                android:layout_height="100dp" />
+                android:layout_height="@dimen/item_menuutama_heihgt" />
 
             <View
                 android:background="@drawable/bg_gradient"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"/>
+                android:layout_height="@dimen/item_menuutama_heihgt"/>
 
             <Button
                 android:layout_alignParentBottom="true"
@@ -38,20 +37,48 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/btn_grid"
+            android:layout_height="@dimen/item_menuutama_heihgt"
+            android:layout_width="match_parent">
+
+            <ImageView
+                android:src="@drawable/img_tech_grid"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_menuutama_heihgt" />
+
+            <View
+                android:background="@drawable/bg_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_menuutama_heihgt"/>
+
+            <Button
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+
+                android:text="Grid"
+                android:textSize="@dimen/big"
+                android:textColor="@color/color_text_light"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
             android:id="@+id/btn_battery"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/item_menuutama_heihgt"
             android:layout_width="match_parent">
 
             <ImageView
                 android:src="@drawable/img_tech_battery"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
-                android:layout_height="100dp" />
+                android:layout_height="@dimen/item_menuutama_heihgt" />
 
             <View
                 android:background="@drawable/bg_gradient"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"/>
+                android:layout_height="@dimen/item_menuutama_heihgt"/>
 
             <Button
                 android:layout_alignParentBottom="true"
@@ -68,19 +95,19 @@
 
         <RelativeLayout
             android:id="@+id/btn_earthing"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/item_menuutama_heihgt"
             android:layout_width="match_parent">
 
             <ImageView
                 android:src="@drawable/img_tech_earthing"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
-                android:layout_height="100dp" />
+                android:layout_height="@dimen/item_menuutama_heihgt" />
 
             <View
                 android:background="@drawable/bg_gradient"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"/>
+                android:layout_height="@dimen/item_menuutama_heihgt"/>
 
             <Button
                 android:layout_alignParentBottom="true"
@@ -97,19 +124,19 @@
 
         <RelativeLayout
             android:id="@+id/btn_dc_power"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/item_menuutama_heihgt"
             android:layout_width="match_parent">
 
             <ImageView
                 android:src="@drawable/img_tech_dc"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
-                android:layout_height="100dp" />
+                android:layout_height="@dimen/item_menuutama_heihgt" />
 
             <View
                 android:background="@drawable/bg_gradient"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"/>
+                android:layout_height="@dimen/item_menuutama_heihgt"/>
 
             <Button
                 android:layout_alignParentBottom="true"
@@ -126,19 +153,19 @@
 
         <RelativeLayout
             android:id="@+id/btn_ran"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/item_menuutama_heihgt"
             android:layout_width="match_parent">
 
             <ImageView
                 android:src="@drawable/img_tech_ran"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
-                android:layout_height="100dp" />
+                android:layout_height="@dimen/item_menuutama_heihgt" />
 
             <View
                 android:background="@drawable/bg_gradient"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"/>
+                android:layout_height="@dimen/item_menuutama_heihgt"/>
 
             <Button
                 android:layout_alignParentBottom="true"
@@ -155,19 +182,19 @@
 
         <RelativeLayout
             android:id="@+id/btn_microwave"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/item_menuutama_heihgt"
             android:layout_width="match_parent">
 
             <ImageView
                 android:src="@drawable/img_tech_microwave"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
-                android:layout_height="100dp" />
+                android:layout_height="@dimen/item_menuutama_heihgt" />
 
             <View
                 android:background="@drawable/bg_gradient"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"/>
+                android:layout_height="@dimen/item_menuutama_heihgt"/>
 
             <Button
                 android:layout_alignParentBottom="true"
@@ -184,19 +211,19 @@
 
         <RelativeLayout
             android:id="@+id/btn_ip"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/item_menuutama_heihgt"
             android:layout_width="match_parent">
 
             <ImageView
                 android:src="@drawable/img_tech_ip"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
-                android:layout_height="100dp" />
+                android:layout_height="@dimen/item_menuutama_heihgt" />
 
             <View
                 android:background="@drawable/bg_gradient"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"/>
+                android:layout_height="@dimen/item_menuutama_heihgt"/>
 
             <Button
                 android:layout_alignParentBottom="true"
@@ -213,19 +240,19 @@
 
         <RelativeLayout
             android:id="@+id/btn_dwdm"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/item_menuutama_heihgt"
             android:layout_width="match_parent">
 
             <ImageView
                 android:src="@drawable/img_tech_dwdm"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
-                android:layout_height="100dp" />
+                android:layout_height="@dimen/item_menuutama_heihgt" />
 
             <View
                 android:background="@drawable/bg_gradient"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"/>
+                android:layout_height="@dimen/item_menuutama_heihgt"/>
 
             <Button
                 android:layout_alignParentBottom="true"
@@ -241,19 +268,19 @@
 
         <RelativeLayout
             android:id="@+id/btn_superwifi"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/item_menuutama_heihgt"
             android:layout_width="match_parent">
 
             <ImageView
                 android:src="@drawable/img_tech_superwifi"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
-                android:layout_height="100dp" />
+                android:layout_height="@dimen/item_menuutama_heihgt" />
 
             <View
                 android:background="@drawable/bg_gradient"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"/>
+                android:layout_height="@dimen/item_menuutama_heihgt"/>
 
             <Button
                 android:layout_alignParentBottom="true"
@@ -269,19 +296,19 @@
 
         <RelativeLayout
             android:id="@+id/btn_mpls"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/item_menuutama_heihgt"
             android:layout_width="match_parent">
 
             <ImageView
                 android:src="@drawable/img_tech_mpls"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
-                android:layout_height="100dp" />
+                android:layout_height="@dimen/item_menuutama_heihgt" />
 
             <View
                 android:background="@drawable/bg_gradient"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"/>
+                android:layout_height="@dimen/item_menuutama_heihgt"/>
 
             <Button
                 android:layout_alignParentBottom="true"
@@ -298,19 +325,19 @@
 
         <RelativeLayout
             android:id="@+id/btn_vsat"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/item_menuutama_heihgt"
             android:layout_width="match_parent">
 
             <ImageView
                 android:src="@drawable/img_tech_vsat"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
-                android:layout_height="100dp" />
+                android:layout_height="@dimen/item_menuutama_heihgt" />
 
             <View
                 android:background="@drawable/bg_gradient"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"/>
+                android:layout_height="@dimen/item_menuutama_heihgt"/>
 
             <Button
                 android:layout_alignParentBottom="true"
@@ -327,19 +354,19 @@
 
         <RelativeLayout
             android:id="@+id/btn_midi"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/item_menuutama_heihgt"
             android:layout_width="match_parent">
 
             <ImageView
                 android:src="@drawable/img_tech_midi"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
-                android:layout_height="100dp" />
+                android:layout_height="@dimen/item_menuutama_heihgt" />
 
             <View
                 android:background="@drawable/bg_gradient"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"/>
+                android:layout_height="@dimen/item_menuutama_heihgt"/>
 
             <Button
                 android:layout_alignParentBottom="true"
@@ -356,19 +383,19 @@
 
         <RelativeLayout
             android:id="@+id/btn_gpon"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/item_menuutama_heihgt"
             android:layout_width="match_parent">
 
             <ImageView
                 android:src="@drawable/img_tech_gpon"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
-                android:layout_height="100dp" />
+                android:layout_height="@dimen/item_menuutama_heihgt" />
 
             <View
                 android:background="@drawable/bg_gradient"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"/>
+                android:layout_height="@dimen/item_menuutama_heihgt"/>
 
             <Button
                 android:layout_alignParentBottom="true"
@@ -385,19 +412,19 @@
 
         <RelativeLayout
             android:id="@+id/btn_coolingcabinet"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/item_menuutama_heihgt"
             android:layout_width="match_parent">
 
             <ImageView
                 android:src="@drawable/img_tech_ac"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
-                android:layout_height="100dp" />
+                android:layout_height="@dimen/item_menuutama_heihgt" />
 
             <View
                 android:background="@drawable/bg_gradient"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"/>
+                android:layout_height="@dimen/item_menuutama_heihgt"/>
 
             <Button
                 android:layout_alignParentBottom="true"
@@ -413,19 +440,19 @@
 
         <RelativeLayout
             android:id="@+id/btn_additional"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/item_menuutama_heihgt"
             android:layout_width="match_parent">
 
             <ImageView
                 android:src="@drawable/img_tech_additional"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
-                android:layout_height="100dp" />
+                android:layout_height="@dimen/item_menuutama_heihgt" />
 
             <View
                 android:background="@drawable/bg_gradient"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"/>
+                android:layout_height="@dimen/item_menuutama_heihgt"/>
 
             <Button
                 android:layout_alignParentBottom="true"

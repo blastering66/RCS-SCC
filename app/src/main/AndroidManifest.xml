@@ -34,7 +34,9 @@
             android:screenOrientation="portrait"
             />
 
-
+        <activity android:name=".Tech_Grid"
+            android:screenOrientation="portrait"
+            />
 
         <activity android:name=".Tech_AdditionalLoads"
             android:screenOrientation="portrait"
@@ -54,9 +56,7 @@
         <activity android:name=".Tech_Earthing"
         android:screenOrientation="portrait"
         />
-        <activity android:name=".Tech_Generators"
-            android:screenOrientation="portrait"
-            />
+
         <activity android:name=".Tech_Gpon"
             android:screenOrientation="portrait"
             />
@@ -82,6 +82,17 @@
             android:screenOrientation="portrait"
             />
 
+        <activity android:name=".Tech_Generators"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".Tech_Generators_Detail_1_Controller"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".Tech_Generators_Detail_2_General"
+            android:screenOrientation="portrait"
+            />
 
     </application>
 

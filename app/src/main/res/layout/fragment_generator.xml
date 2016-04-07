@@ -19,13 +19,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="PLN Site ID" />
+                android:text="Manufacturer" />
 
             <EditText
                 android:id="@+id/ed_site_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="i.e) Melconinda"
+                android:hint="i.e) Sanyo"
                 android:imeOptions="actionNext"
                 android:singleLine="true"
                 android:textColor="@color/color_text_dark" />
@@ -40,7 +40,27 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Number Of Phases" />
+                android:text="Model" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="i.e) SAP-K245G5"
+                android:imeOptions="actionNext"
+                android:singleLine="true"
+                android:textColor="@color/color_text_dark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phases" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -50,7 +70,7 @@
                 <RadioGroup
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
                     <RadioButton
                         android:id="@+id/tipe_single"
                         android:layout_width="wrap_content"
@@ -78,59 +98,137 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Meter Reading" />
+                android:text="Remote Start" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="10dp">
+                android:orientation="horizontal">
 
-                <LinearLayout
+                <RadioGroup
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-                    <TextView
+                    android:orientation="horizontal">
+                    <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Value" />
+                        android:text="Yes" />
 
-                    <EditText
-                        android:id="@+id/ed_value"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                    </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-                    <TextView
+                    <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="50dp"
-                        android:text="Timestamp" />
+                        android:text="No" />
 
-                    <EditText
-                        android:id="@+id/ed_timestamp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:enabled="false"
-                        android:hint="13:20:59" />
-                </LinearLayout>
+                </RadioGroup>
+
 
             </LinearLayout>
+        </LinearLayout>
 
-            <ImageView
-                android:id="@+id/img_meter_reading"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/label_primary_rating"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Primary Rating" />
+            <TextView
+                android:id="@+id/label_primary_rating_kva"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="kVa" />
+
+            <EditText
+                android:id="@+id/ed_primary_rating"
+                android:hint="0"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/label_primary_rating_kva"
+                android:layout_toRightOf="@id/label_primary_rating"
                 android:layout_width="match_parent"
-                android:layout_height="200dp" android:scaleType="centerCrop"
-                android:src="@drawable/img_empty" />
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/label_standby_rating"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Standby Rating" />
+            <TextView
+                android:id="@+id/label_standby_rating_kva"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="kVa" />
+
+            <EditText
+                android:id="@+id/ed_standby_rating"
+                android:hint="0"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/label_standby_rating_kva"
+                android:layout_toRightOf="@id/label_standby_rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Speed (RPM)" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1500" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1800" />
+
+                </RadioGroup>
+
+
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -142,31 +240,131 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Daya Breaker" />
+                android:text="Frequency (Hz)" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="50" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="60" />
+
+                </RadioGroup>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Output Voltage" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="110/120" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="220/240" />
+
+                </RadioGroup>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Connections" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="10dp">
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rating" />
+                    android:text="L1" />
 
                 <EditText
-                    android:id="@+id/ed_rating"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textColor="@color/color_text_dark" />
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/img_rating"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp" android:scaleType="centerCrop"
-                android:src="@drawable/img_empty" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="L2" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textColor="@color/color_text_dark" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="L3" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textColor="@color/color_text_dark" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -178,104 +376,102 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Grid Meter" />
+                android:text="Loads (Amps)" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="10dp">
+                >
 
-                <LinearLayout
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="L1" />
+
+                <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Type" />
-
-                    <EditText
-                        android:id="@+id/ed_tipe"
-                        android:hint="i.e) BATAN"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="50dp"
-                        android:text="Model" />
-
-                    <EditText
-                        android:id="@+id/ed_model"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="i.e) 01JKS011" />
-                </LinearLayout>
-
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textColor="@color/color_text_dark" />
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="10dp">
+                >
 
-                <LinearLayout
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="L2" />
+
+                <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Condition" />
-
-                    <EditText
-                        android:id="@+id/ed_dayabreaker_condition"
-                        android:hint="i.e) Good"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="50dp"
-                        android:text="Rectifier" />
-
-                    <EditText
-                        android:id="@+id/ed_rect"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="0.0" />
-                </LinearLayout>
-
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textColor="@color/color_text_dark" />
             </LinearLayout>
-
-            <ImageView
-                android:id="@+id/img_dayabreaker"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp" android:scaleType="centerCrop"
-                android:src="@drawable/img_empty" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="L3" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textColor="@color/color_text_dark" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Running Hours" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="0.0"
+                android:imeOptions="actionNext"
+                android:singleLine="true"
+                android:textColor="@color/color_text_dark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Condition" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="i.e) Good"
+                android:imeOptions="actionNext"
+                android:singleLine="true"
+                android:textColor="@color/color_text_dark" />
         </LinearLayout>
 
 
@@ -284,101 +480,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="10dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Surge Protection Device" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Manufacturer" />
-
-                    <EditText
-                        android:id="@+id/ed_surge_manufacturer"
-                        android:hint="i.e) BATAN"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="50dp"
-                        android:text="Type" />
-
-                    <EditText
-                        android:id="@+id/ed_surge_tipe"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="i.e) 01JKS011" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Condition" />
-
-                    <EditText
-                        android:id="@+id/ed_surge_condition"
-                        android:hint="i.e) Good"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="50dp"
-                        android:text="Model" />
-
-                    <EditText
-                        android:id="@+id/ed_surge_model"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="i.e) ABCD1234" />
-                </LinearLayout>
-
-            </LinearLayout>
 
             <ImageView
                 android:id="@+id/img_meter_surge"
@@ -388,52 +489,9 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="AC Loads (Amps)" />
-
-            <EditText
-                android:id="@+id/ed_ac_loads"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="0.0"
-                android:imeOptions="actionNext"
-                android:singleLine="true"
-                android:textColor="@color/color_text_dark" />
-
-            </LinearLayout>
-
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Distance to PLN" />
-
-                <EditText
-                    android:id="@+id/ed_ac_loads"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="0.0"
-                    android:imeOptions="actionDone"
-                    android:singleLine="true"
-                    android:textColor="@color/color_text_dark" />
-        </LinearLayout>
-
         <Button
             android:id="@+id/btn"
-            android:text="Done"
+            android:text="Next"
             android:textColor="@color/color_text_light"
             android:background="@drawable/selector_btn"
             android:padding="10dp"
