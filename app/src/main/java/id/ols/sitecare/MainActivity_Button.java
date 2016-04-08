@@ -1,6 +1,7 @@
 package id.ols.sitecare;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,6 +13,7 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import id.ols.util.ParameterCollections;
 
 /**
  * Created by macbook on 4/3/16.
@@ -25,6 +27,7 @@ public class MainActivity_Button extends AppCompatActivity implements View.OnCli
             R.id.img_done_superwifi, R.id.img_done_mpls, R.id.img_done_vsat, R.id.img_done_midi,
             R.id.img_done_gpon, R.id.img_done_cooling, R.id.img_done_additional})
     List<ImageView> images_Done;
+    SharedPreferences spf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,9 @@ public class MainActivity_Button extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_menuutama);
         ButterKnife.bind(this);
         getSupportActionBar().hide();
+
+        spf = getSharedPreferences(ParameterCollections.SH_NAME, MODE_PRIVATE);
+        spf.edit().clear().commit();
 
         btn_generator = (View) findViewById(R.id.btn_generator);
         btn_grid = (View) findViewById(R.id.btn_grid);
@@ -72,8 +78,16 @@ public class MainActivity_Button extends AppCompatActivity implements View.OnCli
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_generator:
+                boolean generator_submited = spf.getBoolean(ParameterCollections.SH_GENERATOR_SUBMITTED, false);
+
+                if(!generator_submited){
+
+                }else{
+
+                }
                 Intent intentTech_Generators = new Intent(getApplicationContext(), Tech_Generators.class);
                 startActivityForResult(intentTech_Generators, 99);
+
                 break;
             case R.id.btn_grid:
                 Intent intentTech_Grid = new Intent(getApplicationContext(), Tech_Grid.class);
@@ -140,12 +154,20 @@ public class MainActivity_Button extends AppCompatActivity implements View.OnCli
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        boolean generator_submited = spf.getBoolean(ParameterCollections.SH_GENERATOR_SUBMITTED, false);
+
+        if(generator_submited){
+            images_Done.get(0).setVisibility(View.VISIBLE);
+        }
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(resultCode == RESULT_OK){
+
             switch (requestCode){
-                case 0:
-                    images_Done.get(0).setVisibility(View.VISIBLE);
-                    break;
                 case 1:
                     images_Done.get(1).setVisibility(View.VISIBLE);
                     break;

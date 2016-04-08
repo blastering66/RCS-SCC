@@ -416,7 +416,7 @@
         </LinearLayout>
         <Button
             android:id="@+id/btn"
-            android:text="Next"
+            android:text="Done"
             android:textColor="@color/color_text_light"
             android:background="@drawable/selector_btn"
             android:padding="10dp"

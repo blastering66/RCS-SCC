@@ -7,4 +7,5 @@ public class ParameterCollections {
 
     public static String SH_NAME = "rcs_life";
     public static String SH_LOGGED = "rcs_life_islogged";
+    public static String SH_GENERATOR_SUBMITTED = "rcs_life_generator_submited";
 }
