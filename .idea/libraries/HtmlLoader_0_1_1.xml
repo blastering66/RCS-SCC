@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="HtmlLoader-0.1.1">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/id.blastering99.htmlloader/HtmlLoader/0.1.1/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/id.blastering99.htmlloader/HtmlLoader/0.1.1/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/id.blastering99.htmlloader/HtmlLoader/0.1.1/15451d92820e8be141f8f96e83d63ed4a0f89fba/HtmlLoader-0.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

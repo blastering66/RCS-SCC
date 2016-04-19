@@ -1,5 +1,6 @@
 package id.ols.sitecare;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -24,6 +25,8 @@ import java.util.Arrays;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import id.blastering99.htmlloader.CustomProgressDialog;
+import id.ols.dialogs.DialogFragmentProgress;
 import id.ols.models.PojoResponseLogin;
 import id.ols.rest_adapter.API_Adapter;
 import id.ols.util.*;
@@ -40,6 +43,8 @@ public class LoginForm extends AppCompatActivity {
     @Bind(R.id.ed_password) EditText ed_Password;
     @Bind(R.id.btn)
     Button btn;
+    SharedPreferences spf ;
+    Activity activity;
 
     @OnClick(R.id.btn) public void click(){
         new AsycnTask_Login().execute();
@@ -50,7 +55,8 @@ public class LoginForm extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_form);
         ButterKnife.bind(this);
-
+        activity = this;
+        spf = getSharedPreferences(ParameterCollections.SH_NAME, MODE_PRIVATE);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 //        actionBar.setDisplayHomeAsUpEnabled(true);
@@ -60,13 +66,19 @@ public class LoginForm extends AppCompatActivity {
     private class AsycnTask_Login extends AsyncTask<Void,Void,Void>{
         String username, password, authKey, message;
         boolean isSukses = false;
-
-
+        CustomProgressDialog pDialog;
+        DialogFragmentProgress dialog;
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
             username = ed_Username.getText().toString();
             password = ed_Password.getText().toString();
+
+            pDialog = new CustomProgressDialog(activity, R.style.SpotsDialogDefault);
+            pDialog.setLoaderType(CustomProgressDialog.SPINNING_CIRCLE);
+            pDialog.show();
+//            dialog = new DialogFragmentProgress();
+//            dialog.show();
         }
 
         @Override
@@ -82,9 +94,9 @@ public class LoginForm extends AppCompatActivity {
                 Response<PojoResponseLogin> response = call.execute();
                 if(response.isSuccess()){
                     if(response.body() != null){
-                        if(response.body().getJsonCode().equals("1")){
+                        if(response.body().getJsonCode() != null){
                             authKey = response.body().getAuthKey();
-                            SharedPreferences spf = getSharedPreferences(ParameterCollections.SH_NAME, MODE_PRIVATE);
+
                             spf.edit().putString(ParameterCollections.SH_AUTHKEY, authKey).commit();
                             isSukses = true;
                             message = response.body().getResponseMessage();
@@ -112,7 +124,9 @@ public class LoginForm extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+            pDialog.dismiss();
             if(isSukses){
+                spf.edit().putBoolean(ParameterCollections.SH_LOGGED, true).commit();
                 startActivity(new Intent(getApplicationContext(), EngineerDetail.class));
                 finish();
             }else{
