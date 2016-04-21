@@ -37,7 +37,6 @@ public class MainActivity_Button extends AppCompatActivity implements View.OnCli
         getSupportActionBar().hide();
 
         spf = getSharedPreferences(ParameterCollections.SH_NAME, MODE_PRIVATE);
-        spf.edit().clear().commit();
 
         btn_generator = (View) findViewById(R.id.btn_generator);
         btn_grid = (View) findViewById(R.id.btn_grid);

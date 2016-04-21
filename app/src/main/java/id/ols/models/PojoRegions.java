@@ -100,9 +100,6 @@ public class PojoRegions {
         @SerializedName("region_id")
         @Expose
         private String regionId;
-        @SerializedName("region_code")
-        @Expose
-        private String regionCode;
         @SerializedName("region_name")
         @Expose
         private String regionName;
@@ -128,23 +125,6 @@ public class PojoRegions {
             this.regionId = regionId;
         }
 
-        /**
-         *
-         * @return
-         * The regionCode
-         */
-        public String getRegionCode() {
-            return regionCode;
-        }
-
-        /**
-         *
-         * @param regionCode
-         * The region_code
-         */
-        public void setRegionCode(String regionCode) {
-            this.regionCode = regionCode;
-        }
 
         /**
          *

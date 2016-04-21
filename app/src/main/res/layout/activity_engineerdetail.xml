@@ -28,7 +28,7 @@
                 android:id="@+id/ed_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Username"
+                android:hint="Engineer Name"
                 android:padding="10dp"
                 android:singleLine="true"
                 android:imeOptions="actionNext"

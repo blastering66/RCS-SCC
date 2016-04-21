@@ -39,4 +39,7 @@ dependencies {
     compile 'com.pkmmte.view:circularimageview:1.1'
     compile 'id.blastering99.htmlloader:HtmlLoader:0.1.1'
     compile 'com.android.support:percent:22.2.0'
+    compile 'io.reactivex:rxjava:1.0.+'
+    compile 'io.reactivex:rxandroid:0.23.+'
+    compile 'com.squareup.retrofit:adapter-rxjava:2.0.0-beta2'
 }

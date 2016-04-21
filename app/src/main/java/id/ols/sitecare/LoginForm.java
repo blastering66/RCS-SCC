@@ -89,17 +89,17 @@ public class LoginForm extends AppCompatActivity {
 
                 API_Adapter adapter = retrofit.create(API_Adapter.class);
                 String apikey = getResources().getString(R.string.api_key);
-                Call<PojoResponseLogin> call = adapter.login(apikey, ParameterCollections.KIND.LOGIN,
-                        ParameterCollections.KIND.MOBILE,username, password);
+                Call<PojoResponseLogin> call = adapter.login(apikey,username, password);
                 Response<PojoResponseLogin> response = call.execute();
                 if(response.isSuccess()){
                     if(response.body() != null){
                         if(response.body().getJsonCode() != null){
-                            authKey = response.body().getAuthKey();
-
-                            spf.edit().putString(ParameterCollections.SH_AUTHKEY, authKey).commit();
-                            isSukses = true;
-                            message = response.body().getResponseMessage();
+                            if(response.body().getAuthKey() != null){
+                                authKey = response.body().getAuthKey();
+                                spf.edit().putString(ParameterCollections.SH_AUTHKEY, authKey).commit();
+                                isSukses = true;
+                                message = response.body().getResponseMessage();
+                            }
                         }else{
                             message = response.body().getResponseMessage();
 
@@ -128,8 +128,10 @@ public class LoginForm extends AppCompatActivity {
             if(isSukses){
                 spf.edit().putBoolean(ParameterCollections.SH_LOGGED, true).commit();
                 startActivity(new Intent(getApplicationContext(), EngineerDetail.class));
+                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
                 finish();
             }else{
+                Log.e("Error =", message);
                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
             }
         }

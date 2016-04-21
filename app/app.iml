@@ -97,24 +97,27 @@
     <orderEntry type="library" exported="" name="circularimageview-1.1" level="project" />
     <orderEntry type="library" exported="" name="support-vector-drawable-23.3.0" level="project" />
     <orderEntry type="library" exported="" name="design-23.1.1" level="project" />
-    <orderEntry type="library" exported="" name="butterknife-7.0.1" level="project" />
+    <orderEntry type="library" exported="" name="rxandroid-0.23.0" level="project" />
     <orderEntry type="library" exported="" name="retrofit-2.0.0-beta2" level="project" />
     <orderEntry type="library" exported="" name="converter-gson-2.0.0-beta2" level="project" />
     <orderEntry type="library" exported="" name="HtmlLoader-0.1.1" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-23.3.0" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-23.3.0" level="project" />
-    <orderEntry type="library" exported="" name="gson-2.3.1" level="project" />
-    <orderEntry type="library" exported="" name="recyclerview-v7-23.1.1" level="project" />
     <orderEntry type="library" exported="" name="android-ui-1.2" level="project" />
     <orderEntry type="library" exported="" name="support-v13-23.1.1" level="project" />
-    <orderEntry type="library" exported="" name="animated-vector-drawable-23.3.0" level="project" />
-    <orderEntry type="library" exported="" name="okhttp-2.5.0" level="project" />
-    <orderEntry type="library" exported="" name="percent-22.2.0" level="project" />
+    <orderEntry type="library" exported="" name="rxjava-1.0.17" level="project" />
     <orderEntry type="library" exported="" name="okio-1.6.0" level="project" />
     <orderEntry type="library" exported="" name="kenburnsview-1.0.7" level="project" />
-    <orderEntry type="library" exported="" name="MaterialTabs-0.11" level="project" />
     <orderEntry type="library" exported="" name="support-v4-23.3.0" level="project" />
     <orderEntry type="library" exported="" name="ink-page-indicator-1.1.1" level="project" />
     <orderEntry type="library" exported="" name="glide-3.7.0" level="project" />
+    <orderEntry type="library" exported="" name="butterknife-7.0.1" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-23.3.0" level="project" />
+    <orderEntry type="library" exported="" name="gson-2.3.1" level="project" />
+    <orderEntry type="library" exported="" name="recyclerview-v7-23.1.1" level="project" />
+    <orderEntry type="library" exported="" name="animated-vector-drawable-23.3.0" level="project" />
+    <orderEntry type="library" exported="" name="okhttp-2.5.0" level="project" />
+    <orderEntry type="library" exported="" name="percent-22.2.0" level="project" />
+    <orderEntry type="library" exported="" name="adapter-rxjava-2.0.0-beta2" level="project" />
+    <orderEntry type="library" exported="" name="MaterialTabs-0.11" level="project" />
   </component>
 </module>

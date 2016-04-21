@@ -163,7 +163,7 @@ public class CameraCapture extends AppCompatActivity implements SurfaceHolder.Ca
             // String namafile = "temp";
             String namafile = format.format(date);
 
-            String fname =  namafile + ".jpg";
+            String fname =  namafile + ".png";
             File file = new File(myDir, fname);
             if (file.exists())
                 file.delete();
@@ -195,7 +195,7 @@ public class CameraCapture extends AppCompatActivity implements SurfaceHolder.Ca
             // String namafile = "temp";
             String namafile = format.format(date);
 
-            String fname =  namafile + ".jpg";
+            String fname =  namafile + ".png";
             File file = new File(myDir, fname);
             if (file.exists())
                 file.delete();
