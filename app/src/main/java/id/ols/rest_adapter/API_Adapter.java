@@ -4,8 +4,11 @@ import com.squareup.okhttp.RequestBody;
 
 import java.util.List;
 
+import id.ols.models.PojoManufactureRAN;
+import id.ols.models.PojoManufactureRANModel;
 import id.ols.models.PojoRegions;
 import id.ols.models.PojoResponseInsert;
+import id.ols.models.PojoResponseInsertSite;
 import id.ols.models.PojoResponseLogin;
 import id.ols.util.ParameterCollections;
 import retrofit.Call;
@@ -37,9 +40,20 @@ public interface API_Adapter {
             @Header("Api-Key") String apikey
     );
 
+    @GET("API.php?exe=get&type=mobile&kind=ran_manufacture")
+    Observable<PojoManufactureRAN> get_manufacture_ran(
+            @Header("Api-Key") String apikey
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=ran_model")
+    Observable<PojoManufactureRANModel> get_manufacture_ran_model(
+            @Header("Api-Key") String apikey,
+            @Query("idmanufactur") String id
+    );
+
     @Multipart
     @POST("API.php?")
-    Observable<PojoResponseInsert> insert_site_detail(
+    Observable<PojoResponseInsertSite> insert_site_detail(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
             @Query("exe")String exe,
@@ -79,6 +93,24 @@ public interface API_Adapter {
     );
 
     @Multipart
+    @POST("API.php?exe=insert&type=mobile&kind=ran")
+    Observable<PojoResponseInsert> insert_tech_ran(
+            @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey,
+//            @Query("exe")String exe,
+//            @Query("type")String type,
+//            @Query("kind")String kind,
+            @Part("ran_idsitevisit")RequestBody ran_idsitevisit,
+            @Part("ran_idmanufacturer")RequestBody ran_idmanufacturer,
+            @Part("ran_idmodel")RequestBody ran_idmodel,
+            @Part("ran_frequency")RequestBody ran_frequency,
+            @Part("ran_configuration")RequestBody ran_configuration,
+            @Part("ran_dcload")RequestBody ran_dcload,
+            @Part("ran_voltase")RequestBody ran_voltase,
+            @Part("ran_photo\"; filename=\"img0.png\" ")RequestBody img0
+    );
+
+    @Multipart
     @POST("API.php?")
     Observable<PojoResponseInsert> insert_tech_microwave(
             @Header("Api-Key") String apikey,
@@ -93,6 +125,8 @@ public interface API_Adapter {
             @Part("microwave_dcload")RequestBody microwave_dcload,
             @Part("microwave_photo\"; filename=\"img0.png\" ")RequestBody img0
     );
+
+
 
     @Multipart
     @POST("API.php?")

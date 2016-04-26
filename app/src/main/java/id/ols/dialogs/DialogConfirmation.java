@@ -1,5 +1,6 @@
 package id.ols.dialogs;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -10,6 +11,7 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 
 import id.ols.sitecare.R;
+import id.ols.sitecare.Tech_RAN;
 
 /**
  * Created by macbook on 3/28/16.
@@ -48,34 +50,25 @@ public class DialogConfirmation extends DialogFragment{
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 // TODO Auto-generated method stub
-//                if(from == 0){
-//                    Intent load = new Intent(getActivity(), Olx_MenuUtama_WP.class);
-//                    getActivity().startActivity(load);
-//                    getActivity().finish();
-//
-//                    Intent notif_service = new Intent(getActivity(), Notif_Service.class);
-//                    getActivity().startService(notif_service);
-//                }else if(from == 1){
-//                    Intent load = new Intent(getActivity(), Olx_Login_Activity.class);
-//                    getActivity().startActivity(load);
-//
-//                    getActivity().finish();
-//                }else if(from == 9){
-//                    getActivity().finish();
-//                    getActivity().overridePendingTransition(android.R.anim.fade_in,R.anim.slide_out_right);
-//                }else{
-//                    dismiss();
-//                }
+                if(from == 0){
 
-                dismiss();
+                }else if(from == 1){
+                    Intent intent = new Intent(context, Tech_RAN.class);
+                    getActivity().setResult(Activity.RESULT_CANCELED);
+                    startActivity(intent);
+                    getActivity().finish();
+                }else if(from == 9){
 
-
+                }
             }
         });
 
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+
+                getActivity().setResult(Activity.RESULT_OK);
+                getActivity().finish();
                 dismiss();
             }
         });

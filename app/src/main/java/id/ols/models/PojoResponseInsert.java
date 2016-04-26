@@ -75,7 +75,7 @@ public class PojoResponseInsert {
 
     public class Data {
 
-        @SerializedName("site_id")
+        @SerializedName("id")
         @Expose
         private String siteId;
 

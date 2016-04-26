@@ -6,7 +6,7 @@ package id.ols.util;
 public class ParameterCollections {
 
     public static String SH_NAME = "rcs_life";
-
+    public static String SH_ID_SITE = "id_site_visit";
     public static String SH_AUTHKEY = "rcs_life_auth";
     public static String SH_LOGGED = "rcs_life_islogged";
     public static String TAG_LATITUDE_NOW = "lati_now";

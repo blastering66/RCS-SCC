@@ -28,6 +28,7 @@
                     android:text="Manufacturer" />
 
                 <Spinner
+                    android:id="@+id/spinner_manufactur"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:entries="@array/maufacturer_ran"
@@ -46,11 +47,34 @@
                     android:text="Model" />
 
                 <Spinner
+                    android:id="@+id/spinner_model"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:entries="@array/model_ran"
                     android:padding="10dp" />
             </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Configuration" />
+
+            <EditText
+                android:id="@+id/ed_config"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="0.0"
+                android:imeOptions="actionDone"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@color/color_text_dark" />
         </LinearLayout>
 
         <LinearLayout
@@ -76,16 +100,19 @@
                     android:orientation="vertical">
 
                     <EditText
+                        android:id="@+id/ed_freq_0"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="2100" />
 
                     <EditText
+                        android:id="@+id/ed_freq_1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="U900" />
 
                     <EditText
+                        android:id="@+id/ed_freq_2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
@@ -97,16 +124,19 @@
                     android:orientation="vertical">
 
                     <EditText
+                        android:id="@+id/ed_freq_a"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="DCS 1800" />
 
                     <EditText
+                        android:id="@+id/ed_freq_b"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="GSM900" />
 
                     <EditText
+                        android:id="@+id/ed_freq_c"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
@@ -136,16 +166,20 @@
                     android:orientation="horizontal">
 
                     <RadioButton
+                        android:id="@+id/radio_volt_24"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="+24V" />
 
                     <RadioButton
+                        android:id="@+id/radio_volt_48"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="-48V" />
 
                     <RadioButton
+                        android:id="@+id/radio_volt_110"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="110 / 220 AC" />
@@ -188,6 +222,7 @@
             android:padding="10dp">
 
             <ImageView
+                android:id="@+id/img"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"

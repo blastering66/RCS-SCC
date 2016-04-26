@@ -40,6 +40,7 @@ import butterknife.OnClick;
 import id.blastering99.htmlloader.CustomProgressDialog;
 import id.ols.models.PojoRegions;
 import id.ols.models.PojoResponseInsert;
+import id.ols.models.PojoResponseInsertSite;
 import id.ols.rest_adapter.API_Adapter;
 import id.ols.rest_adapter.HeaderInterceptor;
 import id.ols.util.CameraCapture;
@@ -170,7 +171,7 @@ public class SiteDetail extends AppCompatActivity {
                         if (name_regions.size() > 0 || name_regions != null) {
                             ArrayAdapter<String> adapter_regions = new ArrayAdapter<String>(getApplicationContext(),
                                     android.R.layout.simple_spinner_item, name_regions);
-                            adapter_regions.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                            adapter_regions.setDropDownViewResource(R.layout.spinner_item);
                             spinner_Regions.setAdapter(adapter_regions);
                         }
                     }
@@ -267,7 +268,7 @@ public class SiteDetail extends AppCompatActivity {
         sourceFile00 = new File(url_file00);
         body00 = RequestBody.create(MediaType.parse("image/*"), sourceFile00);
 
-        Observable<PojoResponseInsert> observable = adapter.insert_site_detail(
+        Observable<PojoResponseInsertSite> observable = adapter.insert_site_detail(
                 apikey, authkey, ParameterCollections.EXE.INSERT,
                 ParameterCollections.KIND.MOBILE, ParameterCollections.KIND.SITE,
                 codeid, name, mobileno, _type,
@@ -278,7 +279,7 @@ public class SiteDetail extends AppCompatActivity {
 //
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<PojoResponseInsert>() {
+                .subscribe(new Observer<PojoResponseInsertSite>() {
                     @Override
                     public void onCompleted() {
                         pDialog.dismiss();
@@ -294,14 +295,16 @@ public class SiteDetail extends AppCompatActivity {
                     public void onError(Throwable e) {
                         pDialog.dismiss();
 //                        Log.e("onError", e.getMessage().toString());
-                        Toast.makeText(getApplicationContext(), "Something wrong, Try Again = ", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Timeout,Please Try Again.", Toast.LENGTH_LONG).show();
                     }
 
                     @Override
-                    public void onNext(PojoResponseInsert pojoResponseInsert) {
+                    public void onNext(PojoResponseInsertSite pojoResponseInsert) {
                         if (pojoResponseInsert.getJsonCode() != null) {
                             if (pojoResponseInsert.getAct().getInsert() == 1) {
                                 isSukses = true;
+                                String id_site = pojoResponseInsert.getData().getSiteId();
+                                spf.edit().putString(ParameterCollections.SH_ID_SITE, id_site).commit();
                             } else {
                                 message = pojoResponseInsert.getResponseMessage();
                             }

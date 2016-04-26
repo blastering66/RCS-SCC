@@ -32,6 +32,7 @@
                     android:orientation="horizontal">
                     <RadioButton
                         android:id="@+id/tipe_single_awl"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
@@ -60,6 +61,7 @@
                     android:orientation="horizontal">
                     <RadioButton
                         android:id="@+id/tipe_ac_awl"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="AC" />
@@ -128,6 +130,7 @@
                     android:orientation="horizontal">
                     <RadioButton
                         android:id="@+id/tipe_yes_esl"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
@@ -156,6 +159,7 @@
                     android:orientation="horizontal">
                     <RadioButton
                         android:id="@+id/tipe_ac_esl"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="AC" />
@@ -224,6 +228,7 @@
                     android:orientation="horizontal">
                     <RadioButton
                         android:id="@+id/tipe_yes_ff"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
@@ -252,6 +257,7 @@
                     android:orientation="horizontal">
                     <RadioButton
                         android:id="@+id/tipe_ac_ff"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="AC" />
@@ -320,6 +326,7 @@
                     android:orientation="horizontal">
                     <RadioButton
                         android:id="@+id/tipe_yes_ss"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
@@ -348,6 +355,7 @@
                     android:orientation="horizontal">
                     <RadioButton
                         android:id="@+id/tipe_ac_ss"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="AC" />
@@ -416,6 +424,7 @@
                     android:orientation="horizontal">
                     <RadioButton
                         android:id="@+id/tipe_yes_oe"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
@@ -444,6 +453,7 @@
                     android:orientation="horizontal">
                     <RadioButton
                         android:id="@+id/tipe_ac_oe"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="AC" />
