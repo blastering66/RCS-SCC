@@ -58,10 +58,10 @@ public interface API_Adapter {
             @Part("site_externaltemperature")RequestBody site_externaltemperature,
             @Part("site_idweathercondition")RequestBody site_idweathercondition,
 
-            @Part("site_nameenginer")RequestBody site_nameenginer,
-            @Part("site_emailenginer")RequestBody site_emailenginer,
-            @Part("site_phoneenginer")RequestBody site_phoneenginer,
-            @Part("view_sitephoto\"; filename=\"img0.png\" ")RequestBody img0
+            @Part("site_nameengineer")RequestBody site_nameenginer,
+            @Part("site_emailengineer")RequestBody site_emailenginer,
+            @Part("site_phoneengineer")RequestBody site_phoneenginer,
+            @Part("site_photo\"; filename=\"img0.png\" ")RequestBody img0
     );
 
     @Multipart
@@ -223,34 +223,67 @@ public interface API_Adapter {
             @Part("gpon_photo\"; filename=\"img0.png\" ")RequestBody img0
     );
 
-    @Multipart
-    @POST("API.php?")
-    Observable<PojoResponseInsert> insert_tech_additional(
+//    @Multipart
+//    @POST("API.php?")
+//    Observable<PojoResponseInsert> insert_tech_additional(
+//            @Header("Api-Key") String apikey,
+//            @Header("Auth-Key") String authkey,
+//            @Query("exe")String exe,
+//            @Query("type")String type,
+//            @Query("kind")String kind,
+//            @Part("additionalloads_idsite")RequestBody additionalloads_idsite,
+//
+//            @Part("additionalloadsawl_option")RequestBody additionalloadsawl_option,  /* Yes,No */
+//            @Part("additionalloadsawl_current")RequestBody additionalloadsawl_option2,     /* AC,DC */
+//            @Part("additionalloadsawl_load")RequestBody additionalloadsawl_load,     /* float */
+//
+//            @Part("additionalloadsesl_option")RequestBody additionalloadsesl_option,  /* Yes,No */
+//            @Part("additionalloadsesl_current")RequestBody additionalloadsesl_option2,     /* AC,DC */
+//            @Part("additionalloadsesl_load")RequestBody additionalloadsesl_load,     /* float */
+//
+//            @Part("additionalloadsffe_option")RequestBody additionalloadsffe_option,  /* Yes,No */
+//            @Part("additionalloadsffe_current")RequestBody additionalloadsffe_option2,     /* AC,DC */
+//            @Part("additionalloadsffe_load")RequestBody additionalloadsffe_load,     /* float */
+//
+//            @Part("additionalloadssse_option")RequestBody additionalloadssse_option,  /* Yes,No */
+//            @Part("additionalloadssse_current")RequestBody additionalloadssse_option2,     /* AC,DC */
+//            @Part("additionalloadssse_load")RequestBody additionalloadssse_load,     /* float */
+//
+//            @Part("additionalloadsoe_option")RequestBody additionalloadsoe_option,  /* Yes,No */
+//            @Part("additionalloadsoe_current")RequestBody additionalloadsoe_option2,     /* AC,DC */
+//            @Part("additionalloadsoe_load")RequestBody additionalloadsoe_load     /* float */
+//
+//    );
+
+    @FormUrlEncoded
+    @POST("API.php?exe=insert&kind=additional_loads&type=mobile")
+    Observable<PojoResponseInsert> insert_tech_additional_test(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
-            @Query("exe")String exe,
-            @Query("type")String type,
-            @Query("kind")String kind,
-            @Part("additionalloads_idsite")RequestBody additionalloads_idsite,
-            @Part("additionalloadsawl_option")RequestBody additionalloadsawl_option,  /* Yes,No */
-            @Part("additionalloadsawl_option2")RequestBody additionalloadsawl_option2,     /* AC,DC */
-            @Part("additionalloadsawl_load")RequestBody additionalloadsawl_load,     /* float */
+//            @Query("exe")String exe,
+//            @Query("type")String type,
+//            @Query("kind")String kind,
+            @Field("additionalloads_idsitevisit")String additionalloads_idsite,
 
-            @Part("additionalloadsesl_option")RequestBody additionalloadsesl_option,  /* Yes,No */
-            @Part("additionalloadsesl_option2")RequestBody additionalloadsesl_option2,     /* AC,DC */
-            @Part("additionalloadsesl_load")RequestBody additionalloadsesl_load,     /* float */
+            @Field("additionalloadsawl_option")String additionalloadsawl_option,  /* Yes,No */
+            @Field("additionalloadsawl_current")String additionalloadsawl_option2,     /* AC,DC */
+            @Field("additionalloadsawl_load")String additionalloadsawl_load,     /* float */
 
-            @Part("additionalloadsffe_option")RequestBody additionalloadsffe_option,  /* Yes,No */
-            @Part("additionalloadsffe_option2")RequestBody additionalloadsffe_option2,     /* AC,DC */
-            @Part("additionalloadsffe_load")RequestBody additionalloadsffe_load,     /* float */
+            @Field("additionalloadsesl_option")String additionalloadsesl_option,  /* Yes,No */
+            @Field("additionalloadsesl_current")String additionalloadsesl_option2,     /* AC,DC */
+            @Field("additionalloadsesl_load")String additionalloadsesl_load,     /* float */
 
-            @Part("additionalloadssse_option")RequestBody additionalloadssse_option,  /* Yes,No */
-            @Part("additionalloadssse_option2")RequestBody additionalloadssse_option2,     /* AC,DC */
-            @Part("additionalloadssse_load")RequestBody additionalloadssse_load,     /* float */
+            @Field("additionalloadsffe_option")String additionalloadsffe_option,  /* Yes,No */
+            @Field("additionalloadsffe_current")String additionalloadsffe_option2,     /* AC,DC */
+            @Field("additionalloadsffe_load")String additionalloadsffe_load,     /* float */
 
-            @Part("additionalloadsoe_option")RequestBody additionalloadsoe_option,  /* Yes,No */
-            @Part("additionalloadsoe_option2")RequestBody additionalloadsoe_option2,     /* AC,DC */
-            @Part("additionalloadsoe_load")RequestBody additionalloadsoe_load     /* float */
+            @Field("additionalloadssse_option")String additionalloadssse_option,  /* Yes,No */
+            @Field("additionalloadssse_current")String additionalloadssse_option2,     /* AC,DC */
+            @Field("additionalloadssse_load")String additionalloadssse_load,     /* float */
+
+            @Field("additionalloadsoe_option")String additionalloadsoe_option,  /* Yes,No */
+            @Field("additionalloadsoe_current")String additionalloadsoe_option2,     /* AC,DC */
+            @Field("additionalloadsoe_load")String additionalloadsoe_load     /* float */
 
     );
 }

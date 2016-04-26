@@ -31,13 +31,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <RadioButton
-                        android:id="@+id/tipe_single"
+                        android:id="@+id/tipe_single_awl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
 
                     <RadioButton
-                        android:id="@+id/tipe_three"
+                        android:id="@+id/tipe_three_awl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="No" />
@@ -59,11 +59,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <RadioButton
+                        android:id="@+id/tipe_ac_awl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="AC" />
 
                     <RadioButton
+                        android:id="@+id/tipe_dc_awl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="DC" />
@@ -85,6 +87,7 @@
                         android:layout_height="wrap_content" />
 
                     <EditText
+                        android:id="@+id/ed_amps_1"
                         android:hint="0.0"
                         android:gravity="right"
                         android:layout_centerVertical="true"
@@ -124,11 +127,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <RadioButton
+                        android:id="@+id/tipe_yes_esl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
 
                     <RadioButton
+                        android:id="@+id/tipe_no_esl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="No" />
@@ -150,11 +155,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <RadioButton
+                        android:id="@+id/tipe_ac_esl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="AC" />
 
                     <RadioButton
+                        android:id="@+id/tipe_dc_esl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="DC" />
@@ -176,6 +183,7 @@
                         android:layout_height="wrap_content" />
 
                     <EditText
+                        android:id="@+id/ed_amps_2_esl"
                         android:hint="0.0"
                         android:gravity="right"
                         android:layout_centerVertical="true"
@@ -215,11 +223,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <RadioButton
+                        android:id="@+id/tipe_yes_ff"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
 
                     <RadioButton
+                        android:id="@+id/tipe_no_ff"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="No" />
@@ -241,11 +251,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <RadioButton
+                        android:id="@+id/tipe_ac_ff"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="AC" />
 
                     <RadioButton
+                        android:id="@+id/tipe_dc_ff"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="DC" />
@@ -267,6 +279,7 @@
                         android:layout_height="wrap_content" />
 
                     <EditText
+                        android:id="@+id/ed_amps_3_ff"
                         android:hint="0.0"
                         android:gravity="right"
                         android:layout_centerVertical="true"
@@ -306,11 +319,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <RadioButton
+                        android:id="@+id/tipe_yes_ss"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
 
                     <RadioButton
+                        android:id="@+id/tipe_no_ss"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="No" />
@@ -332,11 +347,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <RadioButton
+                        android:id="@+id/tipe_ac_ss"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="AC" />
 
                     <RadioButton
+                        android:id="@+id/tipe_dc_ss"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="DC" />
@@ -358,6 +375,7 @@
                         android:layout_height="wrap_content" />
 
                     <EditText
+                        android:id="@+id/ed_amps_4_ss"
                         android:hint="0.0"
                         android:gravity="right"
                         android:layout_centerVertical="true"
@@ -397,11 +415,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <RadioButton
+                        android:id="@+id/tipe_yes_oe"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
 
                     <RadioButton
+                        android:id="@+id/tipe_no_oe"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="No" />
@@ -423,11 +443,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <RadioButton
+                        android:id="@+id/tipe_ac_oe"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="AC" />
 
                     <RadioButton
+                        android:id="@+id/tipe_dc_oe"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="DC" />
@@ -449,6 +471,7 @@
                         android:layout_height="wrap_content" />
 
                     <EditText
+                        android:id="@+id/ed_amps_5_oe"
                         android:hint="0.0"
                         android:gravity="right"
                         android:layout_centerVertical="true"

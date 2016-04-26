@@ -2,6 +2,10 @@
     <string name="app_name">Site Care 1.0</string>
     <string name="api_key">9eQdHOUlb9cER6GeV3GC7u/oAvQHf0Zp9hQS1ZomAneRvbTfrCQVC</string>
     <string name="label_earthing">Earthing &amp; Grounding</string>
+    <string name="option_yes">Yes</string>
+    <string name="option_no">No</string>
+    <string name="current_dc">DC</string>
+    <string name="current_ac">AC</string>
 
     <string-array name="regions">
         <item>CWJ</item>

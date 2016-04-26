@@ -95,7 +95,9 @@ public class SiteDetail extends AppCompatActivity {
     Spinner spinner_Weather;
     @Bind(R.id.img)
     ImageView img_Site;
-    @OnClick(R.id.img) void OnClickIMG(){
+
+    @OnClick(R.id.img)
+    void OnClickIMG() {
         startActivityForResult(new Intent(this, CameraCapture.class), 111);
     }
 
@@ -111,7 +113,7 @@ public class SiteDetail extends AppCompatActivity {
     String message = "";
     List<String> name_regions;
 
-    String site_nameenginer,site_emailenginer,site_phoneenginer;
+    String site_nameenginer, site_emailenginer, site_phoneenginer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,8 +126,8 @@ public class SiteDetail extends AppCompatActivity {
         spf = getSharedPreferences(ParameterCollections.SH_NAME, MODE_PRIVATE);
 
         site_nameenginer = getIntent().getStringExtra("site_nameenginer");
-        site_emailenginer= getIntent().getStringExtra("site_emailenginer");
-        site_phoneenginer= getIntent().getStringExtra("site_phoneenginer");
+        site_emailenginer = getIntent().getStringExtra("site_emailenginer");
+        site_phoneenginer = getIntent().getStringExtra("site_phoneenginer");
 
         getRegionsData();
     }
@@ -144,9 +146,9 @@ public class SiteDetail extends AppCompatActivity {
                 finish();
                 break;
             case R.id.action_next:
-                if(url_file00 != null) {
+                if (url_file00 != null) {
                     sendData();
-                }else{
+                } else {
                     Toast.makeText(getApplicationContext(), "Please take picture or site first", Toast.LENGTH_LONG).show();
                 }
                 break;
@@ -155,7 +157,7 @@ public class SiteDetail extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void getRegionsData(){
+    private void getRegionsData() {
         final API_Adapter adapter = PublicFunctions.initRetrofit();
         String apikey = getResources().getString(R.string.api_key);
         Observable<PojoRegions> observable = adapter.get_regions(apikey);
@@ -165,7 +167,7 @@ public class SiteDetail extends AppCompatActivity {
                     @Override
                     public void onCompleted() {
                         Log.e("Error", "Completed");
-                        if(name_regions.size() >0 || name_regions != null){
+                        if (name_regions.size() > 0 || name_regions != null) {
                             ArrayAdapter<String> adapter_regions = new ArrayAdapter<String>(getApplicationContext(),
                                     android.R.layout.simple_spinner_item, name_regions);
                             adapter_regions.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -182,10 +184,10 @@ public class SiteDetail extends AppCompatActivity {
                     @Override
                     public void onNext(PojoRegions pojoRegions) {
                         Log.e("Datanya = ", pojoRegions.getData().get(0).getRegionName());
-                        if(pojoRegions.getJsonCode() == 1){
-                            if(pojoRegions.getAct().getGet() == 1){
+                        if (pojoRegions.getJsonCode() == 1) {
+                            if (pojoRegions.getAct().getGet() == 1) {
                                 name_regions = new ArrayList<String>();
-                                for(int i=0; i < pojoRegions.getData().size(); i++){
+                                for (int i = 0; i < pojoRegions.getData().size(); i++) {
                                     name_regions.add(pojoRegions.getData().get(i).getRegionName());
                                 }
                             }
@@ -196,7 +198,7 @@ public class SiteDetail extends AppCompatActivity {
 
     }
 
-    private void sendData(){
+    private void sendData() {
         final CustomProgressDialog pDialog;
 
         //param value yg dikirim
@@ -219,7 +221,7 @@ public class SiteDetail extends AppCompatActivity {
             site_type = "Outdoor";
         } else if (radio_tipe_mixed.isChecked()) {
             site_type = "Mixed";
-        }else{
+        } else {
             site_type = "Mixed";
         }
 
@@ -265,12 +267,12 @@ public class SiteDetail extends AppCompatActivity {
         sourceFile00 = new File(url_file00);
         body00 = RequestBody.create(MediaType.parse("image/*"), sourceFile00);
 
-                Observable<PojoResponseInsert> observable = adapter.insert_site_detail(
-                        apikey, authkey, ParameterCollections.EXE.INSERT,
-                        ParameterCollections.KIND.MOBILE, ParameterCollections.KIND.SITE,
-                        codeid, name, mobileno, _type,
-                        keeper, idcluster, location, altitude, timesurveystarted,
-                        externaltemperature, idweathercondition,nameenginer,emailenginer,phoneenginer, body00
+        Observable<PojoResponseInsert> observable = adapter.insert_site_detail(
+                apikey, authkey, ParameterCollections.EXE.INSERT,
+                ParameterCollections.KIND.MOBILE, ParameterCollections.KIND.SITE,
+                codeid, name, mobileno, _type,
+                keeper, idcluster, location, altitude, timesurveystarted,
+                externaltemperature, idweathercondition, nameenginer, emailenginer, phoneenginer, body00
         );
 
 //
@@ -297,10 +299,10 @@ public class SiteDetail extends AppCompatActivity {
 
                     @Override
                     public void onNext(PojoResponseInsert pojoResponseInsert) {
-                        if(pojoResponseInsert.getJsonCode() != null){
-                            if(pojoResponseInsert.getAct().getInsert() == 1){
+                        if (pojoResponseInsert.getJsonCode() != null) {
+                            if (pojoResponseInsert.getAct().getInsert() == 1) {
                                 isSukses = true;
-                            }else{
+                            } else {
                                 message = pojoResponseInsert.getResponseMessage();
                             }
                         }
@@ -310,10 +312,10 @@ public class SiteDetail extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(resultCode == RESULT_OK){
-            if(requestCode == 111){
+        if (resultCode == RESULT_OK) {
+            if (requestCode == 111) {
                 url_file00 = data.getStringExtra("url_img");
-                Bitmap bitmap = Bitmap.createScaledBitmap(BitmapFactory.decodeFile(url_file00), 100,150, true);
+                Bitmap bitmap = Bitmap.createScaledBitmap(BitmapFactory.decodeFile(url_file00), 100, 150, true);
                 Glide.with(getApplicationContext()).load(url_file00).asBitmap().into(img_Site);
 //                img_Site.setImageBitmap(bitmap);
             }
