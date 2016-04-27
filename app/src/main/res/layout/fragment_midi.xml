@@ -25,9 +25,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
+                <ProgressBar
+                    android:id="@+id/pg_manufactur"
+                    android:layout_gravity="center"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp" />
+
                 <Spinner
+                    android:id="@+id/spinner_manufactur"
+                    android:visibility="gone"
                     android:padding="10dp"
-                    android:entries="@array/maufacturer_midi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
@@ -42,9 +49,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
+                <ProgressBar
+                    android:id="@+id/pg_model"
+                    android:layout_gravity="center"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp" />
+
                 <Spinner
+                    android:id="@+id/spinner_model"
                     android:padding="10dp"
-                    android:entries="@array/model_midi"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
@@ -71,16 +85,19 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <RadioButton
+                        android:id="@+id/radio_volt_24"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="+24V" />
 
                     <RadioButton
+                        android:id="@+id/radio_volt_48"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="-48V" />
 
                     <RadioButton
+                        android:id="@+id/radio_volt_110"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="110 / 220 AC" />
@@ -121,6 +138,7 @@
             android:padding="10dp">
 
             <ImageView
+                android:id="@+id/img"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"

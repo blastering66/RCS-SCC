@@ -4,10 +4,24 @@ import com.squareup.okhttp.RequestBody;
 
 import java.util.List;
 
+import id.ols.models.PojoManufactureDwdm;
+import id.ols.models.PojoManufactureDwdmModel;
+import id.ols.models.PojoManufactureGpon;
+import id.ols.models.PojoManufactureGponModel;
+import id.ols.models.PojoManufactureIp;
+import id.ols.models.PojoManufactureIpModel;
 import id.ols.models.PojoManufactureMicrowave;
 import id.ols.models.PojoManufactureMicrowaveModel;
+import id.ols.models.PojoManufactureMidi;
+import id.ols.models.PojoManufactureMidiModel;
+import id.ols.models.PojoManufactureMpls;
+import id.ols.models.PojoManufactureMplsModel;
 import id.ols.models.PojoManufactureRAN;
 import id.ols.models.PojoManufactureRANModel;
+import id.ols.models.PojoManufactureSuperWifi;
+import id.ols.models.PojoManufactureSuperWifiModel;
+import id.ols.models.PojoManufactureVsat;
+import id.ols.models.PojoManufactureVsatModel;
 import id.ols.models.PojoRegions;
 import id.ols.models.PojoResponseInsert;
 import id.ols.models.PojoResponseInsertSite;
@@ -84,6 +98,83 @@ public interface API_Adapter {
 
     @GET("API.php?exe=get&type=mobile&kind=microwave_model")
     Observable<PojoManufactureMicrowaveModel> get_manufacture_microwave_model(
+            @Header("Api-Key") String apikey,
+            @Query("idmanufactur") String id
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=ip_manufacture")
+    Observable<PojoManufactureIp> get_manufacture_ip(
+            @Header("Api-Key") String apikey
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=ip_model")
+    Observable<PojoManufactureIpModel> get_manufacture_ip_model(
+            @Header("Api-Key") String apikey,
+            @Query("idmanufactur") String id
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=dwdm_manufacture")
+    Observable<PojoManufactureDwdm> get_manufacture_dwdm(
+            @Header("Api-Key") String apikey
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=dwdm_model")
+    Observable<PojoManufactureDwdmModel> get_manufacture_dwdm_model(
+            @Header("Api-Key") String apikey,
+            @Query("idmanufactur") String id
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=superwifi_manufacture")
+    Observable<PojoManufactureSuperWifi> get_manufacture_superwifi(
+            @Header("Api-Key") String apikey
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=superwifi_model")
+    Observable<PojoManufactureSuperWifiModel> get_manufacture_superwifi_model(
+            @Header("Api-Key") String apikey,
+            @Query("idmanufactur") String id
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=mpls_manufacture")
+    Observable<PojoManufactureMpls> get_manufacture_mpls(
+            @Header("Api-Key") String apikey
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=mpls_model")
+    Observable<PojoManufactureMplsModel> get_manufacture_mpls_model(
+            @Header("Api-Key") String apikey,
+            @Query("idmanufactur") String id
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=vsat_manufacture")
+    Observable<PojoManufactureVsat> get_manufacture_vsat(
+            @Header("Api-Key") String apikey
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=vsat_model")
+    Observable<PojoManufactureVsatModel> get_manufacture_vsat_model(
+            @Header("Api-Key") String apikey,
+            @Query("idmanufactur") String id
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=midi_manufacture")
+    Observable<PojoManufactureMidi> get_manufacture_midi(
+            @Header("Api-Key") String apikey
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=midi_model")
+    Observable<PojoManufactureMidiModel> get_manufacture_midi_model(
+            @Header("Api-Key") String apikey,
+            @Query("idmanufactur") String id
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=gpon_manufacture")
+    Observable<PojoManufactureGpon> get_manufacture_gpon(
+            @Header("Api-Key") String apikey
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=gpon_model")
+    Observable<PojoManufactureGponModel> get_manufacture_gpon_model(
             @Header("Api-Key") String apikey,
             @Query("idmanufactur") String id
     );
@@ -182,13 +273,13 @@ public interface API_Adapter {
     );
 
     @Multipart
-    @POST("API.php?")
+    @POST("API.php?exe=insert&type=mobile&kind=dwdm")
     Observable<PojoResponseInsert> insert_tech_dwdm(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
-            @Query("exe")String exe,
-            @Query("type")String type,
-            @Query("kind")String kind,
+//            @Query("exe")String exe,
+//            @Query("type")String type,
+//            @Query("kind")String kind,
             @Part("dwdm_idsite")RequestBody idsite,
             @Part("dwdm_idmanufacturer")RequestBody idmanufacturer,
             @Part("dwdm_idmodel")RequestBody idmodel,
@@ -198,13 +289,13 @@ public interface API_Adapter {
     );
 
     @Multipart
-    @POST("API.php?")
+    @POST("API.php?exe=insert&type=mobile&kind=superwifi")
     Observable<PojoResponseInsert> insert_tech_superwifi(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
-            @Query("exe")String exe,
-            @Query("type")String type,
-            @Query("kind")String kind,
+//            @Query("exe")String exe,
+//            @Query("type")String type,
+//            @Query("kind")String kind,
             @Part("superwifi_idsite")RequestBody idsite,
             @Part("superwifi_idmanufacturer")RequestBody idmanufacturer,
             @Part("superwifi_idmodel")RequestBody idmodel,
@@ -214,13 +305,13 @@ public interface API_Adapter {
     );
 
     @Multipart
-    @POST("API.php?")
+    @POST("API.php?exe=insert&type=mobile&kind=mpls")
     Observable<PojoResponseInsert> insert_tech_mpls(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
-            @Query("exe")String exe,
-            @Query("type")String type,
-            @Query("kind")String kind,
+//            @Query("exe")String exe,
+//            @Query("type")String type,
+//            @Query("kind")String kind,
             @Part("mpls_idsite")RequestBody microwave_idsite,
             @Part("mpls_idmanufacturer")RequestBody idmanufacturer,
             @Part("mpls_idmodel")RequestBody idmodel,
@@ -230,13 +321,13 @@ public interface API_Adapter {
     );
 
     @Multipart
-    @POST("API.php?")
+    @POST("API.php?exe=insert&type=mobile&kind=vsat")
     Observable<PojoResponseInsert> insert_tech_vsat(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
-            @Query("exe")String exe,
-            @Query("type")String type,
-            @Query("kind")String kind,
+//            @Query("exe")String exe,
+//            @Query("type")String type,
+//            @Query("kind")String kind,
             @Part("vsat_idsite")RequestBody idsite,
             @Part("vsat_idmanufacturer")RequestBody idmanufacturer,
             @Part("vsat_idmodel")RequestBody idmodel,
@@ -246,13 +337,13 @@ public interface API_Adapter {
     );
 
     @Multipart
-    @POST("API.php?")
+    @POST("API.php?exe=insert&type=mobile&kind=midi")
     Observable<PojoResponseInsert> insert_tech_midi(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
-            @Query("exe")String exe,
-            @Query("type")String type,
-            @Query("kind")String kind,
+//            @Query("exe")String exe,
+//            @Query("type")String type,
+//            @Query("kind")String kind,
             @Part("midi_idsite")RequestBody idsite,
             @Part("midi_idmanufacturer")RequestBody idmanufacturer,
             @Part("midi_idmodel")RequestBody idmodel,
@@ -262,13 +353,13 @@ public interface API_Adapter {
     );
 
     @Multipart
-    @POST("API.php?")
+    @POST("API.php?exe=insert&type=mobile&kind=gpon")
     Observable<PojoResponseInsert> insert_tech_gpon(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
-            @Query("exe")String exe,
-            @Query("type")String type,
-            @Query("kind")String kind,
+//            @Query("exe")String exe,
+//            @Query("type")String type,
+//            @Query("kind")String kind,
             @Part("gpon_idsite")RequestBody idsite,
             @Part("gpon_idmanufacturer")RequestBody idmanufacturer,
             @Part("gpon_idmodel")RequestBody idmodel,
