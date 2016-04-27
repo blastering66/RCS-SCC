@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.rcs.htctools.Splashscreen_Activity" >
 
+
     <item
         android:id="@+id/action_next"
         android:title="Next"

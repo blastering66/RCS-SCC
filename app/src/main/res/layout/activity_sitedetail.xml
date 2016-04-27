@@ -20,10 +20,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
+            <ProgressBar
+                android:id="@+id/pg_regions"
+                android:layout_gravity="center"
+                android:layout_width="15dp"
+                android:layout_height="15dp" />
+
             <Spinner
                 android:id="@+id/spinner_regions"
-                android:entries="@array/regions"
-                android:prompt="@array/regions"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -41,10 +46,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
+            <ProgressBar
+                android:id="@+id/pg_regions_sub"
+                android:layout_gravity="center"
+                android:layout_width="15dp"
+                android:layout_height="15dp" />
+
             <Spinner
                 android:id="@+id/spinner_regions_sub"
-                android:entries="@array/regions_sub"
-                android:prompt="@array/regions_sub"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -61,10 +71,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
+            <ProgressBar
+                android:id="@+id/pg_regions_cluster"
+                android:layout_gravity="center"
+                android:layout_width="15dp"
+                android:layout_height="15dp" />
+
             <Spinner
                 android:id="@+id/spinner_regions_sub_cluster"
-                android:entries="@array/regions_sub_cluster"
-                android:prompt="@array/regions_sub_cluster"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -182,6 +197,7 @@
                     android:layout_height="wrap_content">
                     <RadioButton
                         android:id="@+id/tipe_indoor"
+                        android:checked="true"
                         android:text="Indoor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
@@ -271,7 +287,6 @@
             <EditText
                 android:id="@+id/ed_time"
                 android:enabled="false"
-                android:hint="10.20"
                 android:inputType="number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -309,8 +324,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
+            <ProgressBar
+                android:id="@+id/pg_weather"
+                android:layout_width="15dp"
+                android:layout_height="15dp" />
+
             <Spinner
                 android:id="@+id/spinner_weather"
+                android:visibility="gone"
                 android:entries="@array/weather_condition"
                 android:prompt="@array/weather_condition"
                 android:layout_width="match_parent"

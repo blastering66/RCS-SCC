@@ -4,12 +4,15 @@ import com.squareup.okhttp.RequestBody;
 
 import java.util.List;
 
+import id.ols.models.PojoManufactureMicrowave;
+import id.ols.models.PojoManufactureMicrowaveModel;
 import id.ols.models.PojoManufactureRAN;
 import id.ols.models.PojoManufactureRANModel;
 import id.ols.models.PojoRegions;
 import id.ols.models.PojoResponseInsert;
 import id.ols.models.PojoResponseInsertSite;
 import id.ols.models.PojoResponseLogin;
+import id.ols.models.PojoWeather;
 import id.ols.util.ParameterCollections;
 import retrofit.Call;
 import retrofit.http.Field;
@@ -35,9 +38,32 @@ public interface API_Adapter {
             @Field("password")String password
     );
 
+    @GET("API.php?exe=get&type=mobile&kind=weather")
+    Observable<PojoWeather> get_weather(
+            @Header("Api-Key") String apikey
+    );
+
     @GET("API.php?exe=get&type=mobile&kind=region")
     Observable<PojoRegions> get_regions(
             @Header("Api-Key") String apikey
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=region")
+    Observable<PojoRegions> get_sub_regions(
+            @Header("Api-Key") String apikey,
+            @Query("region_idparent") String id
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=region")
+    Observable<PojoRegions> get_cluster_regions(
+            @Header("Api-Key") String apikey,
+            @Query("region_idparent") String id
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=ran_model")
+    Observable<PojoManufactureRANModel> get_cluster(
+            @Header("Api-Key") String apikey,
+            @Query("idsubregions") String id
     );
 
     @GET("API.php?exe=get&type=mobile&kind=ran_manufacture")
@@ -47,6 +73,17 @@ public interface API_Adapter {
 
     @GET("API.php?exe=get&type=mobile&kind=ran_model")
     Observable<PojoManufactureRANModel> get_manufacture_ran_model(
+            @Header("Api-Key") String apikey,
+            @Query("idmanufactur") String id
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=microwave_manufacture")
+    Observable<PojoManufactureMicrowave> get_manufacture_microwave(
+            @Header("Api-Key") String apikey
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=microwave_model")
+    Observable<PojoManufactureMicrowaveModel> get_manufacture_microwave_model(
             @Header("Api-Key") String apikey,
             @Query("idmanufactur") String id
     );
@@ -111,14 +148,14 @@ public interface API_Adapter {
     );
 
     @Multipart
-    @POST("API.php?")
+    @POST("API.php?exe=insert&type=mobile&kind=microwave")
     Observable<PojoResponseInsert> insert_tech_microwave(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
-            @Query("exe")String exe,
-            @Query("type")String type,
-            @Query("kind")String kind,
-            @Part("microwave_idsite")RequestBody microwave_idsite,
+//            @Query("exe")String exe,
+//            @Query("type")String type,
+//            @Query("kind")String kind,
+            @Part("microwave_idsitevisit")RequestBody microwave_idsite,
             @Part("microwave_idmanufacturer")RequestBody microwave_idmanufacturer,
             @Part("microwave_idmodel")RequestBody microwave_idmodel,
             @Part("microwave_voltase")RequestBody microwave_voltase,
@@ -129,13 +166,13 @@ public interface API_Adapter {
 
 
     @Multipart
-    @POST("API.php?")
+    @POST("API.php?exe=insert&type=mobile&kind=ip")
     Observable<PojoResponseInsert> insert_tech_ip(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
-            @Query("exe")String exe,
-            @Query("type")String type,
-            @Query("kind")String kind,
+//            @Query("exe")String exe,
+//            @Query("type")String type,
+//            @Query("kind")String kind,
             @Part("ip_idsite")RequestBody idsite,
             @Part("ip_idmanufacturer")RequestBody idmanufacturer,
             @Part("ip_idmodel")RequestBody idmodel,

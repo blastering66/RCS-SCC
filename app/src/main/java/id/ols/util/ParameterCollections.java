@@ -22,6 +22,7 @@ public class ParameterCollections {
         public static String MOBILE = "mobile";
         public static String LOGIN = "login";
         public static String SITE = "site";
+        public static String SITE_VISIT = "site_visit";
     }
 
     public static class EXE{

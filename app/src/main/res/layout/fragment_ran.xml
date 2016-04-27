@@ -27,11 +27,17 @@
                     android:layout_height="wrap_content"
                     android:text="Manufacturer" />
 
+                <ProgressBar
+                    android:id="@+id/pg_manufactur"
+                    android:layout_gravity="center"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp" />
+
                 <Spinner
                     android:id="@+id/spinner_manufactur"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:entries="@array/maufacturer_ran"
                     android:padding="10dp" />
             </LinearLayout>
 
@@ -46,11 +52,17 @@
                     android:layout_height="wrap_content"
                     android:text="Model" />
 
+                <ProgressBar
+                    android:id="@+id/pg_model"
+                    android:layout_gravity="center"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp" />
+
                 <Spinner
                     android:id="@+id/spinner_model"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:entries="@array/model_ran"
                     android:padding="10dp" />
             </LinearLayout>
         </LinearLayout>

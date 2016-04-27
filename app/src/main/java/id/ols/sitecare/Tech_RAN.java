@@ -10,10 +10,13 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 
@@ -34,6 +37,10 @@ import id.ols.models.PojoManufactureRAN;
 import id.ols.models.PojoManufactureRANModel;
 import id.ols.models.PojoRegions;
 import id.ols.models.PojoResponseInsert;
+import id.ols.models.RowData_Manufactur;
+import id.ols.models.RowData_Model;
+import id.ols.models.RowData_Regions;
+import id.ols.models.RowData_Weather;
 import id.ols.rest_adapter.API_Adapter;
 import id.ols.util.CameraCapture;
 import id.ols.util.ParameterCollections;
@@ -64,6 +71,9 @@ public class Tech_RAN extends AppCompatActivity {
     @Bind(R.id.radio_volt_48)RadioButton radio_volt_48;
     @Bind(R.id.radio_volt_110)RadioButton radio_volt_110;
 
+    @Bind(R.id.pg_manufactur)ProgressBar pg_manufactur;
+    @Bind(R.id.pg_model)ProgressBar pg_model;
+
     @Bind(R.id.ed_ac_loads)EditText ed_ac_loads;
     @Bind(R.id.img)ImageView img;
 
@@ -79,7 +89,10 @@ public class Tech_RAN extends AppCompatActivity {
     Activity activity;
     boolean isSukses = false;
     String message = "";
-    List<String> name_manufactur, name_model;
+
+    List<RowData_Manufactur> name_manufactur;
+    List<RowData_Model> name_model;
+    String idManufacturParent, idModelParent;
 
     @OnClick(R.id.btn)
     void sendData() {
@@ -93,9 +106,29 @@ public class Tech_RAN extends AppCompatActivity {
                 ran_dcload;
 
         ran_idsitevisit = id_site;
-        ran_idmanufacturer = "1";
-        ran_idmodel = "1";
-        ran_frequency= "DC 1800";
+        ran_idmanufacturer = idManufacturParent;
+        ran_idmodel = idModelParent;
+        ran_frequency= "";
+
+        if(!ed_freq_0.getText().toString().equals("")){
+            ran_frequency = ed_freq_0.getText().toString();
+        }
+        if(!ed_freq_1.getText().toString().equals("")){
+            ran_frequency = ran_frequency + ";" + ed_freq_1.getText().toString();
+        }
+        if(!ed_freq_2.getText().toString().equals("")){
+            ran_frequency = ran_frequency + ";" + ed_freq_2.getText().toString();
+        }
+        if(!ed_freq_a.getText().toString().equals("")){
+            ran_frequency = ran_frequency + ";" + ed_freq_a.getText().toString();
+        }
+        if(!ed_freq_b.getText().toString().equals("")){
+            ran_frequency = ran_frequency + ";" + ed_freq_b.getText().toString();
+        }
+        if(!ed_freq_c.getText().toString().equals("")){
+            ran_frequency = ran_frequency + ";" + ed_freq_c.getText().toString();
+        }
+
         ran_configuration = ed_config.getText().toString();
 
         if(radio_volt_24.isChecked()){
@@ -183,7 +216,6 @@ public class Tech_RAN extends AppCompatActivity {
         id_site = spf.getString(ParameterCollections.SH_ID_SITE, "1");
 
         getManufactureData();
-        getManufacture_Model_Data("1");
     }
 
     @Override
@@ -219,10 +251,33 @@ public class Tech_RAN extends AppCompatActivity {
                     public void onCompleted() {
                         Log.e("Error", "Completed");
                         if (name_manufactur.size() > 0 || name_manufactur != null) {
+                            List<String> array_manufactur = new ArrayList<String>();
+
+                            for(int i=0; i < name_manufactur.size(); i++){
+                                array_manufactur.add(name_manufactur.get(i).name);
+                            }
+
+                            pg_manufactur.setVisibility(View.GONE);
+                            spinner_manufactur.setVisibility(View.VISIBLE);
+
                             ArrayAdapter<String> adapter_manufactur= new ArrayAdapter<String>(getApplicationContext(),
-                                    android.R.layout.simple_spinner_item, name_manufactur);
+                                    R.layout.spinner_item, array_manufactur);
                             adapter_manufactur.setDropDownViewResource(R.layout.spinner_item);
                             spinner_manufactur.setAdapter(adapter_manufactur);
+
+                            spinner_manufactur.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                @Override
+                                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                    idManufacturParent = name_manufactur.get(position).id;
+                                    getManufacture_Model_Data(idManufacturParent);
+
+                                }
+
+                                @Override
+                                public void onNothingSelected(AdapterView<?> parent) {
+                                    getManufacture_Model_Data(name_manufactur.get(0).id);
+                                }
+                            });
                         }
                     }
 
@@ -237,9 +292,10 @@ public class Tech_RAN extends AppCompatActivity {
                         Log.e("Datanya = ", pojoRegions.getData().get(0).getRanmanufacturerName());
                         if (pojoRegions.getJsonCode() == 1) {
                             if (pojoRegions.getAct().getGet() == 1) {
-                                name_manufactur = new ArrayList<String>();
+                                name_manufactur = new ArrayList<RowData_Manufactur>();
                                 for (int i = 0; i < pojoRegions.getData().size(); i++) {
-                                    name_manufactur.add(pojoRegions.getData().get(i).getRanmanufacturerName());
+                                    name_manufactur.add(new RowData_Manufactur(pojoRegions.getData().get(i).getRanmanufacturerId(),
+                                            pojoRegions.getData().get(i).getRanmanufacturerName()));
                                 }
                             }
                         }
@@ -261,10 +317,32 @@ public class Tech_RAN extends AppCompatActivity {
                     public void onCompleted() {
                         Log.e("Error", "Completed");
                         if (name_model.size() > 0 || name_model != null) {
+
+                            List<String> array_model = new ArrayList<String>();
+                            for(int i=0; i < name_model.size(); i++){
+                                array_model.add(name_model.get(i).name);
+                            }
+
+
                             ArrayAdapter<String> adapter_model= new ArrayAdapter<String>(getApplicationContext(),
-                                    R.layout.spinner_item, name_model);
+                                    R.layout.spinner_item, array_model);
                             adapter_model.setDropDownViewResource(R.layout.spinner_item);
                             spinner_model.setAdapter(adapter_model);
+
+                            pg_model.setVisibility(View.GONE);
+                            spinner_model.setVisibility(View.VISIBLE);
+
+                            spinner_model.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                @Override
+                                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                    idModelParent = name_model.get(position).id;
+                                }
+
+                                @Override
+                                public void onNothingSelected(AdapterView<?> parent) {
+                                    idModelParent = name_model.get(0).id;
+                                }
+                            });
                         }
                     }
 
@@ -279,9 +357,10 @@ public class Tech_RAN extends AppCompatActivity {
                         Log.e("Datanya = ", pojoRegions.getData().get(0).getRanmodelName());
                         if (pojoRegions.getJsonCode() == 1) {
                             if (pojoRegions.getAct().getGet() == 1) {
-                                name_model = new ArrayList<String>();
+                                name_model = new ArrayList<RowData_Model>();
                                 for (int i = 0; i < pojoRegions.getData().size(); i++) {
-                                    name_model.add(pojoRegions.getData().get(i).getRanmodelName());
+                                    name_model.add(new RowData_Model(pojoRegions.getData().get(i).getRanmodelId(),
+                                            pojoRegions.getData().get(i).getRanmodelName()));
                                 }
                             }
                         }
