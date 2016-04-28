@@ -208,6 +208,33 @@ public interface API_Adapter {
 
     @Multipart
     @POST("API.php?")
+    Observable<PojoResponseInsertSite> insert_site_detail_test(
+            @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey,
+            @Query("exe")String exe,
+            @Query("type")String type,
+            @Query("kind")String kind,
+            @Part("site_codeid")RequestBody site_codeid,
+            @Part("site_name")RequestBody site_name,
+            @Part("site_mobileno")RequestBody site_mobileno ,
+            @Part("site_type")RequestBody site_type,
+            @Part("site_keeper")RequestBody site_keeper,
+            //idRegons ??
+            @Part("site_idregion")RequestBody site_idcluster,
+            @Part("site_location")RequestBody site_location,
+            @Part("site_altitude")RequestBody site_altitude,
+            @Part("site_timesurveystarted")RequestBody site_timesurveystarted,
+            @Part("site_externaltemperature")RequestBody site_externaltemperature,
+            @Part("site_idweathercondition")RequestBody site_idweathercondition,
+
+            @Part("site_nameengineer")RequestBody site_nameenginer,
+            @Part("site_emailengineer")RequestBody site_emailenginer,
+            @Part("site_phoneengineer")RequestBody site_phoneenginer
+    );
+
+
+    @Multipart
+    @POST("API.php?")
     Observable<PojoResponseInsert> insert_tech_earthing_grounding(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,

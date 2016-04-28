@@ -22,7 +22,7 @@
                 android:text="PLN Site ID" />
 
             <EditText
-                android:id="@+id/ed_site_name"
+                android:id="@+id/ed_pln_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="i.e) Melconinda"
@@ -64,10 +64,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <RadioButton
+                            android:id="@+id/radio_plnmeter_type_digital"
                             android:text="Digital"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
                         <RadioButton
+                            android:id="@+id/radio_plnmeter_type_analog"
                             android:text="Analog"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -86,6 +88,7 @@
                         android:text="Manufacturer" />
 
                     <EditText
+                        android:id="@+id/ed_manufactur_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="" />
@@ -103,6 +106,7 @@
                         android:text="Model" />
 
                     <EditText
+                        android:id="@id/ed_model"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="" />
@@ -120,6 +124,7 @@
                         android:text="Condition" />
 
                     <EditText
+                        android:id="@+id/ed_condition"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="" />
@@ -137,6 +142,7 @@
                         android:text="Distance Rectifier" />
 
                     <EditText
+                        android:id="@+id/ed_distance"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="" />
@@ -147,6 +153,7 @@
 
 
             <ImageView
+                android:id="@+id/img"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" android:scaleType="centerCrop"
                 android:src="@drawable/img_empty" />
@@ -220,7 +227,7 @@
                         android:text="PLN Measurement Phase" />
 
                     <EditText
-                        android:id="@+id/ed_value"
+                        android:id="@+id/ed_value_phase"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                     </LinearLayout>
@@ -245,6 +252,7 @@
                         android:text="PLN Measurement 3R" />
 
                     <EditText
+                        android:id="@+id/ed_pln_measurement_3r"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
@@ -268,6 +276,7 @@
                         android:text="PLN Measurement 3S" />
 
                     <EditText
+                        android:id="@+id/ed_pln_measurement_3s"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
@@ -291,6 +300,7 @@
                         android:text="PLN Measurement 3T" />
 
                     <EditText
+                        android:id="@+id/ed_pln_measurement_3t"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>

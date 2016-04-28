@@ -495,10 +495,25 @@ public class SiteDetail extends AppCompatActivity {
         RequestBody timesurveystarted = RequestBody.create(MediaType.parse("text/plain"), site_timesurveystarted);
         RequestBody externaltemperature = RequestBody.create(MediaType.parse("text/plain"), site_externaltemperature);
         RequestBody idweathercondition = RequestBody.create(MediaType.parse("text/plain"), site_idweathercondition);
-
         RequestBody nameenginer = RequestBody.create(MediaType.parse("text/plain"), site_nameenginer);
         RequestBody emailenginer = RequestBody.create(MediaType.parse("text/plain"), site_emailenginer);
         RequestBody phoneenginer = RequestBody.create(MediaType.parse("text/plain"), site_phoneenginer);
+
+
+//        RequestBody codeid = RequestBody.create(MediaType.parse("text/plain"), "test");
+//        RequestBody name = RequestBody.create(MediaType.parse("text/plain"), "test");
+//        RequestBody mobileno = RequestBody.create(MediaType.parse("text/plain"), "test");
+//        RequestBody _type = RequestBody.create(MediaType.parse("text/plain"), "Indoor");
+//        RequestBody keeper = RequestBody.create(MediaType.parse("text/plain"), "test");
+//        RequestBody idcluster = RequestBody.create(MediaType.parse("text/plain"), "1");
+//        RequestBody location = RequestBody.create(MediaType.parse("text/plain"), "0.00, 0.00");
+//        RequestBody altitude = RequestBody.create(MediaType.parse("text/plain"), "test");
+//        RequestBody timesurveystarted = RequestBody.create(MediaType.parse("text/plain"), "22:00:00");
+//        RequestBody externaltemperature = RequestBody.create(MediaType.parse("text/plain"), "10");
+//        RequestBody idweathercondition = RequestBody.create(MediaType.parse("text/plain"), "1");
+//        RequestBody nameenginer = RequestBody.create(MediaType.parse("text/plain"), "test");
+//        RequestBody emailenginer = RequestBody.create(MediaType.parse("text/plain"), "test");
+//        RequestBody phoneenginer = RequestBody.create(MediaType.parse("text/plain"), "021");
 
         Retrofit retrofit_test = new Retrofit.Builder().addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
@@ -508,18 +523,19 @@ public class SiteDetail extends AppCompatActivity {
         final String apikey = getResources().getString(R.string.api_key);
         final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
 
+        //Sementara
         sourceFile00 = new File(url_file00);
         body00 = RequestBody.create(MediaType.parse("image/*"), sourceFile00);
 
+        //Sementara biar cpt
         Observable<PojoResponseInsertSite> observable = adapter.insert_site_detail(
                 apikey, authkey, ParameterCollections.EXE.INSERT,
                 ParameterCollections.KIND.MOBILE, ParameterCollections.KIND.SITE_VISIT,
                 codeid, name, mobileno, _type,
                 keeper, idcluster, location, altitude, timesurveystarted,
-                externaltemperature, idweathercondition, nameenginer, emailenginer, phoneenginer, body00
+                externaltemperature, idweathercondition, nameenginer, emailenginer, phoneenginer,body00
         );
 
-//
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<PojoResponseInsertSite>() {

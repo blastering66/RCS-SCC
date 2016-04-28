@@ -32,7 +32,7 @@
                 android:text="Manufacturer" />
 
             <EditText
-                android:id="@+id/ed_site_name"
+                android:id="@+id/ed_engine_manufactur_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="i.e) Sanyo"
@@ -52,6 +52,7 @@
                 android:text="Model" />
 
             <EditText
+                android:id="@+id/ed_engine_model"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
@@ -83,6 +84,7 @@
                     android:text="Manufacturer" />
 
                 <EditText
+                    android:id="@+id/ed_altenator_manufactur_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="i.e) Sanyo"
@@ -102,6 +104,7 @@
                     android:text="Model" />
 
                 <EditText
+                    android:id="@+id/ed_altenator_model_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
@@ -131,17 +134,85 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <RadioButton
+                        android:id="@+id/tipe_controller_fitted_yes"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
 
                     <RadioButton
+                        android:id="@+id/tipe_controller_fitted_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="No" />
 
                 </RadioGroup>
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:text="Manufacturer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:id="@+id/ed_controller_manufactur_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:text="Model"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:id="@+id/ed_controller_model_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:text="Condition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:id="@+id/ed_controller_condition"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </LinearLayout>
         </LinearLayout>
 
 
@@ -152,7 +223,7 @@
             android:padding="10dp">
 
             <ImageView
-                android:id="@+id/img_meter_surge"
+                android:id="@+id/img_controller"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" android:scaleType="centerCrop"
                 android:src="@drawable/img_empty" />
@@ -181,11 +252,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <RadioButton
+                        android:id="@+id/tipe_battery_fitted_yes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
 
                     <RadioButton
+                        android:id="@+id/tipe_battery_fitted_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="No" />
@@ -209,6 +282,7 @@
                         android:layout_height="wrap_content" />
 
                     <EditText
+                        android:id="@+id/ed_battery_manufactur_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -225,6 +299,7 @@
                         android:layout_height="wrap_content" />
 
                     <EditText
+                        android:id="@+id/ed_battery_model_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -249,6 +324,7 @@
                         android:layout_height="wrap_content" />
 
                     <EditText
+                        android:id="@+id/ed_battery_condition"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -265,11 +341,26 @@
                         android:layout_height="wrap_content" />
 
                     <EditText
+                        android:id="@+id/ed_battery_voltast"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
 
                 </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/img_battery"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" android:scaleType="centerCrop"
+                    android:src="@drawable/img_empty" />
 
             </LinearLayout>
         </LinearLayout>
@@ -286,5 +377,6 @@
     </LinearLayout>
 
 
+    </LinearLayout>
 
 </ScrollView>

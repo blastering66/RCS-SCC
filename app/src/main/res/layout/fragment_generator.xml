@@ -22,7 +22,7 @@
                 android:text="Manufacturer" />
 
             <EditText
-                android:id="@+id/ed_site_name"
+                android:id="@+id/ed_manufactur_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="i.e) Sanyo"
@@ -43,6 +43,7 @@
                 android:text="Model" />
 
             <EditText
+                android:id="@+id/ed_model"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="i.e) SAP-K245G5"
@@ -110,11 +111,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <RadioButton
+                        android:id="@+id/radio_remote_yes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
 
                     <RadioButton
+                        android:id="@+id/radio_remote_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="No" />
@@ -216,11 +219,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <RadioButton
+                        android:id="@+id/radio_speed_1500"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="1500" />
 
                     <RadioButton
+                        android:id="@+id/radio_speed_1800"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="1800" />
@@ -252,11 +257,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <RadioButton
+                        android:id="@+id/radio_freq_50"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="50" />
 
                     <RadioButton
+                        android:id="@+id/radio_freq_60"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="60" />
@@ -286,11 +293,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <RadioButton
+                        android:id="@+id/radio_voltase_110"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="110/120" />
 
                     <RadioButton
+                        android:id="@+id/radio_voltase_220"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="220/240" />
@@ -322,6 +331,7 @@
                     android:text="L1" />
 
                 <EditText
+                    android:id="@+id/ed_l1_connections"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
@@ -341,6 +351,7 @@
                     android:text="L2" />
 
                 <EditText
+                    android:id="@+id/ed_l2_connections"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
@@ -359,6 +370,7 @@
                     android:text="L3" />
 
                 <EditText
+                    android:id="@+id/ed_l3_connections"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
@@ -390,6 +402,7 @@
                     android:text="L1" />
 
                 <EditText
+                    android:id="@+id/ed_l1_loads"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
@@ -408,6 +421,7 @@
                     android:text="L2" />
 
                 <EditText
+                    android:id="@+id/ed_l2_loads"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
@@ -426,6 +440,7 @@
                     android:text="L3" />
 
                 <EditText
+                    android:id="@+id/ed_l3_loads"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
@@ -446,6 +461,7 @@
                 android:text="Running Hours" />
 
             <EditText
+                android:id="@+id/ed_running_hours"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="0.0"
@@ -466,6 +482,7 @@
                 android:text="Condition" />
 
             <EditText
+                android:id="@+id/ed_condition"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="i.e) Good"

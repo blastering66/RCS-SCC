@@ -235,16 +235,16 @@ public class Tech_Microwave extends AppCompatActivity {
                                     idManufacturParent = name_manufactur.get(position).id;
 
                                     //Sementara
-                                    //getManufacture_Model_Data(idManufacturParent);
-                                    getManufacture_Model_Data("1");
+                                    getManufacture_Model_Data(idManufacturParent);
+//                                    getManufacture_Model_Data("1");
 
                                 }
 
                                 @Override
                                 public void onNothingSelected(AdapterView<?> parent) {
                                     //Sementara
-//                                    getManufacture_Model_Data(name_manufactur.get(0).id);
-                                    getManufacture_Model_Data("1");
+                                    getManufacture_Model_Data(name_manufactur.get(0).id);
+//                                    getManufacture_Model_Data("1");
                                 }
                             });
                         }
@@ -328,7 +328,7 @@ public class Tech_Microwave extends AppCompatActivity {
                             if (pojoRegions.getAct().getGet() == 1) {
                                 name_model = new ArrayList<RowData_Model>();
                                 for (int i = 0; i < pojoRegions.getData().size(); i++) {
-                                    name_model.add(new RowData_Model(pojoRegions.getData().get(i).getModelIdmanufactur(),
+                                    name_model.add(new RowData_Model(pojoRegions.getData().get(i).getRanmodelId(),
                                             pojoRegions.getData().get(i).getModelName()));
                                 }
                             }

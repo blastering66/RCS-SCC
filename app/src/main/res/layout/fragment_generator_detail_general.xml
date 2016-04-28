@@ -31,11 +31,14 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <RadioButton
+                        android:id="@+id/tipe_ats_yes"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
 
                     <RadioButton
+                        android:id="@+id/tipe_ats_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="No" />
@@ -59,8 +62,12 @@
                         android:layout_height="wrap_content" />
 
                     <EditText
+                        android:id="@+id/ed_ats_manufactur_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true"
+                        android:textColor="@color/color_text_dark"
                         />
 
                 </LinearLayout>
@@ -75,8 +82,12 @@
                         android:layout_height="wrap_content" />
 
                     <EditText
+                        android:id="@+id/ed_ats_model"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true"
+                        android:textColor="@color/color_text_dark"
                         />
 
                 </LinearLayout>
@@ -99,6 +110,7 @@
                         android:layout_height="wrap_content" />
 
                     <EditText
+                        android:id="@+id/ed_ats_condition"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -114,7 +126,7 @@
                 android:padding="10dp">
 
                 <ImageView
-                    android:id="@+id/img_meter_surge"
+                    android:id="@+id/img_ats"
                     android:layout_width="match_parent"
                     android:layout_height="200dp" android:scaleType="centerCrop"
                     android:src="@drawable/img_empty" />
@@ -145,11 +157,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <RadioButton
+                        android:id="@+id/tipe_amf_yes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
 
                     <RadioButton
+                        android:id="@+id/tipe_amf_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="No" />
@@ -173,6 +187,7 @@
                         android:layout_height="wrap_content" />
 
                     <EditText
+                        android:id="@+id/ed_amf_manufactur_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -189,6 +204,7 @@
                         android:layout_height="wrap_content" />
 
                     <EditText
+                        android:id="@+id/ed_amf_model_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -213,6 +229,7 @@
                         android:layout_height="wrap_content" />
 
                     <EditText
+                        android:id="@+id/ed_amf_condition"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -228,6 +245,7 @@
                 android:padding="10dp">
 
                 <ImageView
+                    android:id="@+id/img_amf"
                     android:layout_width="match_parent"
                     android:layout_height="200dp" android:scaleType="centerCrop"
                     android:src="@drawable/img_empty" />
@@ -257,6 +275,7 @@
                         android:layout_height="wrap_content" />
 
                     <EditText
+                        android:id="@+id/ed_amf_capacity"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -281,6 +300,7 @@
                         android:layout_height="wrap_content" />
 
                     <EditText
+                        android:id="@+id/ed_amf_capacity_condition"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -296,6 +316,7 @@
                 android:padding="10dp">
 
                 <ImageView
+                    android:id="@+id/img_amf_capacity"
                     android:layout_width="match_parent"
                     android:layout_height="200dp" android:scaleType="centerCrop"
                     android:src="@drawable/img_empty" />
@@ -325,11 +346,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <RadioButton
+                        android:id="@+id/tipe_fullprobe_fitted_yes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
 
                     <RadioButton
+                        android:id="@+id/tipe_fullprobe_fitted_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="No" />
@@ -353,6 +376,7 @@
                         android:layout_height="wrap_content" />
 
                     <EditText
+                        android:id="@+id/ed_fullprobe_manufactur_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -369,6 +393,7 @@
                         android:layout_height="wrap_content" />
 
                     <EditText
+                        android:id="@+id/ed_fullprobe_model_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -393,6 +418,7 @@
                         android:layout_height="wrap_content" />
 
                     <EditText
+                        android:id="@+id/ed_fullprobe_condition"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -408,6 +434,7 @@
                 android:padding="10dp">
 
                 <ImageView
+                    android:id="@+id/img_fullprobe"
                     android:layout_width="match_parent"
                     android:layout_height="200dp" android:scaleType="centerCrop"
                     android:src="@drawable/img_empty" />
