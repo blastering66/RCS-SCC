@@ -484,6 +484,7 @@
                         android:text="Manufacturer" />
 
                     <EditText
+                        android:id="@+id/ed_acpdb_manufactur_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
@@ -501,6 +502,7 @@
                         android:text="Model" />
 
                     <EditText
+                        android:id="@+id/ed_acpdb_model_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -526,6 +528,7 @@
                         android:text="Condition" />
 
                     <EditText
+                        android:id="@+id/ed_acpdb_condition"
                         android:hint="i.e) Good"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
@@ -536,6 +539,7 @@
             </LinearLayout>
 
             <ImageView
+                android:id="@+id/img_acpdb"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" android:scaleType="centerCrop"
                 android:src="@drawable/img_empty" />

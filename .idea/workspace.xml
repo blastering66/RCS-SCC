@@ -16,15 +16,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/rest_adapter/API_Adapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/rest_adapter/API_Adapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/SiteDetail.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/SiteDetail.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Generators.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Generators.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Generators_Detail_1_Controller.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Generators_Detail_1_Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Generators_Detail_2_General.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Generators_Detail_2_General.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Earthing.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Earthing.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Grid.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Grid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Microwave.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Microwave.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_generator.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_generator.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_generator_detail_controller.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_generator_detail_controller.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_generator_detail_general.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_generator_detail_general.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sitedetail.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sitedetail.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_earthing.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_earthing.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_grid.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_grid.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -48,52 +43,87 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="API_Adapter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="API_Adapter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/rest_adapter/API_Adapter.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.28901735">
+              <caret line="285" column="51" selection-start-line="285" selection-start-column="51" selection-end-line="285" selection-end-column="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tech_IP.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_IP.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.4814816">
+              <caret line="124" column="64" selection-start-line="124" selection-start-column="64" selection-end-line="124" selection-end-column="64" />
+              <folding>
+                <element signature="e#7970#7978#0" expanded="true" />
+                <element signature="e#8407#8415#0" expanded="true" />
+                <element signature="e#11541#11549#0" expanded="true" />
+                <element signature="e#11808#11816#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tech_AdditionalLoads.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_AdditionalLoads.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+              <caret line="165" column="24" selection-start-line="165" selection-start-column="24" selection-end-line="165" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tech_Grid.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Grid.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6566901">
-              <caret line="78" column="37" selection-start-line="78" selection-start-column="37" selection-end-line="78" selection-end-column="37" />
-              <folding>
-                <element signature="e#2115#2116#0" expanded="true" />
-                <element signature="e#2197#2198#0" expanded="true" />
-                <element signature="e#2257#2258#0" expanded="true" />
-                <element signature="e#2339#2340#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tech_Microwave.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Microwave.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="204" column="5" selection-start-line="194" selection-start-column="4" selection-end-line="204" selection-end-column="5" />
-              <folding>
-                <element signature="e#11620#11628#0" expanded="true" />
-                <element signature="e#11887#11895#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fragment_grid.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_grid.xml">
+      <file leaf-file-name="activity_sitedetail.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_sitedetail.xml">
           <provider editor-type-id="android-designer">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.793103">
-              <caret line="340" column="43" selection-start-line="340" selection-start-column="33" selection-end-line="340" selection-end-column="43" />
+            <state vertical-scroll-proportion="-4.589286">
+              <caret line="295" column="34" selection-start-line="295" selection-start-column="34" selection-end-line="295" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DialogConfirmation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/dialogs/DialogConfirmation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+              <folding>
+                <element signature="e#843#844#0" expanded="true" />
+                <element signature="e#875#876#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tech_RAN.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_RAN.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="102" column="23" selection-start-line="100" selection-start-column="8" selection-end-line="102" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_earthing.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_earthing.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.7586207">
+              <caret line="63" column="48" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -1777,12 +1807,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoWeather.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/id/ols/util/ParameterCollections.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ols/util/GPSTracker.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Splashscreen.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_sitedetail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_ran.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_RAN.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureMicrowave.java" />
@@ -1816,18 +1842,22 @@
         <option value="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureGpon.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Gpon.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_generator.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Generators.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Generators_Detail_1_Controller.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_generator_detail_controller.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_generator_detail_general.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Generators_Detail_2_General.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/id/ols/rest_adapter/API_Adapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/SiteDetail.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureMicrowaveModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Microwave.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_grid.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_earthing.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Grid.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_AdditionalLoads.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_sitedetail.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Earthing.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ols/rest_adapter/API_Adapter.java" />
       </list>
     </option>
   </component>
@@ -2323,7 +2353,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32718122" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32718122" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39597315" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -2418,80 +2448,32 @@
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_IP.java</url>
-          <line>216</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Earthing.java</url>
+          <line>97</line>
           <properties />
-          <option name="timeStamp" value="90" />
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_IP.java</url>
+          <line>255</line>
+          <properties />
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_IP.java</url>
+          <line>320</line>
+          <properties />
+          <option name="timeStamp" value="98" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="91" />
+      <option name="time" value="100" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Splashscreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.0.17/416d4c2b53fe4a56e295a7923d07935bc1e2a45b/rxjava-1.0.17-sources.jar!/rx/observers/SafeSubscriber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureRAN.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18421052">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_ran.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.4827585">
-          <caret line="236" column="16" selection-start-line="236" selection-start-column="16" selection-end-line="236" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_AdditionalLoads.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34210527">
-          <caret line="119" column="72" selection-start-line="119" selection-start-column="72" selection-end-line="119" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Cooling.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18421052">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_ip.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.206897">
-          <caret line="140" column="37" selection-start-line="140" selection-start-column="37" selection-end-line="140" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureIpModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49122807">
@@ -2811,14 +2793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41589648">
-          <caret line="15" column="38" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Generators.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2863,16 +2837,16 @@
         <state vertical-scroll-proportion="0.26408452">
           <caret line="87" column="40" selection-start-line="87" selection-start-column="40" selection-end-line="87" selection-end-column="40" />
           <folding>
-            <element signature="e#2795#2850#0" expanded="true" />
-            <element signature="e#2895#2949#0" expanded="true" />
-            <element signature="e#3277#3332#0" expanded="true" />
-            <element signature="e#3377#3431#0" expanded="true" />
-            <element signature="e#3951#4006#0" expanded="true" />
-            <element signature="e#4057#4111#0" expanded="true" />
-            <element signature="e#4582#4583#0" expanded="true" />
-            <element signature="e#4664#4665#0" expanded="true" />
-            <element signature="e#4718#4719#0" expanded="true" />
-            <element signature="e#4800#4801#0" expanded="true" />
+            <element signature="e#2795#2850#0" expanded="false" />
+            <element signature="e#2895#2949#0" expanded="false" />
+            <element signature="e#3277#3332#0" expanded="false" />
+            <element signature="e#3377#3431#0" expanded="false" />
+            <element signature="e#3951#4006#0" expanded="false" />
+            <element signature="e#4057#4111#0" expanded="false" />
+            <element signature="e#4582#4583#0" expanded="false" />
+            <element signature="e#4664#4665#0" expanded="false" />
+            <element signature="e#4718#4719#0" expanded="false" />
+            <element signature="e#4800#4801#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2882,12 +2856,12 @@
         <state vertical-scroll-proportion="0.7887324">
           <caret line="168" column="5" selection-start-line="151" selection-start-column="4" selection-end-line="168" selection-end-column="5" />
           <folding>
-            <element signature="e#2116#2117#0" expanded="true" />
-            <element signature="e#2198#2199#0" expanded="true" />
-            <element signature="e#2614#2669#0" expanded="true" />
-            <element signature="e#2714#2768#0" expanded="true" />
-            <element signature="e#3163#3218#0" expanded="true" />
-            <element signature="e#3264#3318#0" expanded="true" />
+            <element signature="e#1972#1973#0" expanded="false" />
+            <element signature="e#2054#2055#0" expanded="false" />
+            <element signature="e#2614#2669#0" expanded="false" />
+            <element signature="e#2714#2768#0" expanded="false" />
+            <element signature="e#3163#3218#0" expanded="false" />
+            <element signature="e#3264#3318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2914,26 +2888,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_IP.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Microwave.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="210" column="72" selection-start-line="210" selection-start-column="72" selection-end-line="210" selection-end-column="72" />
+        <state vertical-scroll-proportion="0.8943662">
+          <caret line="179" column="70" selection-start-line="177" selection-start-column="8" selection-end-line="179" selection-end-column="70" />
+          <folding>
+            <element signature="e#11620#11628#0" expanded="true" />
+            <element signature="e#11887#11895#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33271718">
+          <caret line="12" column="45" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/rest_adapter/API_Adapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoResponseInsert.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.36619717">
+          <caret line="75" column="17" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_RAN.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoResponseInsertSite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.813253">
-          <caret line="77" column="4" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.36619717">
+          <caret line="73" column="17" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -2943,32 +2928,112 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.793103">
-          <caret line="340" column="43" selection-start-line="340" selection-start-column="33" selection-end-line="340" selection-end-column="43" />
+        <state vertical-scroll-proportion="-13.5172415">
+          <caret line="541" column="42" selection-start-line="541" selection-start-column="33" selection-end-line="541" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Microwave.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_earthing.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="204" column="5" selection-start-line="194" selection-start-column="4" selection-end-line="204" selection-end-column="5" />
-          <folding>
-            <element signature="e#11620#11628#0" expanded="true" />
-            <element signature="e#11887#11895#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-7.7586207">
+          <caret line="63" column="48" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Grid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6566901">
-          <caret line="78" column="37" selection-start-line="78" selection-start-column="37" selection-end-line="78" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.33271718">
+          <caret line="217" column="126" selection-start-line="217" selection-start-column="115" selection-end-line="217" selection-end-column="126" />
           <folding>
-            <element signature="e#2115#2116#0" expanded="true" />
-            <element signature="e#2197#2198#0" expanded="true" />
-            <element signature="e#2257#2258#0" expanded="true" />
-            <element signature="e#2339#2340#0" expanded="true" />
+            <element signature="e#2802#2803#0" expanded="false" />
+            <element signature="e#2884#2885#0" expanded="false" />
+            <element signature="e#2944#2945#0" expanded="false" />
+            <element signature="e#3026#3027#0" expanded="false" />
+            <element signature="e#6837#6886#0" expanded="false" />
+            <element signature="e#6932#6981#0" expanded="false" />
+            <element signature="e#7087#7149#0" expanded="false" />
+            <element signature="e#7192#7253#0" expanded="false" />
+            <element signature="e#8497#8539#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_RAN.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="102" column="23" selection-start-line="100" selection-start-column="8" selection-end-line="102" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/dialogs/DialogConfirmation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+          <folding>
+            <element signature="e#843#844#0" expanded="true" />
+            <element signature="e#875#876#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_AdditionalLoads.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="165" column="24" selection-start-line="165" selection-start-column="24" selection-end-line="165" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_sitedetail.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.589286">
+          <caret line="295" column="34" selection-start-line="295" selection-start-column="34" selection-end-line="295" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Earthing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28614458">
+          <caret line="84" column="47" selection-start-line="84" selection-start-column="47" selection-end-line="84" selection-end-column="47" />
+          <folding>
+            <element signature="e#2474#2516#0" expanded="true" />
+            <element signature="e#4204#4205#0" expanded="true" />
+            <element signature="e#4286#4287#0" expanded="true" />
+            <element signature="e#4499#4500#0" expanded="true" />
+            <element signature="e#4581#4582#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_IP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.4814816">
+          <caret line="124" column="64" selection-start-line="124" selection-start-column="64" selection-end-line="124" selection-end-column="64" />
+          <folding>
+            <element signature="e#7970#7978#0" expanded="true" />
+            <element signature="e#8407#8415#0" expanded="true" />
+            <element signature="e#11541#11549#0" expanded="true" />
+            <element signature="e#11808#11816#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/rest_adapter/API_Adapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28901735">
+          <caret line="285" column="51" selection-start-line="285" selection-start-column="51" selection-end-line="285" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

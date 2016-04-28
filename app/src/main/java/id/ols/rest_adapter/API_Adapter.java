@@ -232,15 +232,14 @@ public interface API_Adapter {
             @Part("site_phoneengineer")RequestBody site_phoneenginer
     );
 
-
     @Multipart
-    @POST("API.php?")
+    @POST("API.php?exe=insert&type=mobile&kind=earthing_n_grounding")
     Observable<PojoResponseInsert> insert_tech_earthing_grounding(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
-            @Query("exe")String exe,
-            @Query("type")String type,
-            @Query("kind")String kind,
+//            @Query("exe")String exe,
+//            @Query("type")String type,
+//            @Query("kind")String kind,
             @Part("eartingngrounding_idsite")RequestBody site_codeid,
             @Part("eartingngrounding_busbarphoto\"; filename=\"img0.png\" ")RequestBody img0,
             @Part("eartingngrounding_earthrunsphoto\"; filename=\"img1.png\" ")RequestBody img1,
@@ -291,7 +290,7 @@ public interface API_Adapter {
 //            @Query("exe")String exe,
 //            @Query("type")String type,
 //            @Query("kind")String kind,
-            @Part("ip_idsite")RequestBody idsite,
+            @Part("ip_idsitevisit")RequestBody idsite,
             @Part("ip_idmanufacturer")RequestBody idmanufacturer,
             @Part("ip_idmodel")RequestBody idmodel,
             @Part("ip_voltase")RequestBody voltase,
@@ -443,6 +442,44 @@ public interface API_Adapter {
 //            @Part("additionalloadsoe_load")RequestBody additionalloadsoe_load     /* float */
 //
 //    );
+
+    @Multipart
+    @POST("API.php?exe=insert&type=mobile&kind=griddetail")
+    Observable<PojoResponseInsert> insert_tech_grid_detail(
+            @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey,
+//            @Query("exe")String exe,
+//            @Query("type")String type,
+//            @Query("kind")String kind,
+            @Part("griddetail_idsitevisit")RequestBody griddetail_idsitevisit,
+            @Part("griddetail_plnsiteid")RequestBody griddetail_plnsiteid,
+            @Part("griddetail_plnmetertype")RequestBody griddetail_plnmetertype ,
+            @Part("griddetail_plnmetermanufacturer")RequestBody griddetail_plnmetermanufacturer,
+            @Part("griddetail_plnmetermodel")RequestBody griddetail_plnmetermodel,
+            //idRegons ??
+            @Part("griddetail_plnmetercondition")RequestBody griddetail_plnmetercondition,
+            @Part("griddetail_plnmeterdistancerectifier")RequestBody griddetail_plnmeterdistancerectifier,
+            @Part("griddetail_plnmeternumberofphases")RequestBody griddetail_plnmeternumberofphases,
+            @Part("griddetail_plnphasemeasurement")RequestBody griddetail_plnphasemeasurement,
+            @Part("griddetail_plnphasemeasurement3r")RequestBody griddetail_plnphasemeasurement3r,
+            @Part("griddetail_plnphasemeasurement3s")RequestBody griddetail_plnphasemeasurement3s,
+
+            @Part("griddetail_plnphasemeasurement3t")RequestBody griddetail_plnphasemeasurement3t,
+            @Part("griddetail_plndayabreakerrating")RequestBody griddetail_plndayabreakerrating,
+            @Part("griddetail_plnsurgeprotdevmanufacturer")RequestBody griddetail_plnsurgeprotdevmanufacturer,
+            @Part("griddetail_plnsurgeprotdevtype")RequestBody griddetail_plnsurgeprotdevtype,
+            @Part("griddetail_plnsurgeprotdevcondition")RequestBody griddetail_plnsurgeprotdevcondition,
+            @Part("griddetail_plnsurgeprotdevmodel")RequestBody griddetail_plnsurgeprotdevmodel,
+            @Part("griddetail_plnacpdbmanufacturer")RequestBody griddetail_plnacpdbmanufacturer,
+            @Part("griddetail_plnacpdbmodel")RequestBody griddetail_plnacpdbmodel,
+            @Part("griddetail_plnphaseacpdbcondition")RequestBody griddetail_plnphaseacpdbcondition,
+            @Part("griddetail_plnacpdbdistancepln")RequestBody griddetail_plnacpdbdistancepln,
+
+            @Part("griddetail_plnmeterphoto\"; filename=\"img0.png\" ")RequestBody img0,
+            @Part("griddetail_plndayabreakerphoto\"; filename=\"img1.png\" ")RequestBody img1,
+            @Part("griddetail_plnsurgeprotdevphoto\"; filename=\"img2.png\" ")RequestBody img2,
+            @Part("griddetail_plnphaseacpdbphoto\"; filename=\"img3.png\" ")RequestBody img3
+    );
 
     @FormUrlEncoded
     @POST("API.php?exe=insert&kind=additional_loads&type=mobile")

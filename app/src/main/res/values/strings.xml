@@ -7,6 +7,12 @@
     <string name="option_volt_48">-48V</string>
     <string name="option_volt_110">110/220AC</string>
 
+    <string name="option_digital">Digital</string>
+    <string name="option_analog">Analog</string>
+
+    <string name="option_phase_single_bigcase">Single</string>
+    <string name="option_phase_three_bigcase">Three</string>
+
     <string name="option_phase_single">single</string>
     <string name="option_phase_three">three</string>
 
