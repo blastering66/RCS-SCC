@@ -22,14 +22,14 @@
                 android:text="Manufacturer" />
 
             <EditText
-                android:id="@+id/ed_site_name"
+                android:id="@+id/ed_manufactur_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="i.e) Melconinda"
                 android:imeOptions="actionNext"
                 android:singleLine="true"
                 android:textColor="@color/color_text_dark"
-                android:text="i.e) Narada" />
+                 />
         </LinearLayout>
 
         <LinearLayout
@@ -44,13 +44,14 @@
                 android:text="Model" />
 
             <EditText
+                android:id="@+id/ed_model"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="i.e) 6-GFM-170F"
                 android:imeOptions="actionNext"
                 android:singleLine="true"
                 android:textColor="@color/color_text_dark"
-                android:text="i.e) Narada" />
+                 />
         </LinearLayout>
 
         <LinearLayout
@@ -74,20 +75,25 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <RadioButton
+                        android:id="@+id/radio_volt_2"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="2V" />
 
                     <RadioButton
+                        android:id="@+id/radio_volt_6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="6V" />
                     <RadioButton
+                        android:id="@+id/radio_volt_12"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="12V" />
 
                     <RadioButton
+                        android:id="@+id/radio_volt_48"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="48V" />
@@ -122,7 +128,11 @@
                         android:text="2V Cells" />
 
                     <EditText
+                        android:id="@+id/ed_jumlah_2v"
                         android:hint="0"
+                        android:singleLine="true"
+                        android:inputType="numberDecimal"
+                        android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
@@ -140,8 +150,12 @@
                         android:text="Blocks (6,12, 48V)" />
 
                     <EditText
+                        android:id="@+id/ed_jumlah_block"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:inputType="numberDecimal"
+                        android:imeOptions="actionNext"
                         android:hint="0" />
                 </LinearLayout>
 
@@ -166,7 +180,11 @@
                         android:text="Capacity" />
 
                     <EditText
+                        android:id="@+id/ed_capacity"
                         android:hint="0"
+                        android:singleLine="true"
+                        android:inputType="numberDecimal"
+                        android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                     </LinearLayout>
@@ -181,9 +199,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="50dp"
-                        android:text="Voltage (Disconnected)" />
+                        android:text="Voltage (disconnected)" />
 
                     <EditText
+                        android:id="@+id/ed_voltase_disconnected"
+                        android:singleLine="true"
+                        android:inputType="numberDecimal"
+                        android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="0" />
@@ -209,7 +231,11 @@
                         android:text="Battery Tempt" />
 
                     <EditText
+                        android:id="@+id/ed_temprature"
                         android:hint="0"
+                        android:singleLine="true"
+                        android:inputType="numberDecimal"
+                        android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
@@ -227,8 +253,12 @@
                         android:text="Conditions" />
 
                     <EditText
+                        android:id="@+id/ed_condition"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"
                         android:hint="i.e) Good" />
                 </LinearLayout>
 
@@ -236,7 +266,7 @@
 
 
             <ImageView
-                android:id="@+id/img_meter_reading"
+                android:id="@+id/img"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" android:scaleType="centerCrop"
                 android:src="@drawable/img_empty" />

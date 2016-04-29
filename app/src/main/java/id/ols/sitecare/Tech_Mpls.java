@@ -208,7 +208,8 @@ public class Tech_Mpls extends AppCompatActivity {
     private void getManufactureData() {
         final API_Adapter adapter = PublicFunctions.initRetrofit();
         String apikey = getResources().getString(R.string.api_key);
-        Observable<PojoManufactureMpls> observable = adapter.get_manufacture_mpls(apikey);
+        final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
+        Observable<PojoManufactureMpls> observable = adapter.get_manufacture_mpls(apikey, authkey);
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<PojoManufactureMpls>() {
@@ -236,16 +237,16 @@ public class Tech_Mpls extends AppCompatActivity {
                                     idManufacturParent = name_manufactur.get(position).id;
 
                                     //Sementara
-                                    //getManufacture_Model_Data(idManufacturParent);
-                                    getManufacture_Model_Data("1");
+                                    getManufacture_Model_Data(idManufacturParent);
+//                                    getManufacture_Model_Data("1");
 
                                 }
 
                                 @Override
                                 public void onNothingSelected(AdapterView<?> parent) {
                                     //Sementara
-//                                    getManufacture_Model_Data(name_manufactur.get(0).id);
-                                    getManufacture_Model_Data("1");
+                                    getManufacture_Model_Data(name_manufactur.get(0).id);
+//                                    getManufacture_Model_Data("1");
                                 }
                             });
                         }
@@ -279,7 +280,8 @@ public class Tech_Mpls extends AppCompatActivity {
     private void getManufacture_Model_Data(String id_manufactur) {
         final API_Adapter adapter = PublicFunctions.initRetrofit();
         String apikey = getResources().getString(R.string.api_key);
-        Observable<PojoManufactureMplsModel> observable = adapter.get_manufacture_mpls_model(apikey, id_manufactur);
+        final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
+        Observable<PojoManufactureMplsModel> observable = adapter.get_manufacture_mpls_model(apikey,authkey, id_manufactur);
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<PojoManufactureMplsModel>() {
@@ -329,7 +331,7 @@ public class Tech_Mpls extends AppCompatActivity {
                             if (pojoRegions.getAct().getGet() == 1) {
                                 name_model = new ArrayList<RowData_Model>();
                                 for (int i = 0; i < pojoRegions.getData().size(); i++) {
-                                    name_model.add(new RowData_Model(pojoRegions.getData().get(i).getModelIdmanufactur(),
+                                    name_model.add(new RowData_Model(pojoRegions.getData().get(i).getRanmodelId(),
                                             pojoRegions.getData().get(i).getModelName()));
                                 }
                             }

@@ -22,7 +22,7 @@
                 android:text="Manufacturer" />
 
             <EditText
-                android:id="@+id/ed_site_name"
+                android:id="@+id/ed_cooling_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="i.e) Sanyo"
@@ -43,6 +43,7 @@
                 android:text="Model" />
 
             <EditText
+                android:id="@+id/ed_cooling_model"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="i.e) SAP-K245G5"
@@ -63,7 +64,11 @@
                 android:text="BTU Rating" />
 
             <EditText
+                android:id="@+id/ed_rating"
                 android:hint="0.0"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                android:imeOptions="actionNext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -80,7 +85,11 @@
                 android:text="DC Load (Amps)" />
 
             <EditText
+                android:id="@+id/ed_dc_loads"
                 android:hint="0.0"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                android:imeOptions="actionNext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -92,15 +101,16 @@
             android:padding="10dp">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Condition" />
 
             <EditText
+                android:id="@+id/ed_condition"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="i.e) Good"
-                android:imeOptions="actionNext"
+                android:imeOptions="actionDone"
                 android:singleLine="true"
                 android:textColor="@color/color_text_dark" />
         </LinearLayout>
@@ -113,7 +123,7 @@
             android:padding="10dp">
 
             <ImageView
-                android:id="@+id/img_meter_surge"
+                android:id="@+id/img"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" android:scaleType="centerCrop"
                 android:src="@drawable/img_empty" />

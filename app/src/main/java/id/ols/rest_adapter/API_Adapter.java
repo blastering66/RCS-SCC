@@ -4,6 +4,8 @@ import com.squareup.okhttp.RequestBody;
 
 import java.util.List;
 
+import id.ols.models.PojoManufactureDCPower;
+import id.ols.models.PojoManufactureDCPowerModel;
 import id.ols.models.PojoManufactureDwdm;
 import id.ols.models.PojoManufactureDwdmModel;
 import id.ols.models.PojoManufactureGpon;
@@ -54,128 +56,165 @@ public interface API_Adapter {
 
     @GET("API.php?exe=get&type=mobile&kind=weather")
     Observable<PojoWeather> get_weather(
-            @Header("Api-Key") String apikey
+            @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey
     );
 
     @GET("API.php?exe=get&type=mobile&kind=region")
     Observable<PojoRegions> get_regions(
-            @Header("Api-Key") String apikey
+            @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey
     );
 
     @GET("API.php?exe=get&type=mobile&kind=region")
     Observable<PojoRegions> get_sub_regions(
             @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey,
             @Query("region_idparent") String id
+
     );
 
     @GET("API.php?exe=get&type=mobile&kind=region")
     Observable<PojoRegions> get_cluster_regions(
             @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey,
             @Query("region_idparent") String id
     );
 
     @GET("API.php?exe=get&type=mobile&kind=ran_model")
     Observable<PojoManufactureRANModel> get_cluster(
             @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey,
             @Query("idsubregions") String id
     );
 
     @GET("API.php?exe=get&type=mobile&kind=ran_manufacture")
     Observable<PojoManufactureRAN> get_manufacture_ran(
-            @Header("Api-Key") String apikey
+            @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey
     );
 
     @GET("API.php?exe=get&type=mobile&kind=ran_model")
     Observable<PojoManufactureRANModel> get_manufacture_ran_model(
             @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey,
             @Query("idmanufactur") String id
     );
 
     @GET("API.php?exe=get&type=mobile&kind=microwave_manufacture")
     Observable<PojoManufactureMicrowave> get_manufacture_microwave(
-            @Header("Api-Key") String apikey
+            @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey
     );
 
     @GET("API.php?exe=get&type=mobile&kind=microwave_model")
     Observable<PojoManufactureMicrowaveModel> get_manufacture_microwave_model(
             @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey,
             @Query("idmanufactur") String id
     );
 
     @GET("API.php?exe=get&type=mobile&kind=ip_manufacture")
     Observable<PojoManufactureIp> get_manufacture_ip(
-            @Header("Api-Key") String apikey
+            @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey
     );
 
     @GET("API.php?exe=get&type=mobile&kind=ip_model")
     Observable<PojoManufactureIpModel> get_manufacture_ip_model(
             @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey,
             @Query("idmanufactur") String id
     );
 
     @GET("API.php?exe=get&type=mobile&kind=dwdm_manufacture")
     Observable<PojoManufactureDwdm> get_manufacture_dwdm(
-            @Header("Api-Key") String apikey
+            @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey
     );
 
     @GET("API.php?exe=get&type=mobile&kind=dwdm_model")
     Observable<PojoManufactureDwdmModel> get_manufacture_dwdm_model(
             @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey,
             @Query("idmanufactur") String id
     );
 
     @GET("API.php?exe=get&type=mobile&kind=superwifi_manufacture")
     Observable<PojoManufactureSuperWifi> get_manufacture_superwifi(
-            @Header("Api-Key") String apikey
+            @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey
     );
 
     @GET("API.php?exe=get&type=mobile&kind=superwifi_model")
     Observable<PojoManufactureSuperWifiModel> get_manufacture_superwifi_model(
             @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey,
             @Query("idmanufactur") String id
     );
 
     @GET("API.php?exe=get&type=mobile&kind=mpls_manufacture")
     Observable<PojoManufactureMpls> get_manufacture_mpls(
-            @Header("Api-Key") String apikey
+            @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey
     );
 
     @GET("API.php?exe=get&type=mobile&kind=mpls_model")
     Observable<PojoManufactureMplsModel> get_manufacture_mpls_model(
             @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey,
             @Query("idmanufactur") String id
     );
 
     @GET("API.php?exe=get&type=mobile&kind=vsat_manufacture")
     Observable<PojoManufactureVsat> get_manufacture_vsat(
-            @Header("Api-Key") String apikey
+            @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey
     );
 
     @GET("API.php?exe=get&type=mobile&kind=vsat_model")
     Observable<PojoManufactureVsatModel> get_manufacture_vsat_model(
             @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey,
             @Query("idmanufactur") String id
     );
 
     @GET("API.php?exe=get&type=mobile&kind=midi_manufacture")
     Observable<PojoManufactureMidi> get_manufacture_midi(
-            @Header("Api-Key") String apikey
+            @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey
     );
 
     @GET("API.php?exe=get&type=mobile&kind=midi_model")
     Observable<PojoManufactureMidiModel> get_manufacture_midi_model(
             @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey,
             @Query("idmanufactur") String id
     );
 
     @GET("API.php?exe=get&type=mobile&kind=gpon_manufacture")
     Observable<PojoManufactureGpon> get_manufacture_gpon(
-            @Header("Api-Key") String apikey
+            @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey
     );
 
     @GET("API.php?exe=get&type=mobile&kind=gpon_model")
     Observable<PojoManufactureGponModel> get_manufacture_gpon_model(
             @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey,
+            @Query("idmanufactur") String id
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=dcpower_manufacture")
+    Observable<PojoManufactureDCPower> get_manufacture_dcpower(
+            @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=dcpower_model")
+    Observable<PojoManufactureDCPowerModel> get_manufacture_dcpower_model(
+            @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey,
             @Query("idmanufactur") String id
     );
 
@@ -306,7 +345,7 @@ public interface API_Adapter {
 //            @Query("exe")String exe,
 //            @Query("type")String type,
 //            @Query("kind")String kind,
-            @Part("dwdm_idsite")RequestBody idsite,
+            @Part("dwdm_idsitevisit")RequestBody idsite,
             @Part("dwdm_idmanufacturer")RequestBody idmanufacturer,
             @Part("dwdm_idmodel")RequestBody idmodel,
             @Part("dwdm_voltase")RequestBody voltase,
@@ -322,7 +361,7 @@ public interface API_Adapter {
 //            @Query("exe")String exe,
 //            @Query("type")String type,
 //            @Query("kind")String kind,
-            @Part("superwifi_idsite")RequestBody idsite,
+            @Part("superwifi_idsitevisit")RequestBody idsite,
             @Part("superwifi_idmanufacturer")RequestBody idmanufacturer,
             @Part("superwifi_idmodel")RequestBody idmodel,
             @Part("superwifi_voltase")RequestBody voltase,
@@ -338,7 +377,7 @@ public interface API_Adapter {
 //            @Query("exe")String exe,
 //            @Query("type")String type,
 //            @Query("kind")String kind,
-            @Part("mpls_idsite")RequestBody microwave_idsite,
+            @Part("mpls_idsitevisit")RequestBody microwave_idsite,
             @Part("mpls_idmanufacturer")RequestBody idmanufacturer,
             @Part("mpls_idmodel")RequestBody idmodel,
             @Part("mpls_voltase")RequestBody voltase,
@@ -354,7 +393,7 @@ public interface API_Adapter {
 //            @Query("exe")String exe,
 //            @Query("type")String type,
 //            @Query("kind")String kind,
-            @Part("vsat_idsite")RequestBody idsite,
+            @Part("vsat_idsitevisit")RequestBody idsite,
             @Part("vsat_idmanufacturer")RequestBody idmanufacturer,
             @Part("vsat_idmodel")RequestBody idmodel,
             @Part("vsat_voltase")RequestBody voltase,
@@ -370,7 +409,7 @@ public interface API_Adapter {
 //            @Query("exe")String exe,
 //            @Query("type")String type,
 //            @Query("kind")String kind,
-            @Part("midi_idsite")RequestBody idsite,
+            @Part("midi_idsitevisit")RequestBody idsite,
             @Part("midi_idmanufacturer")RequestBody idmanufacturer,
             @Part("midi_idmodel")RequestBody idmodel,
             @Part("midi_voltase")RequestBody voltase,
@@ -386,7 +425,7 @@ public interface API_Adapter {
 //            @Query("exe")String exe,
 //            @Query("type")String type,
 //            @Query("kind")String kind,
-            @Part("gpon_idsite")RequestBody idsite,
+            @Part("gpon_idsitevisit")RequestBody idsite,
             @Part("gpon_idmanufacturer")RequestBody idmanufacturer,
             @Part("gpon_idmodel")RequestBody idmodel,
             @Part("gpon_voltase")RequestBody voltase,
@@ -402,13 +441,71 @@ public interface API_Adapter {
             @Query("exe")String exe,
             @Query("type")String type,
             @Query("kind")String kind,
-            @Part("coolingcabinet_idsite")RequestBody coolingcabinet_idsite,
+            @Part("coolingcabinet_idsitevisit")RequestBody coolingcabinet_idsite,
             @Part("coolingcabinet_manufacturer")RequestBody coolingcabinet_manufacturer,
             @Part("coolingcabinet_model")RequestBody coolingcabinet_model,
             @Part("coolingcabinet_bturating")RequestBody coolingcabinet_bturating,
             @Part("coolingcabinet_dcload")RequestBody coolingcabinet_dcload,
             @Part("coolingcabinet_condition")RequestBody coolingcabinet_condition,
-            @Part("gpon_photo\"; filename=\"img0.png\" ")RequestBody img0
+            @Part("coolingcabinet_photo\"; filename=\"img0.png\" ")RequestBody img0
+    );
+
+    @Multipart
+    @POST("API.php?")
+    Observable<PojoResponseInsert> insert_tech_battery(
+            @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey,
+            @Query("exe")String exe,
+            @Query("type")String type,
+            @Query("kind")String kind,
+            @Part("batterydetail_idsitevisit")RequestBody batterydetail_idsitevisit,
+            @Part("batterydetail_manufacturer")RequestBody batterydetail_manufacturer,
+            @Part("batterydetail_model")RequestBody batterydetail_model,
+            @Part("batterydetail_sitebatterytype")RequestBody batterydetail_sitebatterytype,
+            @Part("batterydetail_battery2vcells")RequestBody batterydetail_battery2vcells,
+            @Part("batterydetail_batteryblock")RequestBody batterydetail_batteryblock,
+            @Part("batterydetail_batterycapacity")RequestBody batterydetail_batterycapacity,
+            @Part("batterydetail_voltage")RequestBody batterydetail_voltage,
+            @Part("batterydetail_batterytemperature")RequestBody batterydetail_batterytemperature,
+            @Part("batterydetail_batteryconditions")RequestBody batterydetail_batteryconditions,
+            @Part("batterydetail_batteryphoto\"; filename=\"img0.png\" ")RequestBody img0
+    );
+
+    @Multipart
+    @POST("API.php?")
+    Observable<PojoResponseInsert> insert_tech_dcpower(
+            @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey,
+            @Query("exe")String exe,
+            @Query("type")String type,
+            @Query("kind")String kind,
+            @Part("dcpower_idsitevisit")RequestBody dcpower_idsitevisit,
+            @Part("dcpower_idmanufacturer")RequestBody dcpower_idmanufacturer,
+            @Part("dcpower_idmodel")RequestBody dcpower_idmodel,
+            @Part("dcpower_controllermanufacturer")RequestBody dcpower_controllermanufacturer,
+            @Part("dcpower_controllermodel")RequestBody dcpower_controllermodel,
+            @Part("dcpower_rectifiermodmanufacturer")RequestBody dcpower_rectifiermodmanufacturer,
+            @Part("dcpower_rectifiermodmodel")RequestBody dcpower_rectifiermodmodel,
+            @Part("dcpower_rectifiermodoutputrating")RequestBody dcpower_rectifiermodoutputrating,
+            @Part("dcpower_rectifiermodqtyinstaled")RequestBody dcpower_rectifiermodqtyinstaled,
+            @Part("dcpower_rectifiermodnumberspareslot")RequestBody dcpower_rectifiermodnumberspareslot,
+
+            @Part("dcpower_arrestermanufacturer")RequestBody dcpower_arrestermanufacturer,
+            @Part("dcpower_arrestermodel")RequestBody dcpower_arrestermodel,
+            @Part("dcpower_acinputbreakertype")RequestBody dcpower_acinputbreakertype,
+            @Part("dcpower_acinputbreakerrating")RequestBody dcpower_acinputbreakerrating,
+
+            @Part("dcpower_dcbreakersrating")RequestBody dcpower_dcbreakersrating,
+            @Part("dcpower_dcbreakersquantity")RequestBody dcpower_dcbreakersquantity,
+
+            @Part("dcpower_dcload")RequestBody dcpower_dcload,
+            @Part("dcpower_dccabinetcoolingmanufacturer")RequestBody dcpower_dccabinetcoolingmanufacturer,
+            @Part("dcpower_dccabinetcoolingmodel")RequestBody dcpower_dccabinetcoolingmodel,
+
+            @Part("dcpower_controllerphoto\"; filename=\"img0.png\" ")RequestBody img0,
+            @Part("dcpower_acinputbreakerphoto\"; filename=\"img1.png\" ")RequestBody img1,
+            @Part("dcpower_dcbreakersphoto\"; filename=\"img2.png\" ")RequestBody img2,
+            @Part("dcpower_dccabinetcoolingphoto\"; filename=\"img2.png\" ")RequestBody img3
     );
 
 //    @Multipart

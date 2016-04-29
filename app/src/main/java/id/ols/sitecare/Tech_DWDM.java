@@ -207,7 +207,8 @@ public class Tech_DWDM extends AppCompatActivity {
     private void getManufactureData() {
         final API_Adapter adapter = PublicFunctions.initRetrofit();
         String apikey = getResources().getString(R.string.api_key);
-        Observable<PojoManufactureDwdm> observable = adapter.get_manufacture_dwdm(apikey);
+        final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
+        Observable<PojoManufactureDwdm> observable = adapter.get_manufacture_dwdm(apikey, authkey);
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<PojoManufactureDwdm>() {
@@ -278,7 +279,8 @@ public class Tech_DWDM extends AppCompatActivity {
     private void getManufacture_Model_Data(String id_manufactur) {
         final API_Adapter adapter = PublicFunctions.initRetrofit();
         String apikey = getResources().getString(R.string.api_key);
-        Observable<PojoManufactureDwdmModel> observable = adapter.get_manufacture_dwdm_model(apikey, id_manufactur);
+        final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
+        Observable<PojoManufactureDwdmModel> observable = adapter.get_manufacture_dwdm_model(apikey,authkey, id_manufactur);
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<PojoManufactureDwdmModel>() {
@@ -328,7 +330,7 @@ public class Tech_DWDM extends AppCompatActivity {
                             if (pojoRegions.getAct().getGet() == 1) {
                                 name_model = new ArrayList<RowData_Model>();
                                 for (int i = 0; i < pojoRegions.getData().size(); i++) {
-                                    name_model.add(new RowData_Model(pojoRegions.getData().get(i).getModelIdmanufactur(),
+                                    name_model.add(new RowData_Model(pojoRegions.getData().get(i).getRanmodelId(),
                                             pojoRegions.getData().get(i).getModelName()));
                                 }
                             }

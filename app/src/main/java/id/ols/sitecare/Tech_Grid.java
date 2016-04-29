@@ -47,6 +47,7 @@ public class Tech_Grid extends AppCompatActivity {
     @Bind(R.id.ed_model )EditText ed_model;
     @Bind(R.id.ed_condition )EditText ed_condition;
     @Bind(R.id.ed_distance )EditText ed_distance;
+    @Bind(R.id.ed_distance_to_pln)EditText ed_distance_to_pln;
 
     @Bind(R.id.tipe_single )RadioButton tipe_single;
     @Bind(R.id.tipe_three )RadioButton tipe_three;
@@ -55,6 +56,11 @@ public class Tech_Grid extends AppCompatActivity {
     @Bind(R.id.ed_pln_measurement_3s )EditText ed_pln_measurement_3s;
     @Bind(R.id.ed_pln_measurement_3t )EditText ed_pln_measurement_3t;
     @Bind(R.id.ed_rating )EditText ed_rating;
+
+    @Bind(R.id.ed_surge_manufacturer )EditText ed_surge_manufacturer;
+    @Bind(R.id.ed_surge_tipe )EditText ed_surge_tipe;
+    @Bind(R.id.ed_surge_condition )EditText ed_surge_condition;
+    @Bind(R.id.ed_surge_model )EditText ed_surge_model;
 
     @Bind(R.id.ed_acpdb_manufactur_name )EditText ed_acpdb_manufactur_name;
     @Bind(R.id.ed_acpdb_model_name )EditText ed_acpdb_model_name;
@@ -155,25 +161,37 @@ public class Tech_Grid extends AppCompatActivity {
         pDialog.setLoaderType(CustomProgressDialog.SPINNING_SQUARE);
         pDialog.show();
 
-        String pln_id, manufactur_name, model,condition,distance,value_phase,
-                pln_measurement_3r, pln_measurement_3s,pln_measurement_3t,rating;
+        String pln_id, manufactur_name, model,condition,distance,distance_to_pln,value_phase,
+                pln_measurement_3r, pln_measurement_3s,pln_measurement_3t,rating,
+                acpdb_manufactur_name, acpdb_model_name, acpdb_condition,
+                surge_manufacturer,surge_tipe,surge_condition,surge_model;
 
         pln_id = ed_pln_id.getText().toString();
         manufactur_name= ed_manufactur_name.getText().toString();
         model= ed_model.getText().toString();
         condition= ed_condition.getText().toString();
         distance = ed_distance.getText().toString();
+        distance_to_pln = ed_distance_to_pln.getText().toString();
         value_phase = ed_value_phase.getText().toString();
         pln_measurement_3r = ed_pln_measurement_3r.getText().toString();
         pln_measurement_3s = ed_pln_measurement_3s.getText().toString();
         pln_measurement_3t = ed_pln_measurement_3t.getText().toString();
         rating = ed_rating.getText().toString();
 
+        surge_manufacturer = ed_surge_manufacturer.getText().toString();
+        surge_tipe= ed_surge_tipe.getText().toString();
+        surge_condition= ed_surge_condition.getText().toString();
+        surge_model= ed_surge_model.getText().toString();
+
+        acpdb_manufactur_name = ed_acpdb_manufactur_name.getText().toString();
+        acpdb_model_name = ed_acpdb_model_name.getText().toString();
+        acpdb_condition = ed_acpdb_condition.getText().toString();
+
         String plnmeter_type ="";
         if(radio_plnmeter_type_digital.isChecked()){
             plnmeter_type = getResources().getString(R.string.option_digital);
         }else {
-            plnmeter_type = getResources().getString(R.string.option_digital);
+            plnmeter_type = getResources().getString(R.string.option_analog);
         }
 
         String phase_type ="";
@@ -183,11 +201,13 @@ public class Tech_Grid extends AppCompatActivity {
             phase_type = getResources().getString(R.string.option_phase_three_bigcase);
         }
 
+        RequestBody _idsitevisit = RequestBody.create(MediaType.parse("text/plain"), id_site);
         RequestBody _pln_id = RequestBody.create(MediaType.parse("text/plain"), pln_id);
         RequestBody _manufactur_name = RequestBody.create(MediaType.parse("text/plain"), manufactur_name);
         RequestBody _model = RequestBody.create(MediaType.parse("text/plain"), model);
         RequestBody _condition = RequestBody.create(MediaType.parse("text/plain"), condition);
         RequestBody _distance = RequestBody.create(MediaType.parse("text/plain"), distance);
+        RequestBody _distance_to_pln = RequestBody.create(MediaType.parse("text/plain"), distance_to_pln);
 
         RequestBody _value_phase = RequestBody.create(MediaType.parse("text/plain"), value_phase);
         RequestBody _pln_measurement_3r = RequestBody.create(MediaType.parse("text/plain"), pln_measurement_3r);
@@ -197,6 +217,15 @@ public class Tech_Grid extends AppCompatActivity {
 
         RequestBody _plnmeter_type = RequestBody.create(MediaType.parse("text/plain"), plnmeter_type);
         RequestBody _phase_type = RequestBody.create(MediaType.parse("text/plain"), phase_type);
+
+        RequestBody _surge_manufacturer = RequestBody.create(MediaType.parse("text/plain"), surge_manufacturer);
+        RequestBody _surge_tipe = RequestBody.create(MediaType.parse("text/plain"), surge_tipe);
+        RequestBody _surge_condition = RequestBody.create(MediaType.parse("text/plain"), surge_condition);
+        RequestBody _surge_model = RequestBody.create(MediaType.parse("text/plain"), surge_model);
+
+        RequestBody _acpdb_manufactur_name = RequestBody.create(MediaType.parse("text/plain"), acpdb_manufactur_name);
+        RequestBody _acpdb_model_name = RequestBody.create(MediaType.parse("text/plain"), acpdb_model_name);
+        RequestBody _acpdb_condition = RequestBody.create(MediaType.parse("text/plain"), acpdb_condition);
 
         final String apikey = getResources().getString(R.string.api_key);
         final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
@@ -215,40 +244,44 @@ public class Tech_Grid extends AppCompatActivity {
 
         API_Adapter adapter = PublicFunctions.initRetrofit();
 
-//        Observable<PojoResponseInsert> observable = adapter.insert_tech_insert_tech_grid_detail(apikey, authkey, idsitevisit,
-//                idmanufacturer, idmodel, voltase,dcload,body00);
-//        observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(new Observer<PojoResponseInsert>() {
-//                    @Override
-//                    public void onCompleted() {
-//                        pDialog.dismiss();
-//
-//                        DialogConfirmation pDialog_comfirm = new DialogConfirmation();
-//                        pDialog_comfirm.setContext(getApplicationContext());
-//                        pDialog_comfirm.setText("Add Additional Microwave");
-//                        pDialog_comfirm.setFrom(1);
-//
-//                        pDialog_comfirm.show(getSupportFragmentManager(), "");
-//                    }
-//
-//                    @Override
-//                    public void onError(Throwable e) {
-//                        Log.e("Error", "Something Wrong");
-//
-//                    }
-//
-//                    @Override
-//                    public void onNext(PojoResponseInsert pojoResponseInsert) {
-//                        if (pojoResponseInsert.getJsonCode() != null) {
-//                            if (pojoResponseInsert.getAct().getInsert() == 1) {
-//                                isSukses = true;
-//                            } else {
-//                                message = pojoResponseInsert.getResponseMessage();
-//                            }
-//                        }
-//
-//                    }
-//                });
+        Observable<PojoResponseInsert> observable = adapter.insert_tech_grid_detail(apikey,authkey,
+                _idsitevisit,_pln_id,_plnmeter_type,_manufactur_name,_model,_condition,_distance,
+                _phase_type,_value_phase,_pln_measurement_3r,_pln_measurement_3s, _pln_measurement_3t,_rating,
+                _surge_manufacturer, _surge_tipe, _surge_condition,_surge_model,
+                _acpdb_manufactur_name, _acpdb_model_name, _acpdb_condition,_distance_to_pln,
+                body00,body01,body02,body03);
+        observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<PojoResponseInsert>() {
+                    @Override
+                    public void onCompleted() {
+                        pDialog.dismiss();
+
+                        DialogConfirmation pDialog_comfirm = new DialogConfirmation();
+                        pDialog_comfirm.setContext(getApplicationContext());
+                        pDialog_comfirm.setText("Add Additional Grid");
+                        pDialog_comfirm.setFrom(1);
+
+                        pDialog_comfirm.show(getSupportFragmentManager(), "");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.e("Error", "Something Wrong");
+
+                    }
+
+                    @Override
+                    public void onNext(PojoResponseInsert pojoResponseInsert) {
+                        if (pojoResponseInsert.getJsonCode() != null) {
+                            if (pojoResponseInsert.getAct().getInsert() == 1) {
+                                isSukses = true;
+                            } else {
+                                message = pojoResponseInsert.getResponseMessage();
+                            }
+                        }
+
+                    }
+                });
 
 
     }

@@ -318,7 +318,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Daya Breaker" />
+                android:text="Daya Arrester" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -558,7 +558,7 @@
                     android:text="Distance to PLN" />
 
                 <EditText
-                    android:id="@+id/ed_ac_loads"
+                    android:id="@+id/ed_distance_to_pln"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="0.0"

@@ -75,7 +75,7 @@ public class LoginForm extends AppCompatActivity {
             password = ed_Password.getText().toString();
 
             pDialog = new CustomProgressDialog(activity, R.style.SpotsDialogDefault);
-            pDialog.setLoaderType(CustomProgressDialog.SPINNING_CIRCLE);
+            pDialog.setLoaderType(CustomProgressDialog.SPINNING_SQUARE);
             pDialog.show();
 //            dialog = new DialogFragmentProgress();
 //            dialog.show();

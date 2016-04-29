@@ -23,6 +23,9 @@ public class ParameterCollections {
         public static String LOGIN = "login";
         public static String SITE = "site";
         public static String SITE_VISIT = "site_visit";
+        public static String TECH_COOLING = "cooling_cabinet";
+        public static String TECH_BATTERY = "battery";
+        public static String TECH_DCPOWER = "dcpower";
     }
 
     public static class EXE{

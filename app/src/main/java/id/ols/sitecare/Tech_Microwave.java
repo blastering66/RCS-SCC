@@ -207,7 +207,8 @@ public class Tech_Microwave extends AppCompatActivity {
     private void getManufactureData() {
         final API_Adapter adapter = PublicFunctions.initRetrofit();
         String apikey = getResources().getString(R.string.api_key);
-        Observable<PojoManufactureMicrowave> observable = adapter.get_manufacture_microwave(apikey);
+        final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
+        Observable<PojoManufactureMicrowave> observable = adapter.get_manufacture_microwave(apikey, authkey);
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<PojoManufactureMicrowave>() {
@@ -278,7 +279,8 @@ public class Tech_Microwave extends AppCompatActivity {
     private void getManufacture_Model_Data(String id_manufactur) {
         final API_Adapter adapter = PublicFunctions.initRetrofit();
         String apikey = getResources().getString(R.string.api_key);
-        Observable<PojoManufactureMicrowaveModel> observable = adapter.get_manufacture_microwave_model(apikey, id_manufactur);
+        final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
+        Observable<PojoManufactureMicrowaveModel> observable = adapter.get_manufacture_microwave_model(apikey,authkey, id_manufactur);
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<PojoManufactureMicrowaveModel>() {

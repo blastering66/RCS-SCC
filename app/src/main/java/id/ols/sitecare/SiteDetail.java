@@ -139,8 +139,6 @@ public class SiteDetail extends AppCompatActivity {
         ButterKnife.bind(this);
         activity = this;
 
-        spf = getSharedPreferences(ParameterCollections.SH_NAME, MODE_PRIVATE);
-
         getSupportActionBar().setTitle("Site Detail");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         spf = getSharedPreferences(ParameterCollections.SH_NAME, MODE_PRIVATE);
@@ -174,6 +172,10 @@ public class SiteDetail extends AppCompatActivity {
             case android.R.id.home:
                 finish();
                 break;
+            case R.id.action_refresh:
+                getRegionsData();
+                getWeatherData();
+                break;
             case R.id.action_next:
                 if (url_file00 != null) {
                     sendData();
@@ -189,7 +191,8 @@ public class SiteDetail extends AppCompatActivity {
     private void getWeatherData() {
         final API_Adapter adapter = PublicFunctions.initRetrofit();
         String apikey = getResources().getString(R.string.api_key);
-        Observable<PojoWeather> observable = adapter.get_weather(apikey);
+        final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
+        Observable<PojoWeather> observable = adapter.get_weather(apikey, authkey);
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<PojoWeather>() {
@@ -253,42 +256,50 @@ public class SiteDetail extends AppCompatActivity {
     private void getRegionsData() {
         final API_Adapter adapter = PublicFunctions.initRetrofit();
         String apikey = getResources().getString(R.string.api_key);
-        Observable<PojoRegions> observable = adapter.get_regions(apikey);
+        final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
+        Observable<PojoRegions> observable = adapter.get_regions(apikey,authkey);
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<PojoRegions>() {
+                    boolean isSukses= false;
+                    String message= "Something Wrong";
                     @Override
                     public void onCompleted() {
                         Log.e("Get Regions", "Completed");
-                        if (name_regions.size() > 0 || name_regions != null) {
-                            List<String> array_regions = new ArrayList<String>();
+                        if(isSukses){
+                            if (name_regions.size() > 0 || name_regions != null) {
+                                List<String> array_regions = new ArrayList<String>();
 
-                            for(int i=0; i < name_regions.size(); i++){
-                                array_regions.add(name_regions.get(i).name);
+                                for(int i=0; i < name_regions.size(); i++){
+                                    array_regions.add(name_regions.get(i).name);
+                                }
+
+                                pg_regions.setVisibility(View.GONE);
+                                spinner_Regions.setVisibility(View.VISIBLE);
+                                ArrayAdapter<String> adapter_regions = new ArrayAdapter<String>(getApplicationContext(),
+                                        R.layout.spinner_item, array_regions);
+                                adapter_regions.setDropDownViewResource(R.layout.spinner_item);
+                                spinner_Regions.setAdapter(adapter_regions);
+
+                                spinner_Regions.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                    @Override
+                                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                        idRegionParent = name_regions.get(position).id;
+                                        Log.e("idParent", idRegionParent);
+                                        getSubRegionsData(idRegionParent);
+
+                                    }
+
+                                    @Override
+                                    public void onNothingSelected(AdapterView<?> parent) {
+                                        getSubRegionsData(name_regions.get(0).id);
+                                    }
+                                });
                             }
-
-                            pg_regions.setVisibility(View.GONE);
-                            spinner_Regions.setVisibility(View.VISIBLE);
-                            ArrayAdapter<String> adapter_regions = new ArrayAdapter<String>(getApplicationContext(),
-                                    R.layout.spinner_item, array_regions);
-                            adapter_regions.setDropDownViewResource(R.layout.spinner_item);
-                            spinner_Regions.setAdapter(adapter_regions);
-
-                            spinner_Regions.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                                @Override
-                                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                                    idRegionParent = name_regions.get(position).id;
-                                    Log.e("idParent", idRegionParent);
-                                    getSubRegionsData(idRegionParent);
-
-                                }
-
-                                @Override
-                                public void onNothingSelected(AdapterView<?> parent) {
-                                    getSubRegionsData(name_regions.get(0).id);
-                                }
-                            });
+                        }else{
+                            Toast.makeText(getApplicationContext(),message, Toast.LENGTH_LONG).show();
                         }
+
                     }
 
                     @Override
@@ -306,7 +317,10 @@ public class SiteDetail extends AppCompatActivity {
                                 for (int i = 0; i < pojoRegions.getData().size(); i++) {
                                     name_regions.add(new RowData_Regions(pojoRegions.getData().get(i).getRegionId(),
                                             pojoRegions.getData().get(i).getRegionName()));
+                                    isSukses = true;
                                 }
+                            }else{
+                                message = pojoRegions.getResponseMessage();
                             }
                         }
 
@@ -318,41 +332,49 @@ public class SiteDetail extends AppCompatActivity {
     private void getSubRegionsData(String idRegions) {
         final API_Adapter adapter = PublicFunctions.initRetrofit();
         String apikey = getResources().getString(R.string.api_key);
-        Observable<PojoRegions> observable = adapter.get_sub_regions(apikey, idRegions);
+        final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
+        Observable<PojoRegions> observable = adapter.get_sub_regions(apikey, authkey,idRegions);
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<PojoRegions>() {
+                    boolean isSukses= false;
+                    String message= "Something Wrong";
                     @Override
                     public void onCompleted() {
                         Log.e("Error", "Completed");
+                        if(isSukses){
+                            if (name_sub_regions.size() > 0 || name_sub_regions != null) {
 
-                        if (name_sub_regions.size() > 0 || name_sub_regions != null) {
+                                List<String> array_sub_regions = new ArrayList<String>();
+                                for(int i=0; i < name_sub_regions.size(); i++){
+                                    array_sub_regions.add(name_sub_regions.get(i).name);
+                                }
 
-                            List<String> array_sub_regions = new ArrayList<String>();
-                            for(int i=0; i < name_sub_regions.size(); i++){
-                                array_sub_regions.add(name_sub_regions.get(i).name);
+                                ArrayAdapter<String> adapter_sub_regions = new ArrayAdapter<String>(getApplicationContext(),
+                                        R.layout.spinner_item, array_sub_regions);
+                                adapter_sub_regions.setDropDownViewResource(R.layout.spinner_item);
+                                spinner_Regions_Sub.setAdapter(adapter_sub_regions);
+
+                                pg_regions_sub.setVisibility(View.GONE);
+                                spinner_Regions_Sub.setVisibility(View.VISIBLE);
+
+                                spinner_Regions_Sub.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                    @Override
+                                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                        idRegionParent_Sub = name_sub_regions.get(position).id;
+                                        getClusterData(idRegionParent_Sub);
+                                    }
+
+                                    @Override
+                                    public void onNothingSelected(AdapterView<?> parent) {
+
+                                    }
+                                });
                             }
-
-                            ArrayAdapter<String> adapter_sub_regions = new ArrayAdapter<String>(getApplicationContext(),
-                                    R.layout.spinner_item, array_sub_regions);
-                            adapter_sub_regions.setDropDownViewResource(R.layout.spinner_item);
-                            spinner_Regions_Sub.setAdapter(adapter_sub_regions);
-
-                            pg_regions_sub.setVisibility(View.GONE);
-                            spinner_Regions_Sub.setVisibility(View.VISIBLE);
-
-                            spinner_Regions_Sub.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                                @Override
-                                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                                    idRegionParent_Sub = name_sub_regions.get(position).id;
-                                    getClusterData(idRegionParent_Sub);
-                                }
-
-                                @Override
-                                public void onNothingSelected(AdapterView<?> parent) {
-
-                                }
-                            });
+                        }else{
+                            Toast.makeText(getApplicationContext(),message, Toast.LENGTH_LONG).show();
                         }
+
+
                     }
 
                     @Override
@@ -370,7 +392,10 @@ public class SiteDetail extends AppCompatActivity {
                                 for (int i = 0; i < pojoRegions.getData().size(); i++) {
                                     name_sub_regions.add(new RowData_Regions(pojoRegions.getData().get(i).getRegionId(),
                                             pojoRegions.getData().get(i).getRegionName()));
+                                    isSukses = true;
                                 }
+                            }else{
+                                message = pojoRegions.getResponseMessage();
                             }
                         }
 
@@ -382,7 +407,8 @@ public class SiteDetail extends AppCompatActivity {
     private void getClusterData(String idSubRegions) {
         final API_Adapter adapter = PublicFunctions.initRetrofit();
         String apikey = getResources().getString(R.string.api_key);
-        Observable<PojoRegions> observable = adapter.get_cluster_regions(apikey, idSubRegions);
+        final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
+        Observable<PojoRegions> observable = adapter.get_cluster_regions(apikey,authkey, idSubRegions);
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<PojoRegions>() {
                     @Override

@@ -243,7 +243,8 @@ public class Tech_RAN extends AppCompatActivity {
     private void getManufactureData() {
         final API_Adapter adapter = PublicFunctions.initRetrofit();
         String apikey = getResources().getString(R.string.api_key);
-        Observable<PojoManufactureRAN> observable = adapter.get_manufacture_ran(apikey);
+        final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
+        Observable<PojoManufactureRAN> observable = adapter.get_manufacture_ran(apikey, authkey);
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<PojoManufactureRAN>() {
@@ -309,7 +310,8 @@ public class Tech_RAN extends AppCompatActivity {
     private void getManufacture_Model_Data(String id_manufactur) {
         final API_Adapter adapter = PublicFunctions.initRetrofit();
         String apikey = getResources().getString(R.string.api_key);
-        Observable<PojoManufactureRANModel> observable = adapter.get_manufacture_ran_model(apikey, id_manufactur);
+        final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
+        Observable<PojoManufactureRANModel> observable = adapter.get_manufacture_ran_model(apikey,authkey, id_manufactur);
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<PojoManufactureRANModel>() {

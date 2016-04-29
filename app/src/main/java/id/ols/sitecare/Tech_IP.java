@@ -208,7 +208,8 @@ public class Tech_IP extends AppCompatActivity {
     private void getManufactureData() {
         final API_Adapter adapter = PublicFunctions.initRetrofit();
         String apikey = getResources().getString(R.string.api_key);
-        Observable<PojoManufactureIp> observable = adapter.get_manufacture_ip(apikey);
+        final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
+        Observable<PojoManufactureIp> observable = adapter.get_manufacture_ip(apikey, authkey);
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<PojoManufactureIp>() {
@@ -236,16 +237,14 @@ public class Tech_IP extends AppCompatActivity {
                                     idManufacturParent = name_manufactur.get(position).id;
 
                                     //Sementara
-                                    //getManufacture_Model_Data(idManufacturParent);
-                                    getManufacture_Model_Data("1");
+                                    getManufacture_Model_Data(idManufacturParent);
 
                                 }
 
                                 @Override
                                 public void onNothingSelected(AdapterView<?> parent) {
                                     //Sementara
-//                                    getManufacture_Model_Data(name_manufactur.get(0).id);
-                                    getManufacture_Model_Data("1");
+                                    getManufacture_Model_Data(name_manufactur.get(0).id);
                                 }
                             });
                         }
@@ -279,7 +278,8 @@ public class Tech_IP extends AppCompatActivity {
     private void getManufacture_Model_Data(String id_manufactur) {
         final API_Adapter adapter = PublicFunctions.initRetrofit();
         String apikey = getResources().getString(R.string.api_key);
-        Observable<PojoManufactureIpModel> observable = adapter.get_manufacture_ip_model(apikey, id_manufactur);
+        final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
+        Observable<PojoManufactureIpModel> observable = adapter.get_manufacture_ip_model(apikey,authkey, id_manufactur);
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<PojoManufactureIpModel>() {
