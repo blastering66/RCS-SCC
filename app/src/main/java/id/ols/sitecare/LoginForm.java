@@ -93,14 +93,12 @@ public class LoginForm extends AppCompatActivity {
                 Response<PojoResponseLogin> response = call.execute();
                 if(response.isSuccess()){
                     if(response.body() != null){
-                        if(response.body().getJsonCode() != null){
-                            if(response.body().getAuthKey() != null){
+                            if(response.body().getLogin() == 1){
                                 authKey = response.body().getAuthKey();
                                 spf.edit().putString(ParameterCollections.SH_AUTHKEY, authKey).commit();
                                 isSukses = true;
                                 message = response.body().getResponseMessage();
-                            }
-                        }else{
+                            }else{
                             message = response.body().getResponseMessage();
 
                         }

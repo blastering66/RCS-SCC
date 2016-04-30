@@ -95,7 +95,7 @@ public class Tech_Generators_Detail_1_Controller extends AppCompatActivity {
         intent.putExtra("controller_manufactur_name",controller_manufactur_name);
         intent.putExtra("controller_model_name",controller_model_name);
         intent.putExtra("controller_condition",controller_condition);
-
+//        intent.putExtra("engine_fitted",engine_fitted);
         intent.putExtra("battery_fitted",battery_fitted);
         intent.putExtra("battery_controller_manufactur_name",battery_controller_manufactur_name);
         intent.putExtra("battery_model_name",battery_model_name);
@@ -114,11 +114,25 @@ public class Tech_Generators_Detail_1_Controller extends AppCompatActivity {
         intent.putExtra("url_file_generator",url_file00_generator);
 
 
+        intent.putExtra("radio_speed",radio_speed);
+        intent.putExtra("radio_freq",radio_freq);
+        intent.putExtra("radio_voltase",radio_voltase);
+        intent.putExtra("l1_connections",l1_connections);
+        intent.putExtra("l2_connections",l2_connections);
+        intent.putExtra("l3_connections",l3_connections);
+        intent.putExtra("l1_loads",l1_loads);
+        intent.putExtra("l2_loads",l2_loads);
+        intent.putExtra("l3_loads",l3_loads);
+        intent.putExtra("running_hours",running_hours);
+        intent.putExtra("condition",condition);
+
         startActivity(intent);
         finish();
     }
 
     String manufactur_name, model, phase, remote_start, primary_rating, standby_rating, url_file00_generator = "";
+    String radio_speed, radio_freq, radio_voltase, l1_connections, l2_connections, l3_connections,
+            l1_loads,l2_loads,l3_loads,running_hours,condition= "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,7 +148,20 @@ public class Tech_Generators_Detail_1_Controller extends AppCompatActivity {
         phase= getIntent().getStringExtra("phase");
         remote_start= getIntent().getStringExtra("remote_start");
         primary_rating= getIntent().getStringExtra("primary_rating");
-        standby_rating= getIntent().getStringExtra("manufactstandby_ratingur_name");
+        standby_rating= getIntent().getStringExtra("standby_rating");
+
+        radio_speed = getIntent().getStringExtra("radio_speed");
+        radio_freq= getIntent().getStringExtra("radio_freq");
+        radio_voltase= getIntent().getStringExtra("radio_voltase");
+        l1_connections= getIntent().getStringExtra("l1_connections");
+        l2_connections= getIntent().getStringExtra("l2_connections");
+        l3_connections= getIntent().getStringExtra("l3_connections");
+        l1_loads = getIntent().getStringExtra("l1_loads");
+        l2_loads= getIntent().getStringExtra("l2_loads");
+        l3_loads= getIntent().getStringExtra("l3_loads");
+        running_hours= getIntent().getStringExtra("running_hours");
+        condition= getIntent().getStringExtra("condition");
+
         url_file00_generator= getIntent().getStringExtra("url_file_generator");
     }
 

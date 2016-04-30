@@ -578,6 +578,75 @@ public interface API_Adapter {
             @Part("griddetail_plnphaseacpdbphoto\"; filename=\"img3.png\" ")RequestBody img3
     );
 
+    @Multipart
+    @POST("API.php?")
+    Observable<PojoResponseInsert> insert_tech_generator(
+            @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey,
+            @Query("exe")String exe,
+            @Query("type")String type,
+            @Query("kind")String kind,
+            @Part("generatordetail_idsitevisit")RequestBody generatordetail_idsitevisit,
+            @Part("generatordetail_manufacturer")RequestBody generatordetail_manufacturer,
+            @Part("generatordetail_model")RequestBody generatordetail_model,
+            @Part("generatordetail_phases")RequestBody generatordetail_phases,
+            @Part("generatordetail_remotestart")RequestBody generatordetail_remotestart,
+            @Part("generatordetail_primaryrating")RequestBody generatordetail_primaryrating,
+            @Part("generatordetail_standbyrating")RequestBody generatordetail_standbyrating,
+            @Part("generatordetail_speed")RequestBody generatordetail_speed,
+            @Part("generatordetail_frequency")RequestBody generatordetail_frequency,
+            @Part("generatordetail_outputvoltage")RequestBody generatordetail_outputvoltage,
+
+            @Part("generatordetail_connectionsl1")RequestBody generatordetail_connectionsl1,
+            @Part("generatordetail_connectionsl2")RequestBody generatordetail_connectionsl2,
+            @Part("generatordetail_connectionsl3")RequestBody generatordetail_connectionsl3,
+
+            @Part("generatordetail_loadsl1")RequestBody generatordetail_loadsl1,
+            @Part("generatordetail_loadsl2")RequestBody generatordetail_loadsl2,
+            @Part("generatordetail_loadsl3")RequestBody generatordetail_loadsl3,
+
+            @Part("generatordetail_runninghours")RequestBody generatordetail_runninghours,
+            @Part("generatordetail_condition")RequestBody generatordetail_condition,
+            @Part("generatordetail_generatorphoto\"; filename=\"img0.png\" ")RequestBody img0,
+
+            @Part("generatordetail_enginemanufacturer")RequestBody generatordetail_enginemanufacturer,
+            @Part("generatordetail_enginemodel")RequestBody generatordetail_enginemodel,
+
+            @Part("generatordetail_altenatormanufacturer")RequestBody generatordetail_altenatormanufacturer,
+            @Part("generatordetail_altenatormodel")RequestBody generatordetail_altenatormodel,
+
+            @Part("generatordetail_controllerfitted")RequestBody generatordetail_controllerfitted,
+            @Part("generatordetail_controllerphoto\"; filename=\"img1.png\" ")RequestBody img1,
+
+            @Part("generatordetail_batteryfitted")RequestBody generatordetail_batteryfitted,
+            @Part("generatordetail_batterymanufacturer")RequestBody generatordetail_batterymanufacturer,
+            @Part("generatordetail_batterymodel")RequestBody generatordetail_batterymodel,
+            @Part("generatordetail_batterycondition")RequestBody generatordetail_batterycondition,
+            @Part("generatordetail_voltase")RequestBody generatordetail_voltase,
+
+            @Part("generatordetail_atspresent")RequestBody generatordetail_atspresent,
+            @Part("generatordetail_atsmanufacturer")RequestBody generatordetail_atsmanufacturer,
+            @Part("generatordetail_atsmodel")RequestBody generatordetail_atsmodel,
+            @Part("generatordetail_atscondition")RequestBody generatordetail_atscondition,
+            @Part("generatordetail_atsphoto\"; filename=\"img2.png\" ")RequestBody img2,
+
+            @Part("generatordetail_amfpresent")RequestBody generatordetail_amfpresent,
+            @Part("generatordetail_amfmanufacturer")RequestBody generatordetail_amfmanufacturer,
+            @Part("generatordetail_amfmodel")RequestBody generatordetail_amfmodel,
+            @Part("generatordetail_amfcondition")RequestBody generatordetail_amfcondition,
+            @Part("generatordetail_amfphoto\"; filename=\"img3.png\" ")RequestBody img3,
+
+            @Part("generatordetail_capacity")RequestBody generatordetail_capacity,
+            @Part("generatordetail_capacitycondition")RequestBody generatordetail_capacitycondition,
+            @Part("generatordetail_capacityphoto\"; filename=\"img4.png\" ")RequestBody img4,
+
+            @Part("generatordetail_fullprobefitted")RequestBody generatordetail_fullprobefitted,
+            @Part("generatordetail_fullprobemanufacturer")RequestBody generatordetail_fullprobemanufacturer,
+            @Part("generatordetail_fullprobemodel")RequestBody generatordetail_fullprobemodel,
+            @Part("generatordetail_fullprobecondition")RequestBody generatordetail_fullprobecondition,
+            @Part("generatordetail_fullprobephoto\"; filename=\"img5.png\" ")RequestBody img5
+    );
+
     @FormUrlEncoded
     @POST("API.php?exe=insert&kind=additional_loads&type=mobile")
     Observable<PojoResponseInsert> insert_tech_additional_test(

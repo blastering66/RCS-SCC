@@ -78,7 +78,6 @@ public class Tech_Generators extends AppCompatActivity {
         String manufactur_name = ed_manufactur_name.getText().toString();
         String model = ed_model.getText().toString();
         String phase = "";
-
         if(tipe_single.isChecked()){
             phase = getResources().getString(R.string.option_phase_single);
         }else{
@@ -86,15 +85,44 @@ public class Tech_Generators extends AppCompatActivity {
         }
 
         String remote_start = "";
-
         if(radio_remote_yes.isChecked()){
             remote_start = getResources().getString(R.string.option_yes_remote);
         }else{
             remote_start = getResources().getString(R.string.option_no_remote);
         }
 
+        String radio_speed = "";
+        if(radio_speed_1500.isChecked()){
+            radio_speed = getResources().getString(R.string.option_speed_1500);
+        }else{
+            radio_speed = getResources().getString(R.string.option_speed_1800);
+        }
+
+        String radio_freq = "";
+        if(radio_freq_50.isChecked()){
+            radio_freq = getResources().getString(R.string.option_freq_50);
+        }else{
+            radio_freq = getResources().getString(R.string.option_freq_60);
+        }
+
+        String radio_voltase = "";
+        if(radio_voltase_110.isChecked()){
+            radio_voltase = getResources().getString(R.string.option_voltase_110);
+        }else{
+            radio_voltase = getResources().getString(R.string.option_voltase_220);
+        }
+
         String primary_rating = ed_primary_rating.getText().toString();
         String standby_rating = ed_standby_rating.getText().toString();
+
+        String l1_connections = ed_l1_connections.getText().toString();
+        String l2_connections = ed_l2_connections.getText().toString();
+        String l3_connections = ed_l3_connections.getText().toString();
+        String l1_loads = ed_l1_loads.getText().toString();
+        String l2_loads = ed_l2_loads.getText().toString();
+        String l3_loads = ed_l3_loads.getText().toString();
+        String running_hours = ed_running_hours.getText().toString();
+        String condition = ed_condition.getText().toString();
 
         intent.putExtra("manufactur_name",manufactur_name);
         intent.putExtra("model",model);
@@ -102,6 +130,20 @@ public class Tech_Generators extends AppCompatActivity {
         intent.putExtra("remote_start",remote_start);
         intent.putExtra("primary_rating",primary_rating);
         intent.putExtra("standby_rating",standby_rating);
+
+        intent.putExtra("radio_speed",radio_speed);
+        intent.putExtra("radio_freq",radio_freq);
+        intent.putExtra("radio_voltase",radio_voltase);
+
+        intent.putExtra("l1_connections",l1_connections);
+        intent.putExtra("l2_connections",l2_connections);
+        intent.putExtra("l3_connections",l3_connections);
+        intent.putExtra("l1_loads",l1_loads);
+        intent.putExtra("l2_loads",l2_loads);
+        intent.putExtra("l3_loads",l3_loads);
+        intent.putExtra("running_hours",running_hours);
+        intent.putExtra("condition",condition);
+
         intent.putExtra("url_file_generator",url_file00);
 
         startActivity(intent);

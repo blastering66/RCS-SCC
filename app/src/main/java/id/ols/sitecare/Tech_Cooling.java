@@ -30,6 +30,7 @@ import id.ols.models.PojoResponseInsert;
 import id.ols.rest_adapter.API_Adapter;
 import id.ols.util.CameraCapture;
 import id.ols.util.ParameterCollections;
+import id.ols.util.PublicFunctions;
 import retrofit.GsonConverterFactory;
 import retrofit.Retrofit;
 import retrofit.RxJavaCallAdapterFactory;
@@ -86,10 +87,7 @@ public class Tech_Cooling extends AppCompatActivity {
         RequestBody _dc_loads = RequestBody.create(MediaType.parse("text/plain"), dc_loads);
         RequestBody _condition = RequestBody.create(MediaType.parse("text/plain"), condition);
 
-        Retrofit retrofit_test = new Retrofit.Builder().addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl(ParameterCollections.URL_BASE).build();
-        API_Adapter adapter = retrofit_test.create(API_Adapter.class);
+        API_Adapter adapter = PublicFunctions.initRetrofit();
 
         final String apikey = getResources().getString(R.string.api_key);
         final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
@@ -113,7 +111,7 @@ public class Tech_Cooling extends AppCompatActivity {
                             DialogConfirmation pDialog_comfirm = new DialogConfirmation();
                             pDialog_comfirm.setContext(getApplicationContext());
                             pDialog_comfirm.setText("Add Additional Cooling Cabinet");
-                            pDialog_comfirm.setFrom(1);
+                            pDialog_comfirm.setFrom(14);
 
                             pDialog_comfirm.show(getSupportFragmentManager(), "");
                         } else {

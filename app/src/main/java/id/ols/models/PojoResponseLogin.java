@@ -3,6 +3,8 @@ package id.ols.models;
 /**
  * Created by macbook on 4/18/16.
  */
+import android.support.annotation.Nullable;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -14,6 +16,7 @@ public class PojoResponseLogin {
     @SerializedName("login")
     @Expose
     private Integer login;
+    @Nullable
     @SerializedName("Auth-Key")
     @Expose
     private String AuthKey;

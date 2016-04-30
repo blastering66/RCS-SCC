@@ -134,7 +134,7 @@ public class Tech_SuperWifi extends AppCompatActivity {
                         DialogConfirmation pDialog_comfirm = new DialogConfirmation();
                         pDialog_comfirm.setContext(getApplicationContext());
                         pDialog_comfirm.setText("Add Additional SuperWifi");
-                        pDialog_comfirm.setFrom(1);
+                        pDialog_comfirm.setFrom(9);
 
                         pDialog_comfirm.show(getSupportFragmentManager(), "");
                     }

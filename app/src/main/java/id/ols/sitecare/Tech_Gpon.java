@@ -134,7 +134,7 @@ public class Tech_Gpon extends AppCompatActivity {
                         DialogConfirmation pDialog_comfirm = new DialogConfirmation();
                         pDialog_comfirm.setContext(getApplicationContext());
                         pDialog_comfirm.setText("Add Additional GPON");
-                        pDialog_comfirm.setFrom(1);
+                        pDialog_comfirm.setFrom(13);
 
                         pDialog_comfirm.show(getSupportFragmentManager(), "");
                     }

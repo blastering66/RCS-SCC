@@ -3,6 +3,7 @@ package id.ols.sitecare;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,8 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+import id.ols.dialogs.DialogConfirmation;
 import id.ols.util.ParameterCollections;
 
 /**
@@ -28,6 +31,15 @@ public class MainActivity_Button extends AppCompatActivity implements View.OnCli
             R.id.img_done_gpon, R.id.img_done_cooling, R.id.img_done_additional})
     List<ImageView> images_Done;
     SharedPreferences spf;
+    @Bind(R.id.fab)FloatingActionButton fab;
+    @OnClick(R.id.fab) void onFinishVisit(){
+        DialogConfirmation pDialog = new DialogConfirmation();
+        pDialog.setText("Visi Selesai ?");
+        pDialog.setFrom(99);
+        pDialog.setSh(spf);
+        pDialog.show(getSupportFragmentManager(), "");
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

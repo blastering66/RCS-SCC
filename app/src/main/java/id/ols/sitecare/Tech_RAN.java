@@ -169,7 +169,7 @@ public class Tech_RAN extends AppCompatActivity {
                         DialogConfirmation pDialog_comfirm = new DialogConfirmation();
                         pDialog_comfirm.setContext(getApplicationContext());
                         pDialog_comfirm.setText("Add Additional RAN");
-                        pDialog_comfirm.setFrom(1);
+                        pDialog_comfirm.setFrom(5);
 
                         pDialog_comfirm.show(getSupportFragmentManager(), "");
                     }

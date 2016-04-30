@@ -19,6 +19,15 @@
     <string name="option_yes_remote">yes</string>
     <string name="option_no_remote">no</string>
 
+    <string name="option_speed_1500">1500</string>
+    <string name="option_speed_1800">1800</string>
+
+    <string name="option_freq_50">50</string>
+    <string name="option_freq_60">60</string>
+
+    <string name="option_voltase_110">110/120</string>
+    <string name="option_voltase_220">220/240</string>
+
     <string name="option_yes_smallcase">yes</string>
     <string name="option_no_smallcase">no</string>
 

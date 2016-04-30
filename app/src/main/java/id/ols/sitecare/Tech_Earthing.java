@@ -88,7 +88,7 @@ public class Tech_Earthing extends AppCompatActivity {
                         DialogConfirmation pDialog_comfirm = new DialogConfirmation();
                         pDialog_comfirm.setContext(getApplicationContext());
                         pDialog_comfirm.setText("Add Additional Earthing");
-                        pDialog_comfirm.setFrom(1);
+                        pDialog_comfirm.setFrom(3);
 
                         pDialog_comfirm.show(getSupportFragmentManager(), "");
                     }

@@ -39,6 +39,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -143,6 +144,7 @@ public class SiteDetail extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         spf = getSharedPreferences(ParameterCollections.SH_NAME, MODE_PRIVATE);
 
+        spf.edit().putBoolean(ParameterCollections.SH_VISIT_FINISHED, false).commit();
         site_nameenginer = getIntent().getStringExtra("site_nameenginer");
         site_emailenginer = getIntent().getStringExtra("site_emailenginer");
         site_phoneenginer = getIntent().getStringExtra("site_phoneenginer");
@@ -541,7 +543,13 @@ public class SiteDetail extends AppCompatActivity {
 //        RequestBody emailenginer = RequestBody.create(MediaType.parse("text/plain"), "test");
 //        RequestBody phoneenginer = RequestBody.create(MediaType.parse("text/plain"), "021");
 
+        final OkHttpClient okHttpClient = new OkHttpClient();
+        okHttpClient.setReadTimeout(60, TimeUnit.SECONDS);
+        okHttpClient.setConnectTimeout(60, TimeUnit.SECONDS);
+
+
         Retrofit retrofit_test = new Retrofit.Builder().addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(ParameterCollections.URL_BASE).build();
         API_Adapter adapter = retrofit_test.create(API_Adapter.class);

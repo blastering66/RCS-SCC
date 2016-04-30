@@ -44,10 +44,18 @@ public class Splashscreen extends AppCompatActivity {
             super.onPostExecute(aVoid);
 
             boolean isLogged = sp.getBoolean(ParameterCollections.SH_LOGGED, false);
+            boolean isVisitFinished = sp.getBoolean(ParameterCollections.SH_VISIT_FINISHED, false);
 
             if(isLogged){
-                startActivity(new Intent(getApplicationContext(), EngineerDetail.class));
-                finish();
+
+                if(isVisitFinished){
+                    startActivity(new Intent(getApplicationContext(), EngineerDetail.class));
+                    finish();
+                }else{
+                    startActivity(new Intent(getApplicationContext(), MainActivity_Button.class));
+                    finish();
+                }
+
             }else{
                 startActivity(new Intent(getApplicationContext(), LoginForm.class));
                 finish();

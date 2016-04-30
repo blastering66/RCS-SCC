@@ -1,5 +1,6 @@
 package id.ols.sitecare;
 
+import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import id.blastering99.htmlloader.CustomProgressDialog;
 import id.ols.models.PojoResponseInsert;
 import id.ols.rest_adapter.API_Adapter;
 import id.ols.util.ParameterCollections;
@@ -84,7 +86,11 @@ public class Tech_AdditionalLoads extends AppCompatActivity {
     @Bind(R.id.ed_amps_5_oe)
     EditText ed_amps_5_oe;
 
+    boolean isSukses = false;
+    String message = "";
+    Activity activity;
     SharedPreferences spf;
+    String id_site;
     String awl_option, awl_current, awl_loads,
             esl_option, esl_current, esl_loads,
             ff_option, ff_current, ff_loads,
@@ -94,6 +100,11 @@ public class Tech_AdditionalLoads extends AppCompatActivity {
     @Bind(R.id.btn)
     Button btn;
     @OnClick(R.id.btn) void sendData(){
+        final CustomProgressDialog pDialog;
+        pDialog = new CustomProgressDialog(activity, R.style.SpotsDialogDefault);
+        pDialog.setLoaderType(CustomProgressDialog.SPINNING_SQUARE);
+        pDialog.show();
+
         String apiKey = getResources().getString(R.string.api_key);
         String authKey = spf.getString(ParameterCollections.SH_AUTHKEY,"");
 
@@ -165,21 +176,23 @@ public class Tech_AdditionalLoads extends AppCompatActivity {
 
         final API_Adapter adapter = PublicFunctions.initRetrofit();
         Observable<PojoResponseInsert> observable = adapter.insert_tech_additional_test(apiKey, authKey,
-                "1", awl_option, awl_current, awl_loads, esl_option, esl_current, esl_loads,
+                id_site, awl_option, awl_current, awl_loads, esl_option, esl_current, esl_loads,
                 ff_option, ff_current, ff_loads, ss_option,ss_current,ss_loads, oe_option, oe_current,oe_loads);
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<PojoResponseInsert>() {
                     @Override
                     public void onCompleted() {
+                        pDialog.dismiss();
                         Toast.makeText(getApplicationContext(), "Sukses", Toast.LENGTH_LONG).show();
                         Log.e("Task", "Complete");
                     }
 
                     @Override
                     public void onError(Throwable e) {
+                        pDialog.dismiss();
                         Toast.makeText(getApplicationContext(), "Something Wrong Please Try Again", Toast.LENGTH_LONG).show();
-                        Log.e("Task", "Complete");
+                        Log.e("Task", "Error");
                     }
 
                     @Override
@@ -205,6 +218,9 @@ public class Tech_AdditionalLoads extends AppCompatActivity {
         ac.setDisplayHomeAsUpEnabled(true);
 
         spf = getSharedPreferences(ParameterCollections.SH_NAME, MODE_PRIVATE);
+        activity = this;
+        spf = getSharedPreferences(ParameterCollections.SH_NAME, MODE_PRIVATE);
+        id_site = spf.getString(ParameterCollections.SH_ID_SITE, "0");
     }
 
 
