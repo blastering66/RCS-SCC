@@ -135,7 +135,7 @@ public class Tech_Microwave extends AppCompatActivity {
                         pDialog_comfirm.setContext(getApplicationContext());
                         pDialog_comfirm.setText("Add Additional Microwave");
                         pDialog_comfirm.setFrom(6);
-
+                        pDialog_comfirm.setSh(spf);
                         pDialog_comfirm.show(getSupportFragmentManager(), "");
                     }
 

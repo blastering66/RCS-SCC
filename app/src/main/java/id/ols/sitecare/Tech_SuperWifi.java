@@ -135,7 +135,7 @@ public class Tech_SuperWifi extends AppCompatActivity {
                         pDialog_comfirm.setContext(getApplicationContext());
                         pDialog_comfirm.setText("Add Additional SuperWifi");
                         pDialog_comfirm.setFrom(9);
-
+                        pDialog_comfirm.setSh(spf);
                         pDialog_comfirm.show(getSupportFragmentManager(), "");
                     }
 

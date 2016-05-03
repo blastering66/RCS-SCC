@@ -135,7 +135,7 @@ public class Tech_Mpls extends AppCompatActivity {
                         pDialog_comfirm.setContext(getApplicationContext());
                         pDialog_comfirm.setText("Add Additional MPLS");
                         pDialog_comfirm.setFrom(10);
-
+                        pDialog_comfirm.setSh(spf);
                         pDialog_comfirm.show(getSupportFragmentManager(), "");
                     }
 

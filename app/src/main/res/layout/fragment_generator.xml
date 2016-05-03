@@ -74,6 +74,7 @@
                     android:orientation="horizontal">
                     <RadioButton
                         android:id="@+id/tipe_single"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Single" />
@@ -112,6 +113,7 @@
                     android:orientation="horizontal">
                     <RadioButton
                         android:id="@+id/radio_remote_yes"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
@@ -154,6 +156,9 @@
             <EditText
                 android:id="@+id/ed_primary_rating"
                 android:hint="0"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                android:imeOptions="actionNext"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:layout_centerVertical="true"
@@ -189,6 +194,9 @@
             <EditText
                 android:id="@+id/ed_standby_rating"
                 android:hint="0"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                android:imeOptions="actionNext"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:layout_centerVertical="true"
@@ -220,6 +228,7 @@
                     android:orientation="horizontal">
                     <RadioButton
                         android:id="@+id/radio_speed_1500"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="1500" />
@@ -258,6 +267,7 @@
                     android:orientation="horizontal">
                     <RadioButton
                         android:id="@+id/radio_freq_50"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="50" />
@@ -294,6 +304,7 @@
                     android:orientation="horizontal">
                     <RadioButton
                         android:id="@+id/radio_voltase_110"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="110/120" />
@@ -405,6 +416,7 @@
                     android:id="@+id/ed_l1_loads"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
                     android:imeOptions="actionNext"
                     android:singleLine="true"
                     android:textColor="@color/color_text_dark" />
@@ -425,6 +437,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
                     android:singleLine="true"
                     android:textColor="@color/color_text_dark" />
             </LinearLayout>
@@ -443,6 +456,7 @@
                     android:id="@+id/ed_l3_loads"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
                     android:imeOptions="actionNext"
                     android:singleLine="true"
                     android:textColor="@color/color_text_dark" />
@@ -465,6 +479,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="0.0"
+                android:inputType="numberDecimal"
                 android:imeOptions="actionNext"
                 android:singleLine="true"
                 android:textColor="@color/color_text_dark" />
@@ -486,7 +501,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="i.e) Good"
-                android:imeOptions="actionNext"
+                android:imeOptions="actionDone"
                 android:singleLine="true"
                 android:textColor="@color/color_text_dark" />
         </LinearLayout>
@@ -501,8 +516,11 @@
             <ImageView
                 android:id="@+id/img_meter_surge"
                 android:layout_width="match_parent"
-                android:layout_height="200dp" android:scaleType="centerCrop"
-                android:src="@drawable/img_empty" />
+                android:layout_height="200dp"
+                android:padding="10dp"
+                android:src="@drawable/img_empty"
+                android:scaleType="fitCenter"
+                />
 
         </LinearLayout>
 

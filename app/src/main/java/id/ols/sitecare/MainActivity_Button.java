@@ -25,16 +25,34 @@ public class MainActivity_Button extends AppCompatActivity implements View.OnCli
     View btn_generator,btn_grid, btn_battery, btn_earthing, btn_dc_power, btn_ran, btn_microwave, btn_ip,
             btn_dwdm, btn_superwifi, btn_mpls, btn_vsat, btn_midi, btn_gpon, btn_coolingcabinet, btn_additional;
 
-    @Bind({R.id.img_done_generator, R.id.img_done_grid, R.id.img_done_battery, R.id.img_done_earthing,
-    R.id.img_done_dc, R.id.img_done_ran, R.id.img_done_microwave, R.id.img_done_ip,R.id.img_done_dwdm,
-            R.id.img_done_superwifi, R.id.img_done_mpls, R.id.img_done_vsat, R.id.img_done_midi,
-            R.id.img_done_gpon, R.id.img_done_cooling, R.id.img_done_additional})
-    List<ImageView> images_Done;
+//    @Bind({R.id.img_done_generator, R.id., R.id., R.id.,
+//    R.id., R.id., R.id., R.id.,R.id.,
+//            R.id., R.id., R.id., R.id.,
+//            R.id., R.id., R.id.})
+//    List<ImageView> images_Done;
+
+    @Bind(R.id.img_done_generator)ImageView img_done_generator;
+    @Bind(R.id.img_done_grid)ImageView img_done_grid;
+    @Bind(R.id.img_done_battery)ImageView img_done_battery;
+    @Bind(R.id.img_done_earthing)ImageView img_done_earthing;
+    @Bind(R.id.img_done_dc)ImageView img_done_dc;
+    @Bind(R.id.img_done_ran)ImageView img_done_ran;
+    @Bind(R.id.img_done_microwave)ImageView img_done_microwave;
+    @Bind(R.id.img_done_ip)ImageView img_done_ip;
+    @Bind(R.id.img_done_dwdm)ImageView img_done_dwdm;
+    @Bind(R.id.img_done_superwifi)ImageView img_done_superwifi;
+    @Bind(R.id.img_done_mpls)ImageView img_done_mpls;
+    @Bind(R.id.img_done_vsat)ImageView img_done_vsat;
+    @Bind(R.id.img_done_midi)ImageView img_done_midi;
+    @Bind(R.id.img_done_gpon)ImageView img_done_gpon;
+    @Bind(R.id.img_done_cooling)ImageView img_done_cooling;
+    @Bind(R.id.img_done_additional)ImageView img_done_additional;
+
     SharedPreferences spf;
     @Bind(R.id.fab)FloatingActionButton fab;
     @OnClick(R.id.fab) void onFinishVisit(){
         DialogConfirmation pDialog = new DialogConfirmation();
-        pDialog.setText("Visi Selesai ?");
+        pDialog.setText("Visit Selesai ?");
         pDialog.setFrom(99);
         pDialog.setSh(spf);
         pDialog.show(getSupportFragmentManager(), "");
@@ -49,6 +67,7 @@ public class MainActivity_Button extends AppCompatActivity implements View.OnCli
         getSupportActionBar().hide();
 
         spf = getSharedPreferences(ParameterCollections.SH_NAME, MODE_PRIVATE);
+        spf.edit().putBoolean(ParameterCollections.SH_VISIT_FINISHED, false).commit();
 
         btn_generator = (View) findViewById(R.id.btn_generator);
         btn_grid = (View) findViewById(R.id.btn_grid);
@@ -168,63 +187,82 @@ public class MainActivity_Button extends AppCompatActivity implements View.OnCli
     protected void onResume() {
         super.onResume();
         boolean generator_submited = spf.getBoolean(ParameterCollections.SH_GENERATOR_SUBMITTED, false);
+        boolean grid_submited = spf.getBoolean(ParameterCollections.SH_GRID_SUBMITTED, false);
+        boolean battery_submited = spf.getBoolean(ParameterCollections.SH_BATTERY_SUBMITTED, false);
+        boolean earth_submited = spf.getBoolean(ParameterCollections.SH_EARTH_SUBMITTED, false);
+        boolean ran_submited = spf.getBoolean(ParameterCollections.SH_RAN_SUBMITTED, false);
+        boolean microwave_submited = spf.getBoolean(ParameterCollections.SH_MICROWAVE_SUBMITTED, false);
+        boolean ip_submited = spf.getBoolean(ParameterCollections.SH_IP_SUBMITTED, false);
+        boolean dwdm_submited = spf.getBoolean(ParameterCollections.SH_DWDM_SUBMITTED, false);
+        boolean superwifi_submited = spf.getBoolean(ParameterCollections.SH_SUPERWIFI_SUBMITTED, false);
+        boolean mpls_submited = spf.getBoolean(ParameterCollections.SH_MPLS_SUBMITTED, false);
+        boolean vsat_submited = spf.getBoolean(ParameterCollections.SH_VSAT_SUBMITTED, false);
+        boolean midi_submited = spf.getBoolean(ParameterCollections.SH_MIDI_SUBMITTED, false);
+        boolean gpon_submited = spf.getBoolean(ParameterCollections.SH_GPON_SUBMITTED, false);
+        boolean cooling_submited = spf.getBoolean(ParameterCollections.SH_COOLINGCABINET_SUBMITTED, false);
+        boolean additional_submited = spf.getBoolean(ParameterCollections.SH_ADDITIONAL_SUBMITTED, false);
 
         if(generator_submited){
-            images_Done.get(0).setVisibility(View.VISIBLE);
+//            images_Done.get(0).setVisibility(View.VISIBLE);
+            img_done_generator.setVisibility(View.VISIBLE);
         }
+        if(grid_submited){
+//            images_Done.get(1).setVisibility(View.VISIBLE);
+            img_done_grid.setVisibility(View.VISIBLE);
+        }
+        if(battery_submited){
+            img_done_battery.setVisibility(View.VISIBLE);
+//            images_Done.get(2).setVisibility(View.VISIBLE);
+        }
+        if(earth_submited){
+            img_done_earthing.setVisibility(View.VISIBLE);
+//            images_Done.get(3).setVisibility(View.VISIBLE);
+        }
+        if(ran_submited){
+            img_done_ran.setVisibility(View.VISIBLE);
+//            images_Done.get(4).setVisibility(View.VISIBLE);
+        }
+        if(microwave_submited){
+            img_done_microwave.setVisibility(View.VISIBLE);
+//            images_Done.get(5).setVisibility(View.VISIBLE);
+        }
+        if(ip_submited){
+            img_done_ip.setVisibility(View.VISIBLE);
+//            images_Done.get(6).setVisibility(View.VISIBLE);
+        }
+        if(dwdm_submited){
+            img_done_dwdm.setVisibility(View.VISIBLE);
+//            images_Done.get(7).setVisibility(View.VISIBLE);
+        }
+        if(superwifi_submited){
+            img_done_superwifi.setVisibility(View.VISIBLE);
+//            images_Done.get(8).setVisibility(View.VISIBLE);
+        }
+        if(mpls_submited){
+            img_done_mpls.setVisibility(View.VISIBLE);
+//            images_Done.get(9).setVisibility(View.VISIBLE);
+        }
+        if(vsat_submited){
+            img_done_vsat.setVisibility(View.VISIBLE);
+//            images_Done.get(10).setVisibility(View.VISIBLE);
+        }
+        if(midi_submited){
+            img_done_midi.setVisibility(View.VISIBLE);
+//            images_Done.get(11).setVisibility(View.VISIBLE);
+        }
+        if(gpon_submited){
+            img_done_gpon.setVisibility(View.VISIBLE);
+//            images_Done.get(12).setVisibility(View.VISIBLE);
+        }
+        if(cooling_submited){
+            img_done_cooling.setVisibility(View.VISIBLE);
+//            images_Done.get(13).setVisibility(View.VISIBLE);
+        }
+        if(additional_submited){
+            img_done_additional.setVisibility(View.VISIBLE);
+//            images_Done.get(14).setVisibility(View.VISIBLE);
+        }
+
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(resultCode == RESULT_OK){
-
-            switch (requestCode){
-                case 1:
-                    images_Done.get(1).setVisibility(View.VISIBLE);
-                    break;
-                case 2:
-                    images_Done.get(2).setVisibility(View.VISIBLE);
-                    break;
-                case 3:
-                    images_Done.get(3).setVisibility(View.VISIBLE);
-                    break;
-                case 4:
-                    images_Done.get(4).setVisibility(View.VISIBLE);
-                    break;
-                case 5:
-                    images_Done.get(5).setVisibility(View.VISIBLE);
-                    break;
-                case 6:
-                    images_Done.get(6).setVisibility(View.VISIBLE);
-                    break;
-                case 7:
-                    images_Done.get(7).setVisibility(View.VISIBLE);
-                    break;
-                case 8:
-                    images_Done.get(8).setVisibility(View.VISIBLE);
-                    break;
-                case 9:
-                    images_Done.get(9).setVisibility(View.VISIBLE);
-                    break;
-                case 10:
-                    images_Done.get(10).setVisibility(View.VISIBLE);
-                    break;
-                case 11:
-                    images_Done.get(11).setVisibility(View.VISIBLE);
-                    break;
-                case 12:
-                    images_Done.get(12).setVisibility(View.VISIBLE);
-                    break;
-                case 13:
-                    images_Done.get(13).setVisibility(View.VISIBLE);
-                    break;
-                case 14:
-                    images_Done.get(14).setVisibility(View.VISIBLE);
-                    break;
-                case 15:
-                    images_Done.get(15).setVisibility(View.VISIBLE);
-                    break;
-            }
-        }
     }
-}

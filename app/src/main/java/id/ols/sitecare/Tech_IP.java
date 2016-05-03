@@ -135,7 +135,7 @@ public class Tech_IP extends AppCompatActivity {
                         pDialog_comfirm.setContext(getApplicationContext());
                         pDialog_comfirm.setText("Add Additional IP");
                         pDialog_comfirm.setFrom(7);
-
+                        pDialog_comfirm.setSh(spf);
                         pDialog_comfirm.show(getSupportFragmentManager(), "");
                     }
 

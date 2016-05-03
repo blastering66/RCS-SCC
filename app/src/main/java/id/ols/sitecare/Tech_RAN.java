@@ -170,7 +170,7 @@ public class Tech_RAN extends AppCompatActivity {
                         pDialog_comfirm.setContext(getApplicationContext());
                         pDialog_comfirm.setText("Add Additional RAN");
                         pDialog_comfirm.setFrom(5);
-
+                        pDialog_comfirm.setSh(spf);
                         pDialog_comfirm.show(getSupportFragmentManager(), "");
                     }
 

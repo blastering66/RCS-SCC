@@ -151,6 +151,22 @@ public class DialogConfirmation extends DialogFragment{
 
                 } else if (from == 99) {
                     sh.edit().putBoolean(ParameterCollections.SH_VISIT_FINISHED, true).commit();
+
+                    sh.edit().putBoolean(ParameterCollections.SH_GRID_SUBMITTED, false).commit();
+                    sh.edit().putBoolean(ParameterCollections.SH_BATTERY_SUBMITTED, false).commit();
+                    sh.edit().putBoolean(ParameterCollections.SH_EARTH_SUBMITTED, false).commit();
+                    sh.edit().putBoolean(ParameterCollections.SH_DCPOWER_SUBMITTED, false).commit();
+                    sh.edit().putBoolean(ParameterCollections.SH_RAN_SUBMITTED, false).commit();
+                    sh.edit().putBoolean(ParameterCollections.SH_MICROWAVE_SUBMITTED, false).commit();
+                    sh.edit().putBoolean(ParameterCollections.SH_IP_SUBMITTED, false).commit();
+                    sh.edit().putBoolean(ParameterCollections.SH_DWDM_SUBMITTED, false).commit();
+                    sh.edit().putBoolean(ParameterCollections.SH_SUPERWIFI_SUBMITTED, false).commit();
+                    sh.edit().putBoolean(ParameterCollections.SH_MPLS_SUBMITTED, false).commit();
+                    sh.edit().putBoolean(ParameterCollections.SH_VSAT_SUBMITTED, false).commit();
+                    sh.edit().putBoolean(ParameterCollections.SH_MIDI_SUBMITTED, false).commit();
+                    sh.edit().putBoolean(ParameterCollections.SH_GPON_SUBMITTED, false).commit();
+                    sh.edit().putBoolean(ParameterCollections.SH_COOLINGCABINET_SUBMITTED, false).commit();
+                    sh.edit().putBoolean(ParameterCollections.SH_ADDITIONAL_SUBMITTED, false).commit();
                     getActivity().finish();
 
                 }
@@ -159,12 +175,7 @@ public class DialogConfirmation extends DialogFragment{
         });
 
 
-        if(from == 0){
-            sh.edit().putBoolean(ParameterCollections.SH_GENERATOR_SUBMITTED, true).commit();
-            getActivity().setResult(Activity.RESULT_OK);
-            getActivity().finish();
-            dismiss();
-        }else if(from == 99){
+        if(from == 99){
             builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -176,10 +187,90 @@ public class DialogConfirmation extends DialogFragment{
             builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
+                    if(from == 0){
+                        sh.edit().putBoolean(ParameterCollections.SH_GENERATOR_SUBMITTED, true).commit();
+                        getActivity().setResult(Activity.RESULT_OK);
+                        getActivity().finish();
+                        dismiss();
+                    }else if (from == 1) {
+                        sh.edit().putBoolean(ParameterCollections.SH_GRID_SUBMITTED, true).commit();
+                        getActivity().setResult(Activity.RESULT_OK);
+                        getActivity().finish();
+                        dismiss();
+                    } else if (from == 2) {
+                        sh.edit().putBoolean(ParameterCollections.SH_BATTERY_SUBMITTED, true).commit();
+                        getActivity().setResult(Activity.RESULT_OK);
+                        getActivity().finish();
+                        dismiss();
+                    } else if (from == 3) {
+                        sh.edit().putBoolean(ParameterCollections.SH_EARTH_SUBMITTED, true).commit();
+                        getActivity().setResult(Activity.RESULT_OK);
+                        getActivity().finish();
+                        dismiss();
+                    } else if (from == 4) {
+                        sh.edit().putBoolean(ParameterCollections.SH_DCPOWER_SUBMITTED, true).commit();
+                        getActivity().setResult(Activity.RESULT_OK);
+                        getActivity().finish();
+                        dismiss();
+                    } else if (from == 5) {
+                        sh.edit().putBoolean(ParameterCollections.SH_RAN_SUBMITTED, true).commit();
+                        getActivity().setResult(Activity.RESULT_OK);
+                        getActivity().finish();
+                        dismiss();
+                    } else if (from == 6) {
+                        sh.edit().putBoolean(ParameterCollections.SH_MICROWAVE_SUBMITTED, true).commit();
+                        getActivity().setResult(Activity.RESULT_OK);
+                        getActivity().finish();
+                        dismiss();
+                    } else if (from == 7) {
+                        sh.edit().putBoolean(ParameterCollections.SH_IP_SUBMITTED, true).commit();
+                        getActivity().setResult(Activity.RESULT_OK);
+                        getActivity().finish();
+                        dismiss();
+                    } else if (from == 8) {
+                        sh.edit().putBoolean(ParameterCollections.SH_DWDM_SUBMITTED, true).commit();
+                        getActivity().setResult(Activity.RESULT_OK);
+                        getActivity().finish();
+                        dismiss();
+                    } else if (from == 9) {
+                        sh.edit().putBoolean(ParameterCollections.SH_SUPERWIFI_SUBMITTED, true).commit();
+                        getActivity().setResult(Activity.RESULT_OK);
+                        getActivity().finish();
+                        dismiss();
+                    } else if (from == 10) {
+                        sh.edit().putBoolean(ParameterCollections.SH_MPLS_SUBMITTED, true).commit();
+                        getActivity().setResult(Activity.RESULT_OK);
+                        getActivity().finish();
+                        dismiss();
+                    } else if (from == 11) {
+                        sh.edit().putBoolean(ParameterCollections.SH_VSAT_SUBMITTED, true).commit();
+                        getActivity().setResult(Activity.RESULT_OK);
+                        getActivity().finish();
+                        dismiss();
+                    } else if (from == 12) {
+                        sh.edit().putBoolean(ParameterCollections.SH_MIDI_SUBMITTED, true).commit();
+                        getActivity().setResult(Activity.RESULT_OK);
+                        getActivity().finish();
+                        dismiss();
+                    } else if (from == 13) {
+                        sh.edit().putBoolean(ParameterCollections.SH_GPON_SUBMITTED, true).commit();
+                        getActivity().setResult(Activity.RESULT_OK);
+                        getActivity().finish();
+                        dismiss();
+                    } else if (from == 14) {
+                        sh.edit().putBoolean(ParameterCollections.SH_COOLINGCABINET_SUBMITTED, true).commit();
+                        getActivity().setResult(Activity.RESULT_OK);
+                        getActivity().finish();
+                        dismiss();
+                    } else if (from == 15) {
+                        sh.edit().putBoolean(ParameterCollections.SH_ADDITIONAL_SUBMITTED, true).commit();
+                        getActivity().setResult(Activity.RESULT_OK);
+                        getActivity().finish();
+                        dismiss();
 
-                    getActivity().setResult(Activity.RESULT_OK);
-                    getActivity().finish();
-                    dismiss();
+                    }
+
+
                 }
             });
         }

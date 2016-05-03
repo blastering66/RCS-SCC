@@ -112,7 +112,7 @@ public class Tech_Cooling extends AppCompatActivity {
                             pDialog_comfirm.setContext(getApplicationContext());
                             pDialog_comfirm.setText("Add Additional Cooling Cabinet");
                             pDialog_comfirm.setFrom(14);
-
+                            pDialog_comfirm.setSh(spf);
                             pDialog_comfirm.show(getSupportFragmentManager(), "");
                         } else {
                             Toast.makeText(getApplicationContext(), "Failed! Error = " + message, Toast.LENGTH_LONG).show();

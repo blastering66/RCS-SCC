@@ -50,6 +50,7 @@ public interface API_Adapter {
     @POST("API.php?exe=login&type=mobile")
     Call<PojoResponseLogin> login(
             @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey,
             @Field("username")String username,
             @Field("password")String password
     );
@@ -279,7 +280,7 @@ public interface API_Adapter {
 //            @Query("exe")String exe,
 //            @Query("type")String type,
 //            @Query("kind")String kind,
-            @Part("eartingngrounding_idsite")RequestBody site_codeid,
+            @Part("eartingngrounding_idsitevisit")RequestBody site_codeid,
             @Part("eartingngrounding_busbarphoto\"; filename=\"img0.png\" ")RequestBody img0,
             @Part("eartingngrounding_earthrunsphoto\"; filename=\"img1.png\" ")RequestBody img1,
             @Part("eartingngrounding_connectionsphoto\"; filename=\"img2.png\" ")RequestBody img2

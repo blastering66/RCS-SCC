@@ -59,7 +59,8 @@ public class Tech_DCPower extends AppCompatActivity {
     RequestBody body00, body01,body02, body03;
     List<RowData_Manufactur> name_manufactur;
     List<RowData_Model> name_model;
-    String idManufacturParent, idModelParent;
+    String idManufacturParent;
+//    idModelParent;
 
     Activity activity;
     boolean isSukses = false;
@@ -67,7 +68,9 @@ public class Tech_DCPower extends AppCompatActivity {
 
     @Bind(R.id.spinner_manufactur)Spinner spinner_manufactur;
     @Bind(R.id.ed_model) EditText ed_model;
-    @Bind(R.id.spinner_model_controller)Spinner spinner_model_controller;
+
+    @Bind(R.id.ed_manufactur_controller)EditText ed_manufactur_controller;
+    @Bind(R.id.ed_model_controller)EditText ed_model_controller;
 
     @Bind(R.id.ed_rectifier_manufactur) EditText ed_rectifier_manufactur;
     @Bind(R.id.ed_rectifier_model) EditText ed_rectifier_model;
@@ -124,13 +127,16 @@ public class Tech_DCPower extends AppCompatActivity {
         pDialog.setLoaderType(CustomProgressDialog.SPINNING_SQUARE);
         pDialog.show();
 
-        String model,rectifier_manufactur, rectifier_model,rectifier_rating,rectifier_kuantiti, rectifier_spareslot,
+        String model,manufactur_controller, model_controller, rectifier_manufactur, rectifier_model,rectifier_rating,rectifier_kuantiti, rectifier_spareslot,
                 arrester_manufactur, arrester_model,ac_input_breaker_type,ac_input_rating,dc_input_breaker_rating,
                 dc_input_breaker_kuantiti,dc_input_breaker_rating_2,dc_input_breaker_rating_3,dc_input_breaker_rating_4,
                 dc_input_breaker_rating_5,ac_loads,dc_cooling_fan_manufactur,dc_cooling_fan_model,
                 idmanufacturer, idmodel;
 
         model = ed_model.getText().toString();
+        manufactur_controller = ed_manufactur_controller.getText().toString();
+        model_controller= ed_model_controller.getText().toString();
+
         rectifier_manufactur= ed_rectifier_manufactur.getText().toString();
         rectifier_model = ed_rectifier_model.getText().toString();
         rectifier_rating = ed_rectifier_rating.getText().toString();
@@ -151,13 +157,15 @@ public class Tech_DCPower extends AppCompatActivity {
         dc_cooling_fan_model = ed_dc_cooling_fan_model.getText().toString();
 
         idmanufacturer = idManufacturParent;
-        idmodel = idModelParent;
+//        idmodel = idModelParent;
         RequestBody _idmanufacturer = RequestBody.create(MediaType.parse("text/plain"), idmanufacturer);
-        RequestBody _idmodel = RequestBody.create(MediaType.parse("text/plain"), idmodel);
+        RequestBody _model = RequestBody.create(MediaType.parse("text/plain"), model);
+//        RequestBody _idmodel = RequestBody.create(MediaType.parse("text/plain"), idmodel);
 
         RequestBody _idsitevisit = RequestBody.create(MediaType.parse("text/plain"), id_site);
-        RequestBody _controller_manufactur = RequestBody.create(MediaType.parse("text/plain"), "");
-        RequestBody _model = RequestBody.create(MediaType.parse("text/plain"), model);
+        RequestBody _controller_manufactur = RequestBody.create(MediaType.parse("text/plain"), manufactur_controller);
+        RequestBody _controller_model = RequestBody.create(MediaType.parse("text/plain"), model_controller);
+
         RequestBody _rectifier_manufactur = RequestBody.create(MediaType.parse("text/plain"), rectifier_manufactur);
         RequestBody _rectifier_model = RequestBody.create(MediaType.parse("text/plain"), rectifier_model);
         RequestBody _rectifier_rating = RequestBody.create(MediaType.parse("text/plain"), rectifier_rating);
@@ -195,7 +203,7 @@ public class Tech_DCPower extends AppCompatActivity {
         API_Adapter adapter = PublicFunctions.initRetrofit();
         Observable<PojoResponseInsert> observable = adapter.insert_tech_dcpower(apikey, authkey,ParameterCollections.EXE.INSERT,
                 ParameterCollections.KIND.MOBILE, ParameterCollections.KIND.TECH_DCPOWER,_idsitevisit,_idmanufacturer,_model,
-                _controller_manufactur ,_idmodel,
+                _controller_manufactur ,_controller_model,
                 _rectifier_manufactur, _rectifier_model, _rectifier_rating, _rectifier_kuantiti, _rectifier_spareslot,
                 _arrester_manufactur, _arrester_model, _ac_input_breaker_type,_ac_input_rating,
                 _dc_input_breaker_rating, _dc_input_breaker_kuantiti, _ac_loads,
@@ -213,7 +221,7 @@ public class Tech_DCPower extends AppCompatActivity {
                             pDialog_comfirm.setContext(getApplicationContext());
                             pDialog_comfirm.setText("Add Additional DCPower");
                             pDialog_comfirm.setFrom(4);
-
+                            pDialog_comfirm.setSh(spf);
                             pDialog_comfirm.show(getSupportFragmentManager(), "");
                         }else{
                             Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
@@ -328,16 +336,13 @@ public class Tech_DCPower extends AppCompatActivity {
                                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                                     idManufacturParent = name_manufactur.get(position).id;
 
-                                    //Sementara
-                                    getManufacture_Model_Data(idManufacturParent);
-//                                    getManufacture_Model_Data("1");
 
                                 }
 
                                 @Override
                                 public void onNothingSelected(AdapterView<?> parent) {
                                     //Sementara
-                                    getManufacture_Model_Data(name_manufactur.get(0).id);
+                                    idManufacturParent = name_manufactur.get(0).id;
 //                                    getManufacture_Model_Data("1");
                                 }
                             });
@@ -368,69 +373,70 @@ public class Tech_DCPower extends AppCompatActivity {
 
     }
 
+//
+//    private void getManufacture_Model_Data(String id_manufactur) {
+//        final API_Adapter adapter = PublicFunctions.initRetrofit();
+//        String apikey = getResources().getString(R.string.api_key);
+//        final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
+//        Observable<PojoManufactureDCPowerModel> observable = adapter.get_manufacture_dcpower_model(apikey, authkey, id_manufactur);
+//
+//        observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(new Observer<PojoManufactureDCPowerModel>() {
+//                    @Override
+//                    public void onCompleted() {
+//                        Log.e("Error", "Completed");
+//                        if (name_model.size() > 0 || name_model != null) {
+//
+//                            List<String> array_model = new ArrayList<String>();
+//                            for(int i=0; i < name_model.size(); i++){
+//                                array_model.add(name_model.get(i).name);
+//                            }
+//
+//
+//                            ArrayAdapter<String> adapter_model= new ArrayAdapter<String>(getApplicationContext(),
+//                                    R.layout.spinner_item, array_model);
+//                            adapter_model.setDropDownViewResource(R.layout.spinner_item);
+//                            spinner_model_controller.setAdapter(adapter_model);
+//
+////                            pg_model.setVisibility(View.GONE);
+//                            spinner_model_controller.setVisibility(View.VISIBLE);
+//
+//                            spinner_model_controller.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//                                @Override
+//                                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                                    idModelParent = name_model.get(position).id;
+//                                }
+//
+//                                @Override
+//                                public void onNothingSelected(AdapterView<?> parent) {
+//                                    idModelParent = name_model.get(0).id;
+//                                }
+//                            });
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onError(Throwable e) {
+//                        Log.e("Error", "Eror");
+//
+//                    }
+//
+//                    @Override
+//                    public void onNext(PojoManufactureDCPowerModel pojoRegions) {
+//                        Log.e("Datanya = ", pojoRegions.getData().get(0).getModelName());
+//                        if (pojoRegions.getJsonCode() == 1) {
+//                            if (pojoRegions.getAct().getGet() == 1) {
+//                                name_model = new ArrayList<RowData_Model>();
+//                                for (int i = 0; i < pojoRegions.getData().size(); i++) {
+//                                    name_model.add(new RowData_Model(pojoRegions.getData().get(i).getRanmodelId(),
+//                                            pojoRegions.getData().get(i).getModelName()));
+//                                }
+//                            }
+//                        }
+//
+//                    }
+//                });
+//    }
 
-    private void getManufacture_Model_Data(String id_manufactur) {
-        final API_Adapter adapter = PublicFunctions.initRetrofit();
-        String apikey = getResources().getString(R.string.api_key);
-        final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
-        Observable<PojoManufactureDCPowerModel> observable = adapter.get_manufacture_dcpower_model(apikey, authkey, id_manufactur);
 
-        observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<PojoManufactureDCPowerModel>() {
-                    @Override
-                    public void onCompleted() {
-                        Log.e("Error", "Completed");
-                        if (name_model.size() > 0 || name_model != null) {
-
-                            List<String> array_model = new ArrayList<String>();
-                            for(int i=0; i < name_model.size(); i++){
-                                array_model.add(name_model.get(i).name);
-                            }
-
-
-                            ArrayAdapter<String> adapter_model= new ArrayAdapter<String>(getApplicationContext(),
-                                    R.layout.spinner_item, array_model);
-                            adapter_model.setDropDownViewResource(R.layout.spinner_item);
-                            spinner_model_controller.setAdapter(adapter_model);
-
-//                            pg_model.setVisibility(View.GONE);
-                            spinner_model_controller.setVisibility(View.VISIBLE);
-
-                            spinner_model_controller.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                                @Override
-                                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                                    idModelParent = name_model.get(position).id;
-                                }
-
-                                @Override
-                                public void onNothingSelected(AdapterView<?> parent) {
-                                    idModelParent = name_model.get(0).id;
-                                }
-                            });
-                        }
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        Log.e("Error", "Eror");
-
-                    }
-
-                    @Override
-                    public void onNext(PojoManufactureDCPowerModel pojoRegions) {
-                        Log.e("Datanya = ", pojoRegions.getData().get(0).getModelName());
-                        if (pojoRegions.getJsonCode() == 1) {
-                            if (pojoRegions.getAct().getGet() == 1) {
-                                name_model = new ArrayList<RowData_Model>();
-                                for (int i = 0; i < pojoRegions.getData().size(); i++) {
-                                    name_model.add(new RowData_Model(pojoRegions.getData().get(i).getRanmodelId(),
-                                            pojoRegions.getData().get(i).getModelName()));
-                                }
-                            }
-                        }
-
-                    }
-                });
-
-    }
 }

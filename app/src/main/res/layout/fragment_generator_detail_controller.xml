@@ -166,6 +166,9 @@
 
                     <EditText
                         android:id="@+id/ed_controller_manufactur_name"
+                        android:singleLine="true"
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -183,6 +186,9 @@
 
                     <EditText
                         android:id="@+id/ed_controller_model_name"
+                        android:singleLine="true"
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -210,6 +216,9 @@
                         android:id="@+id/ed_controller_condition"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"
                         />
 
                 </LinearLayout>
@@ -225,8 +234,11 @@
             <ImageView
                 android:id="@+id/img_controller"
                 android:layout_width="match_parent"
-                android:layout_height="200dp" android:scaleType="centerCrop"
-                android:src="@drawable/img_empty" />
+                android:layout_height="200dp"
+                android:padding="10dp"
+                android:src="@drawable/img_empty"
+                android:scaleType="fitCenter"
+                 />
 
         </LinearLayout>
 
@@ -253,6 +265,7 @@
                     android:orientation="horizontal">
                     <RadioButton
                         android:id="@+id/tipe_battery_fitted_yes"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
@@ -283,6 +296,9 @@
 
                     <EditText
                         android:id="@+id/ed_battery_manufactur_name"
+                        android:singleLine="true"
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -300,6 +316,9 @@
 
                     <EditText
                         android:id="@+id/ed_battery_model_name"
+                        android:singleLine="true"
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -325,6 +344,9 @@
 
                     <EditText
                         android:id="@+id/ed_battery_condition"
+                        android:singleLine="true"
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -342,6 +364,9 @@
 
                     <EditText
                         android:id="@+id/ed_battery_voltast"
+                        android:singleLine="true"
+                        android:inputType="numberDecimal"
+                        android:imeOptions="actionDone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -359,8 +384,10 @@
                 <ImageView
                     android:id="@+id/img_battery"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp" android:scaleType="centerCrop"
-                    android:src="@drawable/img_empty" />
+                    android:layout_height="200dp"
+                    android:padding="10dp"
+                    android:src="@drawable/img_empty"
+                    android:scaleType="fitCenter" />
 
             </LinearLayout>
         </LinearLayout>

@@ -14,6 +14,22 @@ public class ParameterCollections {
     public static String TAG_LONGITUDE_NOW = "longi_now";
 
     public static String SH_GENERATOR_SUBMITTED = "rcs_life_generator_submited";
+    public static String SH_GRID_SUBMITTED = "rcs_life_grid_submited";
+    public static String SH_BATTERY_SUBMITTED = "rcs_life_battery_submited";
+    public static String SH_EARTH_SUBMITTED = "rcs_life_earthing_submited";
+    public static String SH_DCPOWER_SUBMITTED = "rcs_life_dcpower_submited";
+    public static String SH_RAN_SUBMITTED = "rcs_life_ran_submited";
+    public static String SH_MICROWAVE_SUBMITTED = "rcs_life_microwave_submited";
+    public static String SH_IP_SUBMITTED = "rcs_life_ip_submited";
+    public static String SH_DWDM_SUBMITTED = "rcs_life_dwdm_submited";
+    public static String SH_SUPERWIFI_SUBMITTED = "rcs_life_superwifi_submited";
+    public static String SH_MPLS_SUBMITTED = "rcs_life_mpls_submited";
+    public static String SH_VSAT_SUBMITTED = "rcs_life_vsat_submited";
+    public static String SH_MIDI_SUBMITTED = "rcs_life_midi_submited";
+    public static String SH_GPON_SUBMITTED = "rcs_life_gpon_submited";
+    public static String SH_COOLINGCABINET_SUBMITTED = "rcs_life_cooling_submited";
+    public static String SH_ADDITIONAL_SUBMITTED = "rcs_life_additional_submited";
+
 
     public static String URL_BASE = "http://cascadiant.dev.onelifesolution.id/";
 //    public static String URL_BASE = "http://api.cascadiant.onelifesolution.id/";

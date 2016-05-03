@@ -89,7 +89,7 @@ public class LoginForm extends AppCompatActivity {
 
                 API_Adapter adapter = retrofit.create(API_Adapter.class);
                 String apikey = getResources().getString(R.string.api_key);
-                Call<PojoResponseLogin> call = adapter.login(apikey,username, password);
+                Call<PojoResponseLogin> call = adapter.login(apikey,"",username, password);
                 Response<PojoResponseLogin> response = call.execute();
                 if(response.isSuccess()){
                     if(response.body() != null){

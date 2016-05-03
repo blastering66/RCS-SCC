@@ -3,9 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBgDark">
+    android:background="@color/colorBgLight">
+
+    <ImageView
+        android:src="@drawable/img_logo_splash"
+        android:layout_centerInParent="true"
+        android:layout_width="200dp"
+        android:layout_height="200dp" />
 
     <TextView
+        android:visibility="gone"
         android:text="SITE CARE"
         android:textSize="@dimen/gigantic"
         android:textColor="@color/color_text_light"

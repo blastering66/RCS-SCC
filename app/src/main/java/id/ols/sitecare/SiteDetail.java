@@ -144,7 +144,7 @@ public class SiteDetail extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         spf = getSharedPreferences(ParameterCollections.SH_NAME, MODE_PRIVATE);
 
-        spf.edit().putBoolean(ParameterCollections.SH_VISIT_FINISHED, false).commit();
+
         site_nameenginer = getIntent().getStringExtra("site_nameenginer");
         site_emailenginer = getIntent().getStringExtra("site_emailenginer");
         site_phoneenginer = getIntent().getStringExtra("site_phoneenginer");

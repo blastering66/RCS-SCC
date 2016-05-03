@@ -64,35 +64,65 @@
 
             <LinearLayout
                 android:padding="10dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <LinearLayout
+
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="Manufactur"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:id="@+id/ed_manufactur_controller"
+                        android:padding="10dp"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:imeOptions="actionNext"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
 
                 <LinearLayout
 
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
                         android:text="Model"
                         android:layout_weight="1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
-                    <Spinner
-                        android:id="@+id/spinner_model_controller"
+                    <EditText
+                        android:id="@+id/ed_model_controller"
                         android:padding="10dp"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:imeOptions="actionNext"
+                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
                 </LinearLayout>
+
+
             </LinearLayout>
 
             <ImageView
                 android:id="@+id/img_controller"
                 android:layout_width="match_parent"
-                android:layout_height="200dp" android:scaleType="centerCrop"
-                android:src="@drawable/img_empty" />
+                android:layout_height="200dp"
+                android:padding="10dp"
+                android:src="@drawable/img_empty"
+                android:scaleType="fitCenter"
+                 />
 
         </LinearLayout>
 
@@ -352,8 +382,11 @@
             <ImageView
                 android:id="@+id/img_ac_breaker"
                 android:layout_width="match_parent"
-                android:layout_height="200dp" android:scaleType="centerCrop"
-                android:src="@drawable/img_empty" />
+                android:layout_height="200dp"
+                android:padding="10dp"
+                android:src="@drawable/img_empty"
+                android:scaleType="fitCenter"
+                />
 
         </LinearLayout>
 
@@ -636,8 +669,10 @@
                     android:id="@+id/img_dc"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/img_empty" />
+                    android:padding="10dp"
+                    android:src="@drawable/img_empty"
+                    android:scaleType="fitCenter"
+                    />
             </LinearLayout>
         </LinearLayout>
 
@@ -722,11 +757,13 @@
 
         <ImageView
             android:id="@+id/img_dc_cooling_fan"
-            android:padding="10dp"
             android:layout_margin="10dp"
             android:layout_width="match_parent"
-            android:layout_height="200dp" android:scaleType="centerCrop"
-            android:src="@drawable/img_empty" />
+            android:layout_height="200dp"
+            android:padding="10dp"
+            android:src="@drawable/img_empty"
+            android:scaleType="fitCenter"
+             />
 
         <Button
             android:id="@+id/btn"

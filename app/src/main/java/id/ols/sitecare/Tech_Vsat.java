@@ -135,7 +135,7 @@ public class Tech_Vsat extends AppCompatActivity {
                         pDialog_comfirm.setContext(getApplicationContext());
                         pDialog_comfirm.setText("Add Additional VSAT");
                         pDialog_comfirm.setFrom(11);
-
+                        pDialog_comfirm.setSh(spf);
                         pDialog_comfirm.show(getSupportFragmentManager(), "");
                     }
 

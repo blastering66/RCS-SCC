@@ -125,6 +125,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="0.0"
+                android:inputType="numberDecimal"
                 android:imeOptions="actionDone"
                 android:singleLine="true"
                 android:textColor="@color/color_text_dark" />
@@ -140,8 +141,10 @@
                 android:id="@+id/img"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/img_empty" />
+                android:padding="10dp"
+                android:src="@drawable/img_empty"
+                android:scaleType="fitCenter"
+                />
         </LinearLayout>
 
         <Button

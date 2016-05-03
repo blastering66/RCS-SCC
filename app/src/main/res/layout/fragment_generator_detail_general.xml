@@ -111,6 +111,9 @@
 
                     <EditText
                         android:id="@+id/ed_ats_condition"
+                        android:singleLine="true"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -128,8 +131,11 @@
                 <ImageView
                     android:id="@+id/img_ats"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp" android:scaleType="centerCrop"
-                    android:src="@drawable/img_empty" />
+                    android:layout_height="200dp"
+                    android:padding="10dp"
+                    android:src="@drawable/img_empty"
+                    android:scaleType="fitCenter"
+                    />
 
             </LinearLayout>
         </LinearLayout>
@@ -158,6 +164,7 @@
                     android:orientation="horizontal">
                     <RadioButton
                         android:id="@+id/tipe_amf_yes"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
@@ -188,6 +195,9 @@
 
                     <EditText
                         android:id="@+id/ed_amf_manufactur_name"
+                        android:singleLine="true"
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -205,6 +215,9 @@
 
                     <EditText
                         android:id="@+id/ed_amf_model_name"
+                        android:singleLine="true"
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -230,6 +243,9 @@
 
                     <EditText
                         android:id="@+id/ed_amf_condition"
+                        android:singleLine="true"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -247,8 +263,11 @@
                 <ImageView
                     android:id="@+id/img_amf"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp" android:scaleType="centerCrop"
-                    android:src="@drawable/img_empty" />
+                    android:layout_height="200dp"
+                    android:padding="10dp"
+                    android:src="@drawable/img_empty"
+                    android:scaleType="fitCenter"
+                     />
 
             </LinearLayout>
         </LinearLayout>
@@ -276,6 +295,9 @@
 
                     <EditText
                         android:id="@+id/ed_amf_capacity"
+                        android:singleLine="true"
+                        android:inputType="numberDecimal"
+                        android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -301,6 +323,9 @@
 
                     <EditText
                         android:id="@+id/ed_amf_capacity_condition"
+                        android:singleLine="true"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -318,8 +343,11 @@
                 <ImageView
                     android:id="@+id/img_amf_capacity"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp" android:scaleType="centerCrop"
-                    android:src="@drawable/img_empty" />
+                    android:layout_height="200dp"
+                    android:padding="10dp"
+                    android:src="@drawable/img_empty"
+                    android:scaleType="fitCenter"
+                    />
 
             </LinearLayout>
         </LinearLayout>
@@ -347,6 +375,7 @@
                     android:orientation="horizontal">
                     <RadioButton
                         android:id="@+id/tipe_fullprobe_fitted_yes"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
@@ -377,6 +406,9 @@
 
                     <EditText
                         android:id="@+id/ed_fullprobe_manufactur_name"
+                        android:singleLine="true"
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -394,6 +426,9 @@
 
                     <EditText
                         android:id="@+id/ed_fullprobe_model_name"
+                        android:singleLine="true"
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -419,6 +454,9 @@
 
                     <EditText
                         android:id="@+id/ed_fullprobe_condition"
+                        android:singleLine="true"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -436,8 +474,11 @@
                 <ImageView
                     android:id="@+id/img_fullprobe"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp" android:scaleType="centerCrop"
-                    android:src="@drawable/img_empty" />
+                    android:layout_height="200dp"
+                    android:padding="10dp"
+                    android:src="@drawable/img_empty"
+                    android:scaleType="fitCenter"
+                    />
 
             </LinearLayout>
         </LinearLayout>

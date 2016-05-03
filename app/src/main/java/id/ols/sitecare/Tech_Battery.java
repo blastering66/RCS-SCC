@@ -141,7 +141,7 @@ public class Tech_Battery extends AppCompatActivity{
                             pDialog_comfirm.setContext(getApplicationContext());
                             pDialog_comfirm.setText("Add Additional Battery");
                             pDialog_comfirm.setFrom(2);
-
+                            pDialog_comfirm.setSh(spf);
                             pDialog_comfirm.show(getSupportFragmentManager(), "");
                         } else {
                             Toast.makeText(getApplicationContext(), "Failed! Error = " + message, Toast.LENGTH_LONG).show();

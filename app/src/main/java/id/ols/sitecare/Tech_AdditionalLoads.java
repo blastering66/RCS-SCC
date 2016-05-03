@@ -17,6 +17,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import id.blastering99.htmlloader.CustomProgressDialog;
+import id.ols.dialogs.DialogConfirmation;
 import id.ols.models.PojoResponseInsert;
 import id.ols.rest_adapter.API_Adapter;
 import id.ols.util.ParameterCollections;
@@ -181,11 +182,20 @@ public class Tech_AdditionalLoads extends AppCompatActivity {
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<PojoResponseInsert>() {
+                    boolean isSukses = false;
                     @Override
                     public void onCompleted() {
                         pDialog.dismiss();
-                        Toast.makeText(getApplicationContext(), "Sukses", Toast.LENGTH_LONG).show();
-                        Log.e("Task", "Complete");
+                        if (isSukses) {
+                            DialogConfirmation pDialog_comfirm = new DialogConfirmation();
+                            pDialog_comfirm.setContext(getApplicationContext());
+                            pDialog_comfirm.setText("Add Additional Loads");
+                            pDialog_comfirm.setFrom(15);
+                            pDialog_comfirm.setSh(spf);
+                            pDialog_comfirm.show(getSupportFragmentManager(), "");
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Failed! Error = " + message, Toast.LENGTH_LONG).show();
+                        }
                     }
 
                     @Override
@@ -199,8 +209,7 @@ public class Tech_AdditionalLoads extends AppCompatActivity {
                     public void onNext(PojoResponseInsert pojoResponseInsert) {
                         if (pojoResponseInsert.getJsonCode() == 1) {
                             Log.e("Sukses", "");
-                            setResult(RESULT_OK);
-                            finish();
+                            isSukses = true;
                         }
                     }
                 });
