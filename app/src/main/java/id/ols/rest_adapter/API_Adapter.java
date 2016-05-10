@@ -4,6 +4,7 @@ import com.squareup.okhttp.RequestBody;
 
 import java.util.List;
 
+import id.ols.models.PojoCluster;
 import id.ols.models.PojoManufactureDCPower;
 import id.ols.models.PojoManufactureDCPowerModel;
 import id.ols.models.PojoManufactureDwdm;
@@ -28,6 +29,8 @@ import id.ols.models.PojoRegions;
 import id.ols.models.PojoResponseInsert;
 import id.ols.models.PojoResponseInsertSite;
 import id.ols.models.PojoResponseLogin;
+import id.ols.models.PojoSubCluster;
+import id.ols.models.PojoSubRegions;
 import id.ols.models.PojoWeather;
 import id.ols.util.ParameterCollections;
 import retrofit.Call;
@@ -67,19 +70,26 @@ public interface API_Adapter {
             @Header("Auth-Key") String authkey
     );
 
-    @GET("API.php?exe=get&type=mobile&kind=region")
-    Observable<PojoRegions> get_sub_regions(
+    @GET("API.php?exe=get&type=mobile&kind=subregion")
+    Observable<PojoSubRegions> get_sub_regions(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
-            @Query("region_idparent") String id
+            @Query("region_id") String id
 
     );
 
-    @GET("API.php?exe=get&type=mobile&kind=region")
-    Observable<PojoRegions> get_cluster_regions(
+    @GET("API.php?exe=get&type=mobile&kind=cluster")
+    Observable<PojoCluster> get_cluster_regions(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
-            @Query("region_idparent") String id
+            @Query("subregion_id") String id
+    );
+
+    @GET("API.php?exe=get&type=mobile&kind=subcluster")
+    Observable<PojoSubCluster> get_sub_cluster_regions(
+            @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey,
+            @Query("cluster_id") String id
     );
 
     @GET("API.php?exe=get&type=mobile&kind=ran_model")

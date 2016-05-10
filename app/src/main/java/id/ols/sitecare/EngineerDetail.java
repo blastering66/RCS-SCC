@@ -49,7 +49,8 @@ public class EngineerDetail extends AppCompatActivity {
                 if (!ed_username.getText().toString().equals("") &&
                         !ed_email.getText().toString().equals("") &&
                         !ed_phone.getText().toString().equals("")) {
-                    Intent intent = new Intent(getApplicationContext(), SiteDetail.class);
+//                    Intent intent = new Intent(getApplicationContext(), SiteDetail.class);
+                    Intent intent = new Intent(getApplicationContext(), SiteDetail_New.class);
                     intent.putExtra("site_nameenginer", ed_username.getText().toString());
                     intent.putExtra("site_emailenginer", ed_email.getText().toString());
                     intent.putExtra("site_phoneenginer", ed_phone.getText().toString());

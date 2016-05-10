@@ -45,6 +45,11 @@
             android:screenOrientation="portrait"
             />
 
+        <activity android:name=".SiteDetail_New"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"
+            />
+
         <activity android:name=".Tech_Grid"
             android:screenOrientation="portrait"
             />

@@ -103,9 +103,6 @@ public class PojoRegions {
         @SerializedName("region_name")
         @Expose
         private String regionName;
-        @SerializedName("region_idparent")
-        @Expose
-        private String regionIdparent;
 
         /**
          *
@@ -144,23 +141,6 @@ public class PojoRegions {
             this.regionName = regionName;
         }
 
-        /**
-         *
-         * @return
-         * The regionIdparent
-         */
-        public String getRegionIdparent() {
-            return regionIdparent;
-        }
-
-        /**
-         *
-         * @param regionIdparent
-         * The region_idparent
-         */
-        public void setRegionIdparent(String regionIdparent) {
-            this.regionIdparent = regionIdparent;
-        }
 
     }
 }

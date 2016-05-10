@@ -45,9 +45,11 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import id.blastering99.htmlloader.CustomProgressDialog;
+import id.ols.models.PojoCluster;
 import id.ols.models.PojoRegions;
 import id.ols.models.PojoResponseInsert;
 import id.ols.models.PojoResponseInsertSite;
+import id.ols.models.PojoSubRegions;
 import id.ols.models.PojoWeather;
 import id.ols.models.RowData_Regions;
 import id.ols.models.RowData_Weather;
@@ -335,9 +337,9 @@ public class SiteDetail extends AppCompatActivity {
         final API_Adapter adapter = PublicFunctions.initRetrofit();
         String apikey = getResources().getString(R.string.api_key);
         final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
-        Observable<PojoRegions> observable = adapter.get_sub_regions(apikey, authkey,idRegions);
+        Observable<PojoSubRegions> observable = adapter.get_sub_regions(apikey, authkey,idRegions);
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<PojoRegions>() {
+                .subscribe(new Observer<PojoSubRegions>() {
                     boolean isSukses= false;
                     String message= "Something Wrong";
                     @Override
@@ -386,7 +388,7 @@ public class SiteDetail extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onNext(PojoRegions pojoRegions) {
+                    public void onNext(PojoSubRegions pojoRegions) {
                         Log.e("Datanya = ", pojoRegions.getData().get(0).getRegionName());
                         if (pojoRegions.getJsonCode() == 1) {
                             if (pojoRegions.getAct().getGet() == 1) {
@@ -410,9 +412,9 @@ public class SiteDetail extends AppCompatActivity {
         final API_Adapter adapter = PublicFunctions.initRetrofit();
         String apikey = getResources().getString(R.string.api_key);
         final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
-        Observable<PojoRegions> observable = adapter.get_cluster_regions(apikey,authkey, idSubRegions);
+        Observable<PojoCluster> observable = adapter.get_cluster_regions(apikey,authkey, idSubRegions);
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<PojoRegions>() {
+                .subscribe(new Observer<PojoCluster>() {
                     @Override
                     public void onCompleted() {
                         Log.e("Error", "Completed");
@@ -454,7 +456,7 @@ public class SiteDetail extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onNext(PojoRegions pojoRegions) {
+                    public void onNext(PojoCluster pojoRegions) {
                         Log.e("Datanya = ", pojoRegions.getData().get(0).getRegionName());
                         if (pojoRegions.getJsonCode() == 1) {
                             if (pojoRegions.getAct().getGet() == 1) {
