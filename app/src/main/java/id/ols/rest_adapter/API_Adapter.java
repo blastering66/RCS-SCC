@@ -92,6 +92,14 @@ public interface API_Adapter {
             @Query("cluster_id") String id
     );
 
+    @GET("API.php?exe=get&type=mobile&kind=search_siteid")
+    Observable<PojoSubCluster> get_site_name_id(
+            @Header("Api-Key") String apikey,
+            @Header("Auth-Key") String authkey,
+            @Query("subcluster_id") String id,
+            @Query("site_codeid") String site_codeid
+    );
+
     @GET("API.php?exe=get&type=mobile&kind=ran_model")
     Observable<PojoManufactureRANModel> get_cluster(
             @Header("Api-Key") String apikey,

@@ -11,20 +11,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ccab0767-9c0c-4789-b3ba-3dade43abb06" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoSubCluster.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/SiteDetail_New.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_sitedetail_new.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoSite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/models/RowData_Site.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sitedetail_verification.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_sitedetail_new.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/rest_adapter/API_Adapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/rest_adapter/API_Adapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/EngineerDetail.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/EngineerDetail.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoCluster.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoCluster.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoRegions.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoRegions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoSubRegions.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoSubRegions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/SiteDetail.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/SiteDetail.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/SiteDetail_New.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/SiteDetail_New.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -47,15 +43,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SiteDetail.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/SiteDetail.java">
+      <file leaf-file-name="EngineerDetail.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/EngineerDetail.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="402" column="29" selection-start-line="402" selection-start-column="29" selection-end-line="402" selection-end-column="29" />
+              <caret line="52" column="79" selection-start-line="52" selection-start-column="79" selection-end-line="52" selection-end-column="79" />
               <folding>
                 <element signature="imports" expanded="false" />
-                <element signature="e#3621#3622#0" expanded="false" />
-                <element signature="e#3703#3704#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -64,35 +58,58 @@
       <file leaf-file-name="SiteDetail_New.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/SiteDetail_New.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="65" column="25" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
+            <state vertical-scroll-proportion="-3.851852">
+              <caret line="643" column="70" selection-start-line="643" selection-start-column="70" selection-end-line="643" selection-end-column="70" />
+              <folding>
+                <element signature="e#5686#5694#0" expanded="true" />
+                <element signature="e#6962#7004#0" expanded="true" />
+                <element signature="e#10231#10273#0" expanded="true" />
+                <element signature="e#11028#11036#0" expanded="true" />
+                <element signature="e#14142#14184#0" expanded="true" />
+                <element signature="e#17976#18018#0" expanded="true" />
+                <element signature="e#18668#18676#0" expanded="true" />
+                <element signature="e#18975#18983#0" expanded="true" />
+                <element signature="e#21442#21484#0" expanded="true" />
+                <element signature="e#29786#29828#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="API_Adapter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/rest_adapter/API_Adapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6549865">
+              <caret line="252" column="25" selection-start-line="252" selection-start-column="25" selection-end-line="252" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_sitedetail_new.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_sitedetail_new.xml">
+      <file leaf-file-name="Tech_Battery.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Battery.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24860853">
-              <caret line="131" column="37" selection-start-line="131" selection-start-column="37" selection-end-line="131" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="173" column="43" selection-start-line="173" selection-start-column="43" selection-end-line="173" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#2327#2328#0" expanded="false" />
+                <element signature="e#2409#2410#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_battery.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_battery.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.206897">
+              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
           </provider>
           <provider editor-type-id="android-designer">
             <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="API_Adapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/rest_adapter/API_Adapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="73" column="31" selection-start-line="73" selection-start-column="31" selection-end-line="73" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
           </provider>
         </entry>
       </file>
@@ -1774,8 +1791,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Generators_Detail_1_Controller.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Generators_Detail_2_General.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/LoginForm.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_sitedetail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_earthing.xml" />
@@ -1819,12 +1834,14 @@
         <option value="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoSubRegions.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoCluster.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoSubCluster.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/id/ols/rest_adapter/API_Adapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/SiteDetail.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/EngineerDetail.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/SiteDetail_New.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-land/activity_sitedetail_new.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_sitedetail_verification.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoSite.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ols/rest_adapter/API_Adapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/SiteDetail_New.java" />
       </list>
     </option>
   </component>
@@ -1841,7 +1858,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="712" />
+    <option name="height" value="709" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -1868,7 +1885,6 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1999,13 +2015,32 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="manifests" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ols" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RCS-SCC" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="ProjectPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2025,8 +2060,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="id.ols.sitecare" />
       <recent name="id.ols.models" />
+      <recent name="id.ols.sitecare" />
       <recent name="id.ols.util" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -2210,7 +2245,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="712" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="709" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2219,12 +2254,13 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32718122" sideWeight="0.49192247" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32715008" sideWeight="0.49192247" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39597315" sideWeight="0.49676898" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39597315" sideWeight="0.50807756" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -2234,13 +2270,12 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39597315" sideWeight="0.49676898" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -2592,38 +2627,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_RAN.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.91957104">
-          <caret line="172" column="51" selection-start-line="172" selection-start-column="51" selection-end-line="172" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Mpls.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.91957104">
-          <caret line="137" column="51" selection-start-line="137" selection-start-column="51" selection-end-line="137" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Midi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.91957104">
-          <caret line="137" column="51" selection-start-line="137" selection-start-column="51" selection-end-line="137" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Microwave.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.91957104">
-          <caret line="137" column="51" selection-start-line="137" selection-start-column="51" selection-end-line="137" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_IP.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.91957104">
@@ -2671,14 +2674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.04021448">
           <caret line="114" column="55" selection-start-line="114" selection-start-column="55" selection-end-line="114" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Battery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.04021448">
-          <caret line="147" column="25" selection-start-line="138" selection-start-column="24" selection-end-line="147" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -2950,11 +2945,11 @@
         <state vertical-scroll-proportion="0.5481928">
           <caret line="102" column="32" selection-start-line="102" selection-start-column="32" selection-end-line="102" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2328#2329#0" expanded="true" />
-            <element signature="e#2369#2370#0" expanded="true" />
-            <element signature="e#2516#2517#0" expanded="true" />
-            <element signature="e#2568#2569#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#2328#2329#0" expanded="false" />
+            <element signature="e#2369#2370#0" expanded="false" />
+            <element signature="e#2516#2517#0" expanded="false" />
+            <element signature="e#2568#2569#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2971,13 +2966,13 @@
         <state vertical-scroll-proportion="0.41265061">
           <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1987#1988#0" expanded="true" />
-            <element signature="e#2026#2027#0" expanded="true" />
-            <element signature="e#2165#2166#0" expanded="true" />
-            <element signature="e#2213#2214#0" expanded="true" />
-            <element signature="e#2335#2336#0" expanded="true" />
-            <element signature="e#2376#2377#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1987#1988#0" expanded="false" />
+            <element signature="e#2026#2027#0" expanded="false" />
+            <element signature="e#2165#2166#0" expanded="false" />
+            <element signature="e#2213#2214#0" expanded="false" />
+            <element signature="e#2335#2336#0" expanded="false" />
+            <element signature="e#2376#2377#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2987,10 +2982,10 @@
         <state vertical-scroll-proportion="0.5933735">
           <caret line="143" column="0" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
           <folding>
-            <element signature="e#2326#2327#0" expanded="true" />
-            <element signature="e#2367#2368#0" expanded="true" />
-            <element signature="e#2514#2515#0" expanded="true" />
-            <element signature="e#2566#2567#0" expanded="true" />
+            <element signature="e#2326#2327#0" expanded="false" />
+            <element signature="e#2367#2368#0" expanded="false" />
+            <element signature="e#2514#2515#0" expanded="false" />
+            <element signature="e#2566#2567#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2999,28 +2994,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22590362">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/rest_adapter/API_Adapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="31" selection-start-line="73" selection-start-column="31" selection-end-line="73" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/SiteDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="402" column="29" selection-start-line="402" selection-start-column="29" selection-end-line="402" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#3621#3622#0" expanded="false" />
-            <element signature="e#3703#3704#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3045,39 +3018,149 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/SiteDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="402" column="29" selection-start-line="402" selection-start-column="29" selection-end-line="402" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#3621#3622#0" expanded="false" />
+            <element signature="e#3703#3704#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/LoginForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
-          <folding />
+          <caret line="127" column="73" selection-start-line="127" selection-start-column="73" selection-end-line="127" selection-end-column="73" />
+          <folding>
+            <element signature="e#1357#1358#0" expanded="false" />
+            <element signature="e#1404#1405#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Splashscreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="79" selection-start-line="51" selection-start-column="79" selection-end-line="51" selection-end-column="79" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/EngineerDetail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44542253">
-          <caret line="52" column="86" selection-start-line="52" selection-start-column="86" selection-end-line="52" selection-end-column="86" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="52" column="79" selection-start-line="52" selection-start-column="79" selection-end-line="52" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/SiteDetail_New.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/models/RowData_Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13204226">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/Tech_Battery.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="25" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
-          <folding />
+          <caret line="173" column="43" selection-start-line="173" selection-start-column="43" selection-end-line="173" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2327#2328#0" expanded="false" />
+            <element signature="e#2409#2410#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_sitedetail_new.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_battery.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24860853">
-          <caret line="131" column="37" selection-start-line="131" selection-start-column="37" selection-end-line="131" selection-end-column="37" />
+        <state vertical-scroll-proportion="-6.206897">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_sitedetail_verification.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41604477">
+          <caret line="99" column="59" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoSite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40431267">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#456#463#0" expanded="false" />
+            <element signature="e#647#648#0" expanded="false" />
+            <element signature="e#678#679#0" expanded="false" />
+            <element signature="e#794#795#0" expanded="false" />
+            <element signature="e#834#835#0" expanded="false" />
+            <element signature="e#914#915#0" expanded="false" />
+            <element signature="e#940#941#0" expanded="false" />
+            <element signature="e#1031#1032#0" expanded="false" />
+            <element signature="e#1061#1062#0" expanded="false" />
+            <element signature="e#1151#1152#0" expanded="false" />
+            <element signature="e#1178#1179#0" expanded="false" />
+            <element signature="e#1281#1282#0" expanded="false" />
+            <element signature="e#1313#1314#0" expanded="false" />
+            <element signature="e#1420#1421#0" expanded="false" />
+            <element signature="e#1458#1459#0" expanded="false" />
+            <element signature="e#2053#2054#0" expanded="false" />
+            <element signature="e#2090#2091#0" expanded="false" />
+            <element signature="e#2221#2222#0" expanded="false" />
+            <element signature="e#2265#2266#0" expanded="false" />
+            <element signature="e#2386#2387#0" expanded="false" />
+            <element signature="e#2427#2428#0" expanded="false" />
+            <element signature="e#2574#2575#0" expanded="false" />
+            <element signature="e#2626#2627#0" expanded="false" />
+            <element signature="e#2743#2744#0" expanded="false" />
+            <element signature="e#2782#2783#0" expanded="false" />
+            <element signature="e#2921#2922#0" expanded="false" />
+            <element signature="e#2969#2970#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/SiteDetail_New.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.851852">
+          <caret line="643" column="70" selection-start-line="643" selection-start-column="70" selection-end-line="643" selection-end-column="70" />
+          <folding>
+            <element signature="e#5686#5694#0" expanded="true" />
+            <element signature="e#6962#7004#0" expanded="true" />
+            <element signature="e#10231#10273#0" expanded="true" />
+            <element signature="e#11028#11036#0" expanded="true" />
+            <element signature="e#14142#14184#0" expanded="true" />
+            <element signature="e#17976#18018#0" expanded="true" />
+            <element signature="e#18668#18676#0" expanded="true" />
+            <element signature="e#18975#18983#0" expanded="true" />
+            <element signature="e#21442#21484#0" expanded="true" />
+            <element signature="e#29786#29828#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ols/rest_adapter/API_Adapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6549865">
+          <caret line="252" column="25" selection-start-line="252" selection-start-column="25" selection-end-line="252" selection-end-column="25" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

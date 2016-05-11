@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -42,9 +43,11 @@ import id.blastering99.htmlloader.CustomProgressDialog;
 import id.ols.models.PojoCluster;
 import id.ols.models.PojoRegions;
 import id.ols.models.PojoResponseInsertSite;
+import id.ols.models.PojoSubCluster;
 import id.ols.models.PojoSubRegions;
 import id.ols.models.PojoWeather;
 import id.ols.models.RowData_Regions;
+import id.ols.models.RowData_Site;
 import id.ols.models.RowData_Weather;
 import id.ols.rest_adapter.API_Adapter;
 import id.ols.util.CameraCapture;
@@ -70,10 +73,12 @@ public class SiteDetail_New extends AppCompatActivity {
     Spinner spinner_Regions_Sub;
     @Bind(R.id.spinner_regions_sub_cluster)
     Spinner spinner_Regions_Sub_Cluster;
+    @Bind(R.id.spinner_regions_sub_cluster_sub)
+    Spinner spinner_Regions_Sub_Cluster_Sub;
     @Bind(R.id.ed_site_name)
     EditText ed_site_name;
     @Bind(R.id.ed_site_id)
-    EditText ed_site_id;
+    AutoCompleteTextView ed_site_id;
     @Bind(R.id.ed_site_keeper)
     EditText ed_site_keeper;
     @Bind(R.id.ed_phone)
@@ -101,6 +106,7 @@ public class SiteDetail_New extends AppCompatActivity {
     @Bind(R.id.pg_regions)ProgressBar pg_regions;
     @Bind(R.id.pg_regions_sub)ProgressBar pg_regions_sub;
     @Bind(R.id.pg_regions_cluster)ProgressBar pg_regions_cluster;
+    @Bind(R.id.pg_regions_sub_cluster_sub)ProgressBar pg_regions_cluster_sub;
     @Bind(R.id.pg_weather)ProgressBar pg_weather;
 
     @OnClick(R.id.img)
@@ -118,17 +124,17 @@ public class SiteDetail_New extends AppCompatActivity {
 
     boolean isSukses = false;
     String message = "";
-    List<RowData_Regions> name_regions, name_sub_regions,name_cluster_regions;
+    List<RowData_Regions> name_regions, name_sub_regions,name_cluster_regions,name_subcluster_regions;
     List<RowData_Weather> name_weather;
 
     String site_nameenginer, site_emailenginer, site_phoneenginer;
-    String idRegionParent, idRegionParent_Sub, idRegionParent_Cluster;
+    String idRegionParent, idRegionParent_Sub, idRegionParent_Cluster, idRegionParent_Cluster_Sub;
     String idWeatherSelected ="1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sitedetail_new);
+        setContentView(R.layout.activity_sitedetail_verification);
         ButterKnife.bind(this);
         activity = this;
 
@@ -148,6 +154,22 @@ public class SiteDetail_New extends AppCompatActivity {
         String formattedDate = df.format(c.getTime());
         time_now = formattedDate;
         ed_time.setText(formattedDate);
+
+        List<RowData_Site> data_site = new ArrayList<>();
+        data_site.add(new RowData_Site("20BTU173","TEGALREJOMLG"));
+        data_site.add(new RowData_Site("20SMP062", "TALAGASMPPL"));
+        data_site.add(new RowData_Site("20SIT056", "SUMBERWARU"));
+
+        ArrayList<String> array_site = new ArrayList<>();
+        for(int i=0; i<  data_site.size(); i++){
+            array_site.add(data_site.get(i).name);
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
+                R.layout.spinner_item, array_site);
+        ed_site_id.setAdapter(adapter);
+
+//        ed_site_id.setCompletionHint();
 
         getRegionsData();
         getWeatherData();
@@ -251,7 +273,7 @@ public class SiteDetail_New extends AppCompatActivity {
         final API_Adapter adapter = PublicFunctions.initRetrofit();
         String apikey = getResources().getString(R.string.api_key);
         final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
-        Observable<PojoRegions> observable = adapter.get_regions(apikey,authkey);
+        Observable<PojoRegions> observable = adapter.get_regions(apikey, authkey);
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<PojoRegions>() {
@@ -327,7 +349,7 @@ public class SiteDetail_New extends AppCompatActivity {
         final API_Adapter adapter = PublicFunctions.initRetrofit();
         String apikey = getResources().getString(R.string.api_key);
         final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
-        Observable<PojoSubRegions> observable = adapter.get_sub_regions(apikey, authkey,idRegions);
+        Observable<PojoSubRegions> observable = adapter.get_sub_regions(apikey, authkey, idRegions);
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<PojoSubRegions>() {
                     boolean isSukses= false;
@@ -402,7 +424,7 @@ public class SiteDetail_New extends AppCompatActivity {
         final API_Adapter adapter = PublicFunctions.initRetrofit();
         String apikey = getResources().getString(R.string.api_key);
         final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
-        Observable<PojoCluster> observable = adapter.get_cluster_regions(apikey,authkey, idSubRegions);
+        Observable<PojoCluster> observable = adapter.get_cluster_regions(apikey, authkey, idSubRegions);
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<PojoCluster>() {
                     @Override
@@ -428,7 +450,7 @@ public class SiteDetail_New extends AppCompatActivity {
                                 @Override
                                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                                     idRegionParent_Cluster = name_cluster_regions.get(position).id;
-//                                    getClusterData(idRegionParent_Sub);
+                                    getSubClusterData(idRegionParent_Cluster);
                                 }
 
                                 @Override
@@ -453,6 +475,71 @@ public class SiteDetail_New extends AppCompatActivity {
                                 name_cluster_regions= new ArrayList<RowData_Regions>();
                                 for (int i = 0; i < pojoRegions.getData().size(); i++) {
                                     name_cluster_regions.add(new RowData_Regions(pojoRegions.getData().get(i).getRegionId(),
+                                            pojoRegions.getData().get(i).getRegionName()));
+                                }
+                            }
+                        }
+
+                    }
+                });
+
+    }
+
+    private void getSubClusterData(String idSubRegions) {
+        final API_Adapter adapter = PublicFunctions.initRetrofit();
+        String apikey = getResources().getString(R.string.api_key);
+        final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
+        Observable<PojoSubCluster> observable = adapter.get_sub_cluster_regions(apikey, authkey, idSubRegions);
+        observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<PojoSubCluster>() {
+                    @Override
+                    public void onCompleted() {
+                        Log.e("Error", "Completed");
+
+                        if (name_subcluster_regions.size() > 0 || name_subcluster_regions != null) {
+
+                            List<String> array_cluster_regions = new ArrayList<String>();
+                            for(int i=0; i < name_subcluster_regions.size(); i++){
+                                array_cluster_regions.add(name_subcluster_regions.get(i).name);
+                            }
+
+                            ArrayAdapter<String> adapter_cluster_regions = new ArrayAdapter<String>(getApplicationContext(),
+                                    R.layout.spinner_item, array_cluster_regions);
+                            adapter_cluster_regions.setDropDownViewResource(R.layout.spinner_item);
+                            spinner_Regions_Sub_Cluster_Sub.setAdapter(adapter_cluster_regions);
+
+                            pg_regions_cluster_sub.setVisibility(View.GONE);
+                            spinner_Regions_Sub_Cluster_Sub.setVisibility(View.VISIBLE);
+
+                            spinner_Regions_Sub_Cluster_Sub.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                @Override
+                                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                    idRegionParent_Cluster_Sub = name_subcluster_regions.get(position).id;
+//                                    getClusterData(idRegionParent_Sub);
+                                }
+
+                                @Override
+                                public void onNothingSelected(AdapterView<?> parent) {
+                                    idRegionParent_Cluster_Sub = name_subcluster_regions.get(0).id;
+                                }
+                            });
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.e("Error", "Eror");
+
+                    }
+
+                    @Override
+                    public void onNext(PojoSubCluster pojoRegions) {
+                        Log.e("Datanya = ", pojoRegions.getData().get(0).getRegionName());
+                        if (pojoRegions.getJsonCode() == 1) {
+                            if (pojoRegions.getAct().getGet() == 1) {
+                                name_subcluster_regions= new ArrayList<RowData_Regions>();
+                                for (int i = 0; i < pojoRegions.getData().size(); i++) {
+                                    name_subcluster_regions.add(new RowData_Regions(pojoRegions.getData().get(i).getRegionId(),
                                             pojoRegions.getData().get(i).getRegionName()));
                                 }
                             }
