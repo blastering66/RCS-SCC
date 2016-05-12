@@ -106,7 +106,7 @@
                         android:padding="10dp"
                         android:inputType="text"
                         android:singleLine="true"
-                        android:imeOptions="actionNext"
+                        android:imeOptions="actionDone"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
@@ -199,7 +199,7 @@
 
                     <EditText
                         android:id="@+id/ed_rectifier_rating"
-                        android:inputType="text"
+                        android:inputType="numberDecimal"
                         android:singleLine="true"
                         android:imeOptions="actionNext"
                         android:layout_width="match_parent"
@@ -228,10 +228,10 @@
 
                     <EditText
                         android:id="@+id/ed_rectifier_kuantiti"
-                        android:inputType="text"
+                        android:inputType="number"
                         android:singleLine="true"
                         android:imeOptions="actionNext"
-                        android:hint="0.0"
+                        android:hint="0"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
@@ -250,12 +250,12 @@
 
                     <EditText
                         android:id="@+id/ed_rectifier_spareslot"
-                        android:inputType="text"
+                        android:inputType="number"
                         android:singleLine="true"
                         android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="0.0" />
+                        android:hint="0" />
                 </LinearLayout>
 
 
@@ -369,7 +369,7 @@
                     <EditText
                         android:id="@+id/ed_ac_input_rating"
                         android:singleLine="true"
-                        android:inputType="text"
+                        android:inputType="numberDecimal"
                         android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -421,7 +421,7 @@
                     <EditText
                         android:id="@+id/ed_dc_input_breaker_rating"
                         android:singleLine="true"
-                        android:inputType="text"
+                        android:inputType="numberDecimal"
                         android:imeOptions="actionNext"
                         android:hint="0.0"
                         android:layout_width="match_parent"
@@ -443,11 +443,11 @@
                     <EditText
                         android:id="@+id/ed_dc_input_breaker_kuantiti"
                         android:singleLine="true"
-                        android:inputType="text"
+                        android:inputType="number"
                         android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="0.0" />
+                        android:hint="0" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -473,7 +473,7 @@
                     <EditText
                         android:id="@+id/ed_dc_input_breaker_rating_2"
                         android:singleLine="true"
-                        android:inputType="text"
+                        android:inputType="numberDecimal"
                         android:imeOptions="actionNext"
                         android:hint="0.0"
                         android:layout_width="match_parent"
@@ -495,7 +495,7 @@
                     <EditText
                         android:id="@+id/ed_dc_input_breaker_kuantiti_2"
                         android:singleLine="true"
-                        android:inputType="text"
+                        android:inputType="numberDecimal"
                         android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -525,7 +525,7 @@
                     <EditText
                         android:id="@+id/ed_dc_input_breaker_rating_3"
                         android:singleLine="true"
-                        android:inputType="text"
+                        android:inputType="numberDecimal"
                         android:imeOptions="actionNext"
                         android:hint="0.0"
                         android:layout_width="match_parent"
@@ -547,7 +547,7 @@
                     <EditText
                         android:id="@+id/ed_dc_input_breaker_kuantiti_3"
                         android:singleLine="true"
-                        android:inputType="text"
+                        android:inputType="numberDecimal"
                         android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -576,7 +576,7 @@
                     <EditText
                         android:id="@+id/ed_dc_input_breaker_rating_4"
                         android:singleLine="true"
-                        android:inputType="text"
+                        android:inputType="numberDecimal"
                         android:imeOptions="actionNext"
                         android:hint="0.0"
                         android:layout_width="match_parent"
@@ -598,7 +598,7 @@
                     <EditText
                         android:id="@+id/ed_dc_input_breaker_kuantiti_4"
                         android:singleLine="true"
-                        android:inputType="text"
+                        android:inputType="numberDecimal"
                         android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -628,7 +628,7 @@
                     <EditText
                         android:id="@+id/ed_dc_input_breaker_rating_5"
                         android:singleLine="true"
-                        android:inputType="text"
+                        android:inputType="numberDecimal"
                         android:imeOptions="actionNext"
                         android:hint="0.0"
                         android:layout_width="match_parent"
@@ -650,11 +650,11 @@
                     <EditText
                         android:id="@+id/ed_dc_input_breaker_kuantiti_5"
                         android:singleLine="true"
-                        android:inputType="text"
-                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:imeOptions="actionDone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="0.0" />
+                        android:hint="0" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -691,8 +691,9 @@
                     android:id="@+id/ed_ac_loads"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
                     android:hint="0.0"
-                    android:imeOptions="actionDone"
+                    android:imeOptions="actionNext"
                     android:singleLine="true"
                     android:textColor="@color/color_text_dark" />
         </LinearLayout>
@@ -724,7 +725,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="0.0"
-                    android:imeOptions="actionDone"
+                    android:inputType="numberDecimal"
+                    android:imeOptions="actionNext"
                     android:singleLine="true"
                     android:textColor="@color/color_text_dark" />
 
@@ -743,7 +745,7 @@
 
                 <EditText
                     android:id="@+id/ed_dc_cooling_fan_model"
-                    android:inputType="text"
+                    android:inputType="numberDecimal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="0.0"

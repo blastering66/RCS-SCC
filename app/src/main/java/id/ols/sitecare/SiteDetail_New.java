@@ -586,14 +586,14 @@ public class SiteDetail_New extends AppCompatActivity {
                                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                                     idRegionParent_Cluster_Sub = name_subcluster_regions.get(position).id;
 
-                                    idRegionParent_Cluster_Sub = "74";
+//                                    idRegionParent_Cluster_Sub = "74";
 //                                    getClusterData(idRegionParent_Sub);
                                 }
 
                                 @Override
                                 public void onNothingSelected(AdapterView<?> parent) {
                                     idRegionParent_Cluster_Sub = name_subcluster_regions.get(0).id;
-                                    idRegionParent_Cluster_Sub = "74";
+//                                    idRegionParent_Cluster_Sub = "74";
                                 }
                             });
                         }
