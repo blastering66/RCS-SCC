@@ -10,28 +10,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ccab0767-9c0c-4789-b3ba-3dade43abb06" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/rest_adapter/API_Adapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/rest_adapter/API_Adapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureDCPowerModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureDCPowerModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureDwdmModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureDwdmModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureGponModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureGponModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureIpModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureIpModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureMicrowaveModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureMicrowaveModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureMidiModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureMidiModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureMplsModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureMplsModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureRANModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureRANModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureSuperWifiModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureSuperWifiModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureVsatModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/models/PojoManufactureVsatModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/SiteDetail.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/SiteDetail.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/SiteDetail_New.java" afterPath="$PROJECT_DIR$/app/src/main/java/id/ols/sitecare/SiteDetail_New.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sitedetail_verification.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sitedetail_verification.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="ccab0767-9c0c-4789-b3ba-3dade43abb06" name="Default" comment="" />
     <ignored path="RCS-SCC.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
