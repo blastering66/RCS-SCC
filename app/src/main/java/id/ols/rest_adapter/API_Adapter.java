@@ -29,6 +29,7 @@ import id.ols.models.PojoRegions;
 import id.ols.models.PojoResponseInsert;
 import id.ols.models.PojoResponseInsertSite;
 import id.ols.models.PojoResponseLogin;
+import id.ols.models.PojoSite;
 import id.ols.models.PojoSubCluster;
 import id.ols.models.PojoSubRegions;
 import id.ols.models.PojoWeather;
@@ -93,7 +94,7 @@ public interface API_Adapter {
     );
 
     @GET("API.php?exe=get&type=mobile&kind=search_siteid")
-    Observable<PojoSubCluster> get_site_name_id(
+    Observable<PojoSite> get_site_name_id(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
             @Query("subcluster_id") String id,
@@ -107,7 +108,7 @@ public interface API_Adapter {
             @Query("idsubregions") String id
     );
 
-    @GET("API.php?exe=get&type=mobile&kind=ran_manufacture")
+    @GET("API.php?exe=get&type=mobile&kind=ran_manufacturer")
     Observable<PojoManufactureRAN> get_manufacture_ran(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey
@@ -117,10 +118,10 @@ public interface API_Adapter {
     Observable<PojoManufactureRANModel> get_manufacture_ran_model(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
-            @Query("idmanufactur") String id
+            @Query("idmanufacturer") String id
     );
 
-    @GET("API.php?exe=get&type=mobile&kind=microwave_manufacture")
+    @GET("API.php?exe=get&type=mobile&kind=microwave_manufacturer")
     Observable<PojoManufactureMicrowave> get_manufacture_microwave(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey
@@ -130,10 +131,10 @@ public interface API_Adapter {
     Observable<PojoManufactureMicrowaveModel> get_manufacture_microwave_model(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
-            @Query("idmanufactur") String id
+            @Query("idmanufacturer") String id
     );
 
-    @GET("API.php?exe=get&type=mobile&kind=ip_manufacture")
+    @GET("API.php?exe=get&type=mobile&kind=ip_manufacturer")
     Observable<PojoManufactureIp> get_manufacture_ip(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey
@@ -143,10 +144,10 @@ public interface API_Adapter {
     Observable<PojoManufactureIpModel> get_manufacture_ip_model(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
-            @Query("idmanufactur") String id
+            @Query("idmanufacturer") String id
     );
 
-    @GET("API.php?exe=get&type=mobile&kind=dwdm_manufacture")
+    @GET("API.php?exe=get&type=mobile&kind=dwdm_manufacturer")
     Observable<PojoManufactureDwdm> get_manufacture_dwdm(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey
@@ -156,10 +157,10 @@ public interface API_Adapter {
     Observable<PojoManufactureDwdmModel> get_manufacture_dwdm_model(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
-            @Query("idmanufactur") String id
+            @Query("idmanufacturer") String id
     );
 
-    @GET("API.php?exe=get&type=mobile&kind=superwifi_manufacture")
+    @GET("API.php?exe=get&type=mobile&kind=superwifi_manufacturer")
     Observable<PojoManufactureSuperWifi> get_manufacture_superwifi(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey
@@ -169,10 +170,10 @@ public interface API_Adapter {
     Observable<PojoManufactureSuperWifiModel> get_manufacture_superwifi_model(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
-            @Query("idmanufactur") String id
+            @Query("idmanufacturer") String id
     );
 
-    @GET("API.php?exe=get&type=mobile&kind=mpls_manufacture")
+    @GET("API.php?exe=get&type=mobile&kind=mpls_manufacturer")
     Observable<PojoManufactureMpls> get_manufacture_mpls(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey
@@ -182,10 +183,10 @@ public interface API_Adapter {
     Observable<PojoManufactureMplsModel> get_manufacture_mpls_model(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
-            @Query("idmanufactur") String id
+            @Query("idmanufacturer") String id
     );
 
-    @GET("API.php?exe=get&type=mobile&kind=vsat_manufacture")
+    @GET("API.php?exe=get&type=mobile&kind=vsat_manufacturer")
     Observable<PojoManufactureVsat> get_manufacture_vsat(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey
@@ -195,10 +196,10 @@ public interface API_Adapter {
     Observable<PojoManufactureVsatModel> get_manufacture_vsat_model(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
-            @Query("idmanufactur") String id
+            @Query("idmanufacturer") String id
     );
 
-    @GET("API.php?exe=get&type=mobile&kind=midi_manufacture")
+    @GET("API.php?exe=get&type=mobile&kind=midi_manufacturer")
     Observable<PojoManufactureMidi> get_manufacture_midi(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey
@@ -208,10 +209,10 @@ public interface API_Adapter {
     Observable<PojoManufactureMidiModel> get_manufacture_midi_model(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
-            @Query("idmanufactur") String id
+            @Query("idmanufacturer") String id
     );
 
-    @GET("API.php?exe=get&type=mobile&kind=gpon_manufacture")
+    @GET("API.php?exe=get&type=mobile&kind=gpon_manufacturer")
     Observable<PojoManufactureGpon> get_manufacture_gpon(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey
@@ -221,10 +222,10 @@ public interface API_Adapter {
     Observable<PojoManufactureGponModel> get_manufacture_gpon_model(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
-            @Query("idmanufactur") String id
+            @Query("idmanufacturer") String id
     );
 
-    @GET("API.php?exe=get&type=mobile&kind=dcpower_manufacture")
+    @GET("API.php?exe=get&type=mobile&kind=dcpower_manufacturer")
     Observable<PojoManufactureDCPower> get_manufacture_dcpower(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey
@@ -234,7 +235,7 @@ public interface API_Adapter {
     Observable<PojoManufactureDCPowerModel> get_manufacture_dcpower_model(
             @Header("Api-Key") String apikey,
             @Header("Auth-Key") String authkey,
-            @Query("idmanufactur") String id
+            @Query("idmanufacturer") String id
     );
 
     @Multipart
@@ -245,23 +246,25 @@ public interface API_Adapter {
             @Query("exe")String exe,
             @Query("type")String type,
             @Query("kind")String kind,
-            @Part("site_codeid")RequestBody site_codeid,
-            @Part("site_name")RequestBody site_name,
-            @Part("site_mobileno")RequestBody site_mobileno ,
-            @Part("site_type")RequestBody site_type,
-            @Part("site_keeper")RequestBody site_keeper,
+            @Part("sitevisit_codeid")RequestBody site_codeid,
+            @Part("sitevisit_name")RequestBody site_name,
+            @Part("sitevisit_mobileno")RequestBody site_mobileno ,
+            @Part("sitevisit_type")RequestBody site_type,
+            @Part("sitevisit_keeper")RequestBody site_keeper,
             //idRegons ??
-            @Part("site_idregion")RequestBody site_idcluster,
-            @Part("site_location")RequestBody site_location,
-            @Part("site_altitude")RequestBody site_altitude,
-            @Part("site_timesurveystarted")RequestBody site_timesurveystarted,
-            @Part("site_externaltemperature")RequestBody site_externaltemperature,
-            @Part("site_idweathercondition")RequestBody site_idweathercondition,
+            @Part("sitevisit_latitude")RequestBody sitevisit_latitude,
+            @Part("sitevisit_longitude")RequestBody sitevisit_longitude,
+            @Part("sitevisit_altitude")RequestBody site_altitude,
+            @Part("sitevisit_timesurveystarted")RequestBody site_timesurveystarted,
+            @Part("sitevisit_externaltemperature")RequestBody site_externaltemperature,
+            @Part("sitevisit_idweathercondition")RequestBody site_idweathercondition,
 
-            @Part("site_nameengineer")RequestBody site_nameenginer,
-            @Part("site_emailengineer")RequestBody site_emailenginer,
-            @Part("site_phoneengineer")RequestBody site_phoneenginer,
-            @Part("site_photo\"; filename=\"img0.png\" ")RequestBody img0
+            @Part("sitevisit_nameengineer")RequestBody sitevisit_nameengineer,
+            @Part("sitevisit_emailengineer")RequestBody sitevisit_emailengineer,
+            @Part("sitevisit_phoneengineer")RequestBody sitevisit_phoneengineer,
+
+            @Part("sitevisit_ownership")RequestBody sitevisit_ownership,
+            @Part("sitevisit_photo\"; filename=\"img0.png\" ")RequestBody img0
     );
 
     @Multipart

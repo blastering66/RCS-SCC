@@ -104,7 +104,7 @@ public class PojoManufactureRANModel {
         @SerializedName("ranmodel_name")
         @Expose
         private String ranmodelName;
-        @SerializedName("ranmodel_idmanufactur")
+        @SerializedName("ranmodel_idmanufacturer")
         @Expose
         private String ranmodelIdmanufactur;
         @SerializedName("updated_at")

@@ -564,13 +564,15 @@ public class SiteDetail extends AppCompatActivity {
         body00 = RequestBody.create(MediaType.parse("image/*"), sourceFile00);
 
         //Sementara biar cpt
-        Observable<PojoResponseInsertSite> observable = adapter.insert_site_detail(
-                apikey, authkey, ParameterCollections.EXE.INSERT,
-                ParameterCollections.KIND.MOBILE, ParameterCollections.KIND.SITE_VISIT,
-                codeid, name, mobileno, _type,
-                keeper, idcluster, location, altitude, timesurveystarted,
-                externaltemperature, idweathercondition, nameenginer, emailenginer, phoneenginer,body00
-        );
+//        Observable<PojoResponseInsertSite> observable = adapter.insert_site_detail(
+//                apikey, authkey, ParameterCollections.EXE.INSERT,
+//                ParameterCollections.KIND.MOBILE, ParameterCollections.KIND.SITE_VISIT,
+//                codeid, name, mobileno, _type,
+//                keeper, idcluster, location, altitude, timesurveystarted,
+//                externaltemperature, idweathercondition, nameenginer, emailenginer, phoneenginer,body00
+//        );
+
+        Observable<PojoResponseInsertSite> observable = null;
 
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())

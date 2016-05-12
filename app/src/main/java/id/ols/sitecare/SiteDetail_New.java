@@ -7,6 +7,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -42,7 +44,9 @@ import butterknife.OnClick;
 import id.blastering99.htmlloader.CustomProgressDialog;
 import id.ols.models.PojoCluster;
 import id.ols.models.PojoRegions;
+import id.ols.models.PojoRegionsCity;
 import id.ols.models.PojoResponseInsertSite;
+import id.ols.models.PojoSite;
 import id.ols.models.PojoSubCluster;
 import id.ols.models.PojoSubRegions;
 import id.ols.models.PojoWeather;
@@ -89,6 +93,10 @@ public class SiteDetail_New extends AppCompatActivity {
     RadioButton radio_tipe_outdoor;
     @Bind(R.id.tipe_mixed)
     RadioButton radio_tipe_mixed;
+    @Bind(R.id.tipe_owned)
+    RadioButton radio_tipe_owned;
+    @Bind(R.id.tipe_lease)
+    RadioButton radio_tipe_lease;
     @Bind(R.id.tv_lat)
     TextView tv_lat;
     @Bind(R.id.tv_longi)
@@ -155,21 +163,26 @@ public class SiteDetail_New extends AppCompatActivity {
         time_now = formattedDate;
         ed_time.setText(formattedDate);
 
-        List<RowData_Site> data_site = new ArrayList<>();
-        data_site.add(new RowData_Site("20BTU173","TEGALREJOMLG"));
-        data_site.add(new RowData_Site("20SMP062", "TALAGASMPPL"));
-        data_site.add(new RowData_Site("20SIT056", "SUMBERWARU"));
+        ed_site_id.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-        ArrayList<String> array_site = new ArrayList<>();
-        for(int i=0; i<  data_site.size(); i++){
-            array_site.add(data_site.get(i).name);
-        }
+            }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
-                R.layout.spinner_item, array_site);
-        ed_site_id.setAdapter(adapter);
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//                final char _cha = s.charAt(s.length() -1);
+                if(count != 0){
+                    getSearchCityId(s.subSequence(start, s.length()-1).toString());
+                }
 
-//        ed_site_id.setCompletionHint();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
         getRegionsData();
         getWeatherData();
@@ -202,6 +215,63 @@ public class SiteDetail_New extends AppCompatActivity {
 
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void getSearchCityId(String c) {
+        final API_Adapter adapter = PublicFunctions.initRetrofit();
+        String apikey = getResources().getString(R.string.api_key);
+        final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
+        Observable<PojoSite> observable = adapter.get_site_name_id(apikey, authkey, idRegionParent_Cluster_Sub,
+                String.valueOf(c));
+
+        observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<PojoSite>() {
+                    @Override
+                    public void onCompleted() {
+                        Log.e("Get Regions", "Completed");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.e("Error", "Something wrong");
+
+                    }
+
+                    @Override
+                    public void onNext(PojoSite pojoSite) {
+                        if (pojoSite.getJsonCode() == 1) {
+                            if (pojoSite.getAct().getGet() == 1) {
+                                if(pojoSite.getData() != null){
+                                    final List<RowData_Site> data_site = new ArrayList<>();
+
+                                    for(int i=0; i<  pojoSite.getData().size(); i++){
+                                        data_site.add(new RowData_Site(pojoSite.getData().get(i).getSiteCodeid(),
+                                                pojoSite.getData().get(i).getSiteName()));
+                                    }
+
+                                    ArrayList<String> array_site = new ArrayList<>();
+                                    for(int i=0; i<  data_site.size(); i++){
+                                        array_site.add(data_site.get(i).id);
+                                    }
+
+                                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
+                                            R.layout.spinner_item, array_site);
+                                    ed_site_id.setAdapter(adapter);
+                                    ed_site_id.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                        @Override
+                                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                            wrapper.setVisibility(View.VISIBLE);
+                                            String site_name = data_site.get(position).name.toString();
+                                            ed_site_name.setText(site_name);
+                                        }
+                                    });
+                                }
+                            }
+                        }
+
+                    }
+                });
+
     }
 
     private void getWeatherData() {
@@ -515,12 +585,15 @@ public class SiteDetail_New extends AppCompatActivity {
                                 @Override
                                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                                     idRegionParent_Cluster_Sub = name_subcluster_regions.get(position).id;
+
+                                    idRegionParent_Cluster_Sub = "74";
 //                                    getClusterData(idRegionParent_Sub);
                                 }
 
                                 @Override
                                 public void onNothingSelected(AdapterView<?> parent) {
                                     idRegionParent_Cluster_Sub = name_subcluster_regions.get(0).id;
+                                    idRegionParent_Cluster_Sub = "74";
                                 }
                             });
                         }
@@ -554,7 +627,7 @@ public class SiteDetail_New extends AppCompatActivity {
         final CustomProgressDialog pDialog;
 
         //param value yg dikirim
-        String site_codeid, site_name, site_keeper, site_mobileno, site_type,
+        String site_codeid, site_name, site_keeper, site_mobileno, site_type,site_type_ownership,
                 site_idregion, site_idcluster, site_location, site_altitude,
                 site_timesurveystarted, site_externaltemperature, site_idweathercondition;
 
@@ -577,6 +650,12 @@ public class SiteDetail_New extends AppCompatActivity {
             site_type = "Mixed";
         }
 
+        if (radio_tipe_owned.isChecked()) {
+            site_type_ownership = "OWN";
+        } else {
+            site_type_ownership = "LEASE";
+        }
+
         site_idcluster = idRegionParent_Cluster;
         lat_now = spf.getString(ParameterCollections.TAG_LATITUDE_NOW, "0.0");
         longi_now = spf.getString(ParameterCollections.TAG_LONGITUDE_NOW, "0.0");
@@ -596,8 +675,8 @@ public class SiteDetail_New extends AppCompatActivity {
         RequestBody mobileno = RequestBody.create(MediaType.parse("text/plain"), site_mobileno);
         RequestBody _type = RequestBody.create(MediaType.parse("text/plain"), site_type);
         RequestBody keeper = RequestBody.create(MediaType.parse("text/plain"), site_keeper);
-        RequestBody idcluster = RequestBody.create(MediaType.parse("text/plain"), site_idcluster);
-        RequestBody location = RequestBody.create(MediaType.parse("text/plain"), site_location);
+        RequestBody latitude = RequestBody.create(MediaType.parse("text/plain"), lat_now);
+        RequestBody longitude = RequestBody.create(MediaType.parse("text/plain"), longi_now);
         RequestBody altitude = RequestBody.create(MediaType.parse("text/plain"), site_altitude);
         RequestBody timesurveystarted = RequestBody.create(MediaType.parse("text/plain"), site_timesurveystarted);
         RequestBody externaltemperature = RequestBody.create(MediaType.parse("text/plain"), site_externaltemperature);
@@ -605,7 +684,7 @@ public class SiteDetail_New extends AppCompatActivity {
         RequestBody nameenginer = RequestBody.create(MediaType.parse("text/plain"), site_nameenginer);
         RequestBody emailenginer = RequestBody.create(MediaType.parse("text/plain"), site_emailenginer);
         RequestBody phoneenginer = RequestBody.create(MediaType.parse("text/plain"), site_phoneenginer);
-
+        RequestBody ownership = RequestBody.create(MediaType.parse("text/plain"), site_type_ownership);
 
 //        RequestBody codeid = RequestBody.create(MediaType.parse("text/plain"), "test");
 //        RequestBody name = RequestBody.create(MediaType.parse("text/plain"), "test");
@@ -645,9 +724,10 @@ public class SiteDetail_New extends AppCompatActivity {
                 apikey, authkey, ParameterCollections.EXE.INSERT,
                 ParameterCollections.KIND.MOBILE, ParameterCollections.KIND.SITE_VISIT,
                 codeid, name, mobileno, _type,
-                keeper, idcluster, location, altitude, timesurveystarted,
-                externaltemperature, idweathercondition, nameenginer, emailenginer, phoneenginer,body00
+                keeper, latitude, longitude, altitude, timesurveystarted,
+                externaltemperature, idweathercondition, nameenginer, emailenginer, phoneenginer,ownership,body00
         );
+//        Observable<PojoResponseInsertSite> observable= null;
 
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())

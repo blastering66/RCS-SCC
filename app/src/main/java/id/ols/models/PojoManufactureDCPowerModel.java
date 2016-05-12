@@ -102,10 +102,10 @@ public class PojoManufactureDCPowerModel {
         @SerializedName("dcmodel_name")
         @Expose
         private String ranmodelId;
-        @SerializedName("dcmodel_idmanufactur")
+        @SerializedName("dcmodel_idmanufacturer")
         @Expose
         private String ranmodelName;
-        @SerializedName("ipmodel_idmanufactur")
+        @SerializedName("ipmodel_idmanufacturer")
         @Expose
         private String ranmodelIdmanufactur;
         @SerializedName("updated_at")

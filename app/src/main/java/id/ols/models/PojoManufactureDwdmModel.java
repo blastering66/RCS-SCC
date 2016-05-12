@@ -105,7 +105,7 @@ public class PojoManufactureDwdmModel {
         @SerializedName("dwdmmodel_name")
         @Expose
         private String ranmodelName;
-        @SerializedName("ipmodel_idmanufactur")
+        @SerializedName("ipmodel_idmanufacturer")
         @Expose
         private String ranmodelIdmanufactur;
         @SerializedName("updated_at")
