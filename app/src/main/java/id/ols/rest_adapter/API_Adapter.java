@@ -586,7 +586,7 @@ public interface API_Adapter {
             @Part("griddetail_plnphasemeasurement3t")RequestBody griddetail_plnphasemeasurement3t,
             @Part("griddetail_plndayabreakerrating")RequestBody griddetail_plndayabreakerrating,
             @Part("griddetail_plnsurgeprotdevmanufacturer")RequestBody griddetail_plnsurgeprotdevmanufacturer,
-            @Part("griddetail_plnsurgeprotdevtype")RequestBody griddetail_plnsurgeprotdevtype,
+//            @Part("griddetail_plnsurgeprotdevtype")RequestBody griddetail_plnsurgeprotdevtype,
             @Part("griddetail_plnsurgeprotdevcondition")RequestBody griddetail_plnsurgeprotdevcondition,
             @Part("griddetail_plnsurgeprotdevmodel")RequestBody griddetail_plnsurgeprotdevmodel,
             @Part("griddetail_plnacpdbmanufacturer")RequestBody griddetail_plnacpdbmanufacturer,

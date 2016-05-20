@@ -10,10 +10,13 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.bumptech.glide.Glide;
 import com.squareup.okhttp.MediaType;
@@ -52,13 +55,18 @@ public class Tech_Grid extends AppCompatActivity {
     @Bind(R.id.tipe_single )RadioButton tipe_single;
     @Bind(R.id.tipe_three )RadioButton tipe_three;
     @Bind(R.id.ed_value_phase )EditText ed_value_phase;
+    @Bind(R.id.wrapper_single_phase )View wrapper_single_phase;
+    @Bind(R.id.wrapper_phase_r )View wrapper_phase_r;
+    @Bind(R.id.wrapper_phase_s )View wrapper_phase_s;
+    @Bind(R.id.wrapper_phase_t )View wrapper_phase_t;
+
     @Bind(R.id.ed_pln_measurement_3r )EditText ed_pln_measurement_3r;
     @Bind(R.id.ed_pln_measurement_3s )EditText ed_pln_measurement_3s;
     @Bind(R.id.ed_pln_measurement_3t )EditText ed_pln_measurement_3t;
     @Bind(R.id.ed_rating )EditText ed_rating;
 
     @Bind(R.id.ed_surge_manufacturer )EditText ed_surge_manufacturer;
-    @Bind(R.id.ed_surge_tipe )EditText ed_surge_tipe;
+//    @Bind(R.id.ed_surge_tipe )EditText ed_surge_tipe;
     @Bind(R.id.ed_surge_condition )EditText ed_surge_condition;
     @Bind(R.id.ed_surge_model )EditText ed_surge_model;
 
@@ -141,6 +149,32 @@ public class Tech_Grid extends AppCompatActivity {
         activity = this;
         spf = getSharedPreferences(ParameterCollections.SH_NAME, MODE_PRIVATE);
         id_site = spf.getString(ParameterCollections.SH_ID_SITE, "1");
+
+        tipe_single.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    wrapper_phase_r.setVisibility(View.GONE);
+                    wrapper_phase_s.setVisibility(View.GONE);
+                    wrapper_phase_t.setVisibility(View.GONE);
+
+                    wrapper_single_phase.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+        tipe_three.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    wrapper_phase_r.setVisibility(View.VISIBLE);
+                    wrapper_phase_s.setVisibility(View.VISIBLE);
+                    wrapper_phase_t.setVisibility(View.VISIBLE);
+
+                    wrapper_single_phase.setVisibility(View.GONE);
+                }
+            }
+        });
+
     }
 
     @Override
@@ -179,7 +213,7 @@ public class Tech_Grid extends AppCompatActivity {
         rating = ed_rating.getText().toString();
 
         surge_manufacturer = ed_surge_manufacturer.getText().toString();
-        surge_tipe= ed_surge_tipe.getText().toString();
+//        surge_tipe= ed_surge_tipe.getText().toString();
         surge_condition= ed_surge_condition.getText().toString();
         surge_model= ed_surge_model.getText().toString();
 
@@ -219,7 +253,7 @@ public class Tech_Grid extends AppCompatActivity {
         RequestBody _phase_type = RequestBody.create(MediaType.parse("text/plain"), phase_type);
 
         RequestBody _surge_manufacturer = RequestBody.create(MediaType.parse("text/plain"), surge_manufacturer);
-        RequestBody _surge_tipe = RequestBody.create(MediaType.parse("text/plain"), surge_tipe);
+//        RequestBody _surge_tipe = RequestBody.create(MediaType.parse("text/plain"), surge_tipe);
         RequestBody _surge_condition = RequestBody.create(MediaType.parse("text/plain"), surge_condition);
         RequestBody _surge_model = RequestBody.create(MediaType.parse("text/plain"), surge_model);
 
@@ -244,10 +278,17 @@ public class Tech_Grid extends AppCompatActivity {
 
         API_Adapter adapter = PublicFunctions.initRetrofit();
 
+//        Observable<PojoResponseInsert> observable = adapter.insert_tech_grid_detail(apikey,authkey,
+//                _idsitevisit,_pln_id,_plnmeter_type,_manufactur_name,_model,_condition,_distance,
+//                _phase_type,_value_phase,_pln_measurement_3r,_pln_measurement_3s, _pln_measurement_3t,_rating,
+//                _surge_manufacturer, _surge_tipe, _surge_condition,_surge_model,
+//                _acpdb_manufactur_name, _acpdb_model_name, _acpdb_condition,_distance_to_pln,
+//                body00,body01,body02,body03);
+
         Observable<PojoResponseInsert> observable = adapter.insert_tech_grid_detail(apikey,authkey,
                 _idsitevisit,_pln_id,_plnmeter_type,_manufactur_name,_model,_condition,_distance,
                 _phase_type,_value_phase,_pln_measurement_3r,_pln_measurement_3s, _pln_measurement_3t,_rating,
-                _surge_manufacturer, _surge_tipe, _surge_condition,_surge_model,
+                _surge_manufacturer, _surge_condition,_surge_model,
                 _acpdb_manufactur_name, _acpdb_model_name, _acpdb_condition,_distance_to_pln,
                 body00,body01,body02,body03);
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
