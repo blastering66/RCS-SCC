@@ -147,7 +147,9 @@ public class DialogConfirmation extends DialogFragment{
                     startActivity(intent);
                     getActivity().finish();
 
-                } else if (from == 9) {
+                } else if (from == 98) {
+                    sh.edit().clear().commit();
+                    getActivity().finish();
 
                 } else if (from == 99) {
                     sh.edit().putBoolean(ParameterCollections.SH_VISIT_FINISHED, true).commit();
@@ -183,7 +185,14 @@ public class DialogConfirmation extends DialogFragment{
                 }
             });
 
-        }else{
+        }else if(from == 98){
+            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dismiss();
+                }
+            });
+        } else{
             builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {

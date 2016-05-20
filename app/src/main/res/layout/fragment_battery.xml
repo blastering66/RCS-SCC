@@ -25,7 +25,7 @@
                 android:id="@+id/ed_manufactur_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="i.e) Melconinda"
+                android:hint="ex) Narada"
                 android:imeOptions="actionNext"
                 android:singleLine="true"
                 android:textColor="@color/color_text_dark"
@@ -47,7 +47,7 @@
                 android:id="@+id/ed_model"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="i.e) 6-GFM-170F"
+                android:hint="ex) 6-GFM-170F"
                 android:imeOptions="actionNext"
                 android:singleLine="true"
                 android:textColor="@color/color_text_dark"
@@ -63,7 +63,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Site / Battery Type" />
+                android:text="Battery Type" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -125,7 +125,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="2V Cells" />
+                        android:text="Number of Banks" />
 
                     <EditText
                         android:id="@+id/ed_jumlah_2v"
@@ -146,8 +146,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="50dp"
-                        android:text="Blocks (6,12, 48V)" />
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:text="Number of Blocks" />
 
                     <EditText
                         android:id="@+id/ed_jumlah_block"
@@ -177,7 +179,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Capacity" />
+                        android:text="Block Capacity (Volt)" />
 
                     <EditText
                         android:id="@+id/ed_capacity"
@@ -198,8 +200,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="50dp"
-                        android:text="Voltage (disconnected)" />
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:text="Banks Voltage (Volt)" />
 
                     <EditText
                         android:id="@+id/ed_voltase_disconnected"
@@ -228,7 +232,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Battery Tempt" />
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:text="Battery Temperature" />
 
                     <EditText
                         android:id="@+id/ed_temprature"
@@ -249,7 +255,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="50dp"
+                        android:paddingLeft="10dp"
                         android:text="Conditions" />
 
                     <EditText
@@ -259,11 +265,16 @@
                         android:singleLine="true"
                         android:inputType="text"
                         android:imeOptions="actionDone"
-                        android:hint="i.e) Good" />
+                        android:hint="ex) Good" />
                 </LinearLayout>
 
             </LinearLayout>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Battery Picture" />
 
             <ImageView
                 android:id="@+id/img"

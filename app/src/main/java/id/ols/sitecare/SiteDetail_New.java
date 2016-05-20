@@ -736,6 +736,7 @@ public class SiteDetail_New extends AppCompatActivity {
                     public void onCompleted() {
                         pDialog.dismiss();
                         if (isSukses) {
+                            spf.edit().putBoolean(ParameterCollections.SH_SITEVISIT_INPUTED, true).commit();
                             startActivity(new Intent(getApplicationContext(), MainActivity_Button.class));
                             finish();
                         } else {

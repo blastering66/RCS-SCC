@@ -82,7 +82,7 @@
                 android:id="@+id/ed_config"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="0.0"
+                android:hint="ex) 2/2/2"
                 android:imeOptions="actionDone"
                 android:paddingLeft="10dp"
                 android:singleLine="true"
@@ -98,7 +98,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Frequency's" />
+                android:text="Frequency (MHz)" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -115,13 +115,13 @@
                         android:id="@+id/ed_freq_0"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="2100" />
+                        android:hint="ex) GSM900" />
 
                     <EditText
                         android:id="@+id/ed_freq_1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="U900" />
+                        android:hint="ex) DCS1800" />
 
                     <EditText
                         android:id="@+id/ed_freq_2"
@@ -145,10 +145,11 @@
                         android:id="@+id/ed_freq_b"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="GSM900" />
+                        android:hint="ex) UMTS2100" />
 
                     <EditText
                         android:id="@+id/ed_freq_c"
+                        android:hint="ex) LTE2100"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
@@ -191,6 +192,7 @@
                         android:text="-48V" />
 
                     <RadioButton
+                        android:visibility="gone"
                         android:id="@+id/radio_volt_110"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -233,6 +235,11 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RAN Photo" />
 
             <ImageView
                 android:id="@+id/img"

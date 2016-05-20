@@ -73,7 +73,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Voltase" />
+                android:text="Voltage" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -137,6 +137,35 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Number of Links" />
+
+            <EditText
+                android:id="@+id/ed_number_link"
+                android:paddingLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="0"
+                android:inputType="number"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:textColor="@color/color_text_dark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="IP Photo" />
 
             <ImageView
                 android:id="@+id/img"

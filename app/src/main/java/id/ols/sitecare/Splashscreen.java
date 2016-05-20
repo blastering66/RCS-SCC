@@ -45,6 +45,7 @@ public class Splashscreen extends AppCompatActivity {
 
             boolean isLogged = sp.getBoolean(ParameterCollections.SH_LOGGED, false);
             boolean isVisitFinished = sp.getBoolean(ParameterCollections.SH_VISIT_FINISHED, false);
+            boolean isSiteInputed = sp.getBoolean(ParameterCollections.SH_SITEVISIT_INPUTED, false);
 
             if(isLogged){
 
@@ -52,8 +53,16 @@ public class Splashscreen extends AppCompatActivity {
                     startActivity(new Intent(getApplicationContext(), EngineerDetail.class));
                     finish();
                 }else{
-                    startActivity(new Intent(getApplicationContext(), MainActivity_Button.class));
-                    finish();
+
+                    if(isSiteInputed){
+                        startActivity(new Intent(getApplicationContext(), MainActivity_Button.class));
+                        finish();
+                    }else{
+                        startActivity(new Intent(getApplicationContext(), EngineerDetail.class));
+                        finish();
+
+                    }
+
                 }
 
             }else{

@@ -10,6 +10,8 @@ public class ParameterCollections {
     public static String SH_AUTHKEY = "rcs_life_auth";
     public static String SH_LOGGED = "rcs_life_islogged";
     public static String SH_VISIT_FINISHED = "visit_finished";
+    public static String SH_SITEVISIT_INPUTED = "sitevisit_inputed";
+
     public static String TAG_LATITUDE_NOW = "lati_now";
     public static String TAG_LONGITUDE_NOW = "longi_now";
 

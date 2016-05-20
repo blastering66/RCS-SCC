@@ -58,6 +58,14 @@ public class MainActivity_Button extends AppCompatActivity implements View.OnCli
         pDialog.show(getSupportFragmentManager(), "");
 
     }
+    @OnClick(R.id.fab_logout) void onLogout(){
+        DialogConfirmation pDialog = new DialogConfirmation();
+        pDialog.setText("Logout ?");
+        pDialog.setFrom(98);
+        pDialog.setSh(spf);
+        pDialog.show(getSupportFragmentManager(), "");
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

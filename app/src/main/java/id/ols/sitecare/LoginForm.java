@@ -125,7 +125,10 @@ public class LoginForm extends AppCompatActivity {
             pDialog.dismiss();
             if(isSukses){
                 spf.edit().putBoolean(ParameterCollections.SH_LOGGED, true).commit();
+
+                //perubahan 20May2016
                 startActivity(new Intent(getApplicationContext(), EngineerDetail.class));
+//                startActivity(new Intent(getApplicationContext(), SiteDetail_New.class));
                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
                 finish();
             }else{

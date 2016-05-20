@@ -25,7 +25,7 @@
                 android:id="@+id/ed_pln_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="i.e) Melconinda"
+                android:hint="Ex) 5351241469"
                 android:imeOptions="actionNext"
                 android:singleLine="true"
                 android:textColor="@color/color_text_dark" />
@@ -95,7 +95,7 @@
                         android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="" />
+                        android:hint="ex) Actaris" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -116,7 +116,7 @@
                         android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="" />
+                        android:hint="ex) C1144HR1" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -141,6 +141,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -161,18 +162,49 @@
                         android:hint="" />
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PLN Meter Photo" />
+
+                    <ImageView
+                        android:id="@+id/img"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:padding="10dp"
+                        android:src="@drawable/img_empty"
+                        android:scaleType="fitCenter"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Initial PLN Meter Reading" />
+
+                    <ImageView
+                        android:id="@+id/img_initial_pln"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:padding="10dp"
+                        android:src="@drawable/img_empty"
+                        android:scaleType="fitCenter"
+                        />
+                </LinearLayout>
 
             </LinearLayout>
-
-
-            <ImageView
-                android:id="@+id/img"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:padding="10dp"
-                android:src="@drawable/img_empty"
-                android:scaleType="fitCenter"
-                />
 
         </LinearLayout>
 
@@ -241,7 +273,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="PLN Measurement Phase" />
+                        android:text="Single Measurement" />
 
                     <EditText
                         android:id="@+id/ed_value_phase"
@@ -261,6 +293,8 @@
                 >
 
                 <LinearLayout
+                    android:id="@+id/wrapper_phase_r"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -269,7 +303,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="PLN Measurement 3R" />
+                        android:text="Phase R Measurement" />
 
                     <EditText
                         android:id="@+id/ed_pln_measurement_3r"
@@ -288,6 +322,8 @@
                 >
 
                 <LinearLayout
+                    android:id="@+id/wrapper_phase_s"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -296,7 +332,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="PLN Measurement 3S" />
+                        android:text="Phase S Measurement" />
 
 
                     <EditText
@@ -316,6 +352,8 @@
                 >
 
                 <LinearLayout
+                    android:id="@+id/wrapper_phase_t"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -324,7 +362,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="PLN Measurement 3T" />
+                        android:text="Phase T Measurement" />
 
                     <EditText
                         android:id="@+id/ed_pln_measurement_3t"
@@ -348,7 +386,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Daya Arrester" />
+                android:text="PLN MCB Breaker" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -359,7 +397,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rating" />
+                    android:text="MCB Capacity" />
 
                 <EditText
                     android:id="@+id/ed_rating"
@@ -369,6 +407,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PLN MCB Photo" />
 
             <ImageView
                 android:id="@+id/img_rating"
@@ -391,7 +434,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Surge Protection Device" />
+                android:text="Arrester Device" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -412,58 +455,7 @@
 
                     <EditText
                         android:id="@+id/ed_surge_manufacturer"
-                        android:hint="i.e) BATAN"
-                        android:singleLine="true"
-                        android:inputType="text"
-                        android:imeOptions="actionNext"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="50dp"
-                        android:text="Type" />
-
-                    <EditText
-                        android:id="@+id/ed_surge_tipe"
-                        android:singleLine="true"
-                        android:inputType="text"
-                        android:imeOptions="actionNext"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="i.e) 01JKS011" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Condition" />
-
-                    <EditText
-                        android:id="@+id/ed_surge_condition"
-                        android:hint="i.e) Good"
+                        android:hint="ex) PHOENIX"
                         android:singleLine="true"
                         android:inputType="text"
                         android:imeOptions="actionNext"
@@ -490,10 +482,44 @@
                         android:imeOptions="actionDone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="i.e) ABCD1234" />
+                        android:hint="ex) VAL-MS230T" />
                 </LinearLayout>
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Condition" />
+
+                    <EditText
+                        android:id="@+id/ed_surge_condition"
+                        android:hint="ex) Good"
+                        android:singleLine="true"
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Arrester Device Photo" />
 
             <ImageView
                 android:id="@+id/img_meter_surge"
@@ -589,14 +615,17 @@
                         android:singleLine="true"
                         android:inputType="text"
                         android:imeOptions="actionDone"
-                        android:hint="i.e) Good"
+                        android:hint="ex) Good"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
 
-
-
             </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ACPDB Photo" />
 
             <ImageView
                 android:id="@+id/img_acpdb"
@@ -610,6 +639,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"

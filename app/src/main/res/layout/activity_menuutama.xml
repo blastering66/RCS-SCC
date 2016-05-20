@@ -71,7 +71,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
 
-                android:text="Grid"
+                android:text="Grid / PLN"
                 android:textSize="@dimen/big"
                 android:textColor="@color/color_text_light"
                 android:background="@android:color/transparent"
@@ -189,7 +189,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
 
-                android:text="DC Power"
+                android:text="DC Rectifier System"
                 android:textSize="@dimen/big"
                 android:textColor="@color/color_text_light"
                 android:background="@android:color/transparent"
@@ -585,7 +585,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
 
-                android:text="Cooling Cabinet"
+                android:text="Air Conditioner"
                 android:textSize="@dimen/big"
                 android:textColor="@color/color_text_light"
                 android:background="@android:color/transparent"
@@ -645,13 +645,30 @@
     </LinearLayout>
 
 </ScrollView>
-    
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:background="@android:color/white"
-        android:src="@drawable/img_finish"
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:background="@android:color/white"
+            android:layout_margin="20dp"
+            android:src="@drawable/img_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_logout"
+            android:layout_margin="20dp"
+            android:background="@android:color/white"
+            android:src="@drawable/img_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    
+
 </RelativeLayout>

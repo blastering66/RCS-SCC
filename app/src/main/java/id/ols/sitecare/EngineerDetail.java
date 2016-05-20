@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import id.ols.util.ParameterCollections;
 
 /**
  * Created by macbook on 3/27/16.
@@ -42,6 +43,11 @@ public class EngineerDetail extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
+                finish();
+                break;
+
+            case R.id.action_logout:
+                getSharedPreferences(ParameterCollections.SH_NAME, MODE_PRIVATE).edit().clear().commit();
                 finish();
                 break;
 
