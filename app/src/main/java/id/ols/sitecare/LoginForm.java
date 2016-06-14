@@ -87,7 +87,8 @@ public class LoginForm extends AppCompatActivity {
                 Retrofit retrofit = new Retrofit.Builder().addConverterFactory(GsonConverterFactory.create())
                         .baseUrl(ParameterCollections.URL_BASE).build();
 
-                API_Adapter adapter = retrofit.create(API_Adapter.class);
+//                API_Adapter adapter = retrofit.create(API_Adapter.class);
+                API_Adapter adapter = PublicFunctions.initRetrofit();
                 String apikey = getResources().getString(R.string.api_key);
                 Call<PojoResponseLogin> call = adapter.login(apikey,"",username, password);
                 Response<PojoResponseLogin> response = call.execute();
@@ -127,7 +128,7 @@ public class LoginForm extends AppCompatActivity {
                 spf.edit().putBoolean(ParameterCollections.SH_LOGGED, true).commit();
 
                 //perubahan 20May2016
-                startActivity(new Intent(getApplicationContext(), EngineerDetail.class));
+                startActivity(new Intent(getApplicationContext(), SiteDetail_New.class));
 //                startActivity(new Intent(getApplicationContext(), SiteDetail_New.class));
                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
                 finish();
