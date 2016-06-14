@@ -135,7 +135,7 @@ public class SiteDetail_New extends AppCompatActivity {
     List<RowData_Regions> name_regions, name_sub_regions,name_cluster_regions,name_subcluster_regions;
     List<RowData_Weather> name_weather;
 
-    String site_nameenginer, site_emailenginer, site_phoneenginer;
+//    String site_nameenginer, site_emailenginer, site_phoneenginer;
     String idRegionParent, idRegionParent_Sub, idRegionParent_Cluster, idRegionParent_Cluster_Sub;
     String idWeatherSelected ="1";
 
@@ -151,9 +151,9 @@ public class SiteDetail_New extends AppCompatActivity {
         spf = getSharedPreferences(ParameterCollections.SH_NAME, MODE_PRIVATE);
 
 
-        site_nameenginer = getIntent().getStringExtra("site_nameenginer");
-        site_emailenginer = getIntent().getStringExtra("site_emailenginer");
-        site_phoneenginer = getIntent().getStringExtra("site_phoneenginer");
+//        site_nameenginer = getIntent().getStringExtra("site_nameenginer");
+//        site_emailenginer = getIntent().getStringExtra("site_emailenginer");
+//        site_phoneenginer = getIntent().getStringExtra("site_phoneenginer");
 
         Calendar c = Calendar.getInstance();
         System.out.println("Current time => " + c.getTime());
@@ -681,9 +681,9 @@ public class SiteDetail_New extends AppCompatActivity {
         RequestBody timesurveystarted = RequestBody.create(MediaType.parse("text/plain"), site_timesurveystarted);
         RequestBody externaltemperature = RequestBody.create(MediaType.parse("text/plain"), site_externaltemperature);
         RequestBody idweathercondition = RequestBody.create(MediaType.parse("text/plain"), site_idweathercondition);
-        RequestBody nameenginer = RequestBody.create(MediaType.parse("text/plain"), site_nameenginer);
-        RequestBody emailenginer = RequestBody.create(MediaType.parse("text/plain"), site_emailenginer);
-        RequestBody phoneenginer = RequestBody.create(MediaType.parse("text/plain"), site_phoneenginer);
+//        RequestBody nameenginer = RequestBody.create(MediaType.parse("text/plain"), site_nameenginer);
+//        RequestBody emailenginer = RequestBody.create(MediaType.parse("text/plain"), site_emailenginer);
+//        RequestBody phoneenginer = RequestBody.create(MediaType.parse("text/plain"), site_phoneenginer);
         RequestBody ownership = RequestBody.create(MediaType.parse("text/plain"), site_type_ownership);
 
 //        RequestBody codeid = RequestBody.create(MediaType.parse("text/plain"), "test");
@@ -719,15 +719,19 @@ public class SiteDetail_New extends AppCompatActivity {
         sourceFile00 = new File(url_file00);
         body00 = RequestBody.create(MediaType.parse("image/*"), sourceFile00);
 
-        //Sementara biar cpt
+//        Observable<PojoResponseInsertSite> observable = adapter.insert_site_detail(
+//                apikey, authkey, ParameterCollections.EXE.INSERT,
+//                ParameterCollections.KIND.MOBILE, ParameterCollections.KIND.SITE_VISIT,
+//                codeid, name, mobileno, _type,
+//                keeper, latitude, longitude, altitude, timesurveystarted,
+//                externaltemperature, idweathercondition, nameenginer, emailenginer, phoneenginer,ownership,body00
         Observable<PojoResponseInsertSite> observable = adapter.insert_site_detail(
                 apikey, authkey, ParameterCollections.EXE.INSERT,
                 ParameterCollections.KIND.MOBILE, ParameterCollections.KIND.SITE_VISIT,
                 codeid, name, mobileno, _type,
                 keeper, latitude, longitude, altitude, timesurveystarted,
-                externaltemperature, idweathercondition, nameenginer, emailenginer, phoneenginer,ownership,body00
+                externaltemperature, idweathercondition,ownership,body00
         );
-//        Observable<PojoResponseInsertSite> observable= null;
 
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())

@@ -259,9 +259,9 @@ public interface API_Adapter {
             @Part("sitevisit_externaltemperature")RequestBody site_externaltemperature,
             @Part("sitevisit_idweathercondition")RequestBody site_idweathercondition,
 
-            @Part("sitevisit_nameengineer")RequestBody sitevisit_nameengineer,
-            @Part("sitevisit_emailengineer")RequestBody sitevisit_emailengineer,
-            @Part("sitevisit_phoneengineer")RequestBody sitevisit_phoneengineer,
+//            @Part("sitevisit_nameengineer")RequestBody sitevisit_nameengineer,
+//            @Part("sitevisit_emailengineer")RequestBody sitevisit_emailengineer,
+//            @Part("sitevisit_phoneengineer")RequestBody sitevisit_phoneengineer,
 
             @Part("sitevisit_ownership")RequestBody sitevisit_ownership,
             @Part("sitevisit_photo\"; filename=\"img0.png\" ")RequestBody img0

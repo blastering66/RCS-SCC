@@ -33,8 +33,8 @@ public class ParameterCollections {
     public static String SH_ADDITIONAL_SUBMITTED = "rcs_life_additional_submited";
 
 
-    public static String URL_BASE = "http://cascadiant.dev.onelifesolution.id/";
-//    public static String URL_BASE = "http://api.cascadiant.onelifesolution.id/";
+//    public static String URL_BASE = "http://cascadiant.dev.onelifesolution.id/";
+    public static String URL_BASE = "http://api.cascadiant.onelifesolution.id/";
 
     public static String URL_FOLDER_IMG = "/SCC/temp/";
 

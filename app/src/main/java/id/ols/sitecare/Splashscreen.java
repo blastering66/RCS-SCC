@@ -50,7 +50,7 @@ public class Splashscreen extends AppCompatActivity {
             if(isLogged){
 
                 if(isVisitFinished){
-                    startActivity(new Intent(getApplicationContext(), EngineerDetail.class));
+                    startActivity(new Intent(getApplicationContext(), SiteDetail_New.class));
                     finish();
                 }else{
 
@@ -58,11 +58,10 @@ public class Splashscreen extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), MainActivity_Button.class));
                         finish();
                     }else{
-                        startActivity(new Intent(getApplicationContext(), EngineerDetail.class));
+                        startActivity(new Intent(getApplicationContext(), SiteDetail_New.class));
                         finish();
 
                     }
-
                 }
 
             }else{
