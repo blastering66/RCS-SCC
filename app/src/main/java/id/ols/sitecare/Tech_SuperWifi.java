@@ -19,6 +19,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.squareup.okhttp.MediaType;
@@ -83,6 +85,8 @@ public class Tech_SuperWifi extends AppCompatActivity {
     List<RowData_Model> name_model;
     String idManufacturParent, idModelParent;
 
+    @Bind(R.id.tv)TextView tv;
+
     @OnClick(R.id.btn)
     void sendData() {
         final CustomProgressDialog pDialog;
@@ -92,7 +96,7 @@ public class Tech_SuperWifi extends AppCompatActivity {
         pDialog.show();
 
         String ran_idsitevisit, ran_idmanufacturer, ran_idmodel,ran_frequency,ran_configuration,ran_voltase,
-                ran_dcload;
+                ran_dcload, ran_current;
 
         ran_idsitevisit = id_site;
         ran_idmanufacturer = idManufacturParent;
@@ -100,10 +104,15 @@ public class Tech_SuperWifi extends AppCompatActivity {
 
         if(radio_volt_24.isChecked()){
             ran_voltase = getResources().getString(R.string.option_volt_24);
+            ran_current = "DC";
+
         }else if(radio_volt_48.isChecked()){
             ran_voltase = getResources().getString(R.string.option_volt_48);
+            ran_current = "DC";
         }else {
             ran_voltase = getResources().getString(R.string.option_volt_110);
+            ran_current = "AC";
+            tv.setText("AC Loads (Watt)");
         }
 
         ran_dcload = ed_ac_loads.getText().toString();
@@ -113,6 +122,7 @@ public class Tech_SuperWifi extends AppCompatActivity {
         RequestBody idmodel = RequestBody.create(MediaType.parse("text/plain"), ran_idmodel);
         RequestBody voltase = RequestBody.create(MediaType.parse("text/plain"), ran_voltase);
         RequestBody dcload = RequestBody.create(MediaType.parse("text/plain"), ran_dcload);
+        RequestBody current = RequestBody.create(MediaType.parse("text/plain"), ran_current);
 
         final String apikey = getResources().getString(R.string.api_key);
         final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
@@ -123,7 +133,7 @@ public class Tech_SuperWifi extends AppCompatActivity {
         API_Adapter adapter = PublicFunctions.initRetrofit();
 
         Observable<PojoResponseInsert> observable = adapter.insert_tech_superwifi(apikey,authkey,idsitevisit,
-                idmanufacturer,idmodel,voltase,dcload,body00);
+                idmanufacturer,idmodel,voltase,dcload,current,body00);
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<PojoResponseInsert>() {
@@ -131,17 +141,24 @@ public class Tech_SuperWifi extends AppCompatActivity {
                     public void onCompleted() {
                         pDialog.dismiss();
 
-                        DialogConfirmation pDialog_comfirm = new DialogConfirmation();
-                        pDialog_comfirm.setContext(getApplicationContext());
-                        pDialog_comfirm.setText("Add Additional SuperWifi");
-                        pDialog_comfirm.setFrom(9);
-                        pDialog_comfirm.setSh(spf);
-                        pDialog_comfirm.show(getSupportFragmentManager(), "");
+                        if(isSukses){
+                            DialogConfirmation pDialog_comfirm = new DialogConfirmation();
+                            pDialog_comfirm.setContext(getApplicationContext());
+                            pDialog_comfirm.setText("Add Additional SuperWifi");
+                            pDialog_comfirm.setFrom(9);
+                            pDialog_comfirm.setSh(spf);
+                            pDialog_comfirm.show(getSupportFragmentManager(), "");
+                        }else{
+                            Toast.makeText(getApplicationContext(), "Failed! Error = " + message, Toast.LENGTH_LONG).show();
+                        }
+
                     }
 
                     @Override
                     public void onError(Throwable e) {
                         Log.e("Error", "Something Wrong");
+                        pDialog.dismiss();
+                        Toast.makeText(getApplicationContext(), "Something Wrong, = " + e.getMessage().toString(), Toast.LENGTH_LONG).show();
 
                     }
 

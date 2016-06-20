@@ -99,13 +99,13 @@ public class PojoManufactureDCPowerModel {
 
     public class Datum {
 
-        @SerializedName("dcmodel_name")
+        @SerializedName("dcmodel_id")
         @Expose
         private String ranmodelId;
-        @SerializedName("dcmodel_idmanufacturer")
+        @SerializedName("dcmodel_name")
         @Expose
         private String ranmodelName;
-        @SerializedName("ipmodel_idmanufacturer")
+        @SerializedName("dcmodel_idmanufacturer")
         @Expose
         private String ranmodelIdmanufactur;
         @SerializedName("updated_at")

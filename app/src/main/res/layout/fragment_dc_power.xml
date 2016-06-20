@@ -28,7 +28,6 @@
                     android:layout_height="wrap_content" />
 
                 <Spinner
-                    android:id="@+id/spinner_manufactur"
                     android:padding="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
@@ -80,7 +79,21 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
+                    <ProgressBar
+                        android:id="@+id/pg_manufactur_controller"
+                        android:layout_gravity="center"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp" />
+
+                    <Spinner
+                        android:id="@+id/spinner_manufactur_controller"
+                        android:padding="10dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
                     <EditText
+                        android:visibility="gone"
                         android:id="@+id/ed_manufactur_controller"
                         android:padding="10dp"
                         android:inputType="text"
@@ -96,19 +109,35 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <TextView
                         android:text="Model"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
+                    <ProgressBar
+                        android:id="@+id/pg_model_controller"
+                        android:layout_gravity="center"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp" />
+
+                    <Spinner
+                        android:id="@+id/spinner_model_controller"
+                        android:padding="10dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
                     <EditText
+                        android:visibility="gone"
                         android:id="@+id/ed_model_controller"
                         android:padding="10dp"
                         android:inputType="text"
                         android:singleLine="true"
                         android:imeOptions="actionDone"
-                        android:layout_weight="1"
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
                 </LinearLayout>
@@ -155,7 +184,21 @@
                     android:layout_height="wrap_content"
                     android:text="Manufacture" />
 
+                <ProgressBar
+                    android:id="@+id/pg_manufacture_rec_system"
+                    android:layout_gravity="center"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp" />
+
+                <Spinner
+                    android:id="@+id/spinner_manufacture_rec_system"
+                    android:padding="10dp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
                 <EditText
+                    android:visibility="gone"
                     android:id="@+id/ed_rectifier_manufactur"
                     android:inputType="text"
                     android:singleLine="true"
@@ -181,7 +224,21 @@
                         android:layout_height="wrap_content"
                         android:text="Model" />
 
+                    <ProgressBar
+                        android:id="@+id/pg_model_rec_system"
+                        android:layout_gravity="center"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp" />
+
+                    <Spinner
+                        android:id="@+id/spinner_model_rec_system"
+                        android:padding="10dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
                     <EditText
+                        android:visibility="gone"
                         android:id="@+id/ed_rectifier_model"
                         android:inputType="text"
                         android:singleLine="true"
@@ -393,7 +450,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:text="Capacity (Amps)" />
+                android:text="AC Input Breaker Photo" />
 
             <ImageView
                 android:id="@+id/img_ac_breaker"

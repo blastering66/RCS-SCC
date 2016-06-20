@@ -1,11 +1,14 @@
 package id.ols.sitecare;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -119,7 +122,15 @@ public class SiteDetail_New extends AppCompatActivity {
 
     @OnClick(R.id.img)
     void OnClickIMG() {
-        startActivityForResult(new Intent(this, CameraCapture.class), 111);
+        int cameraAccessIsPermitted = ContextCompat.checkSelfPermission(SiteDetail_New.this,
+                Manifest.permission.CAMERA);
+        if(cameraAccessIsPermitted == PackageManager.PERMISSION_GRANTED){
+            startActivityForResult(new Intent(this, CameraCapture.class), 111);
+        }else{
+            Toast.makeText(getApplicationContext(), "Harap Hak Akses Camera di Aktifkan di Setting HP anda",
+                    Toast.LENGTH_LONG).show();
+        }
+
     }
 
     String lat_now, longi_now, time_now;
@@ -677,7 +688,7 @@ public class SiteDetail_New extends AppCompatActivity {
         RequestBody keeper = RequestBody.create(MediaType.parse("text/plain"), site_keeper);
         RequestBody latitude = RequestBody.create(MediaType.parse("text/plain"), lat_now);
         RequestBody longitude = RequestBody.create(MediaType.parse("text/plain"), longi_now);
-        RequestBody altitude = RequestBody.create(MediaType.parse("text/plain"), site_altitude);
+//        RequestBody altitude = RequestBody.create(MediaType.parse("text/plain"), site_altitude);
         RequestBody timesurveystarted = RequestBody.create(MediaType.parse("text/plain"), site_timesurveystarted);
         RequestBody externaltemperature = RequestBody.create(MediaType.parse("text/plain"), site_externaltemperature);
         RequestBody idweathercondition = RequestBody.create(MediaType.parse("text/plain"), site_idweathercondition);
@@ -729,7 +740,7 @@ public class SiteDetail_New extends AppCompatActivity {
                 apikey, authkey, ParameterCollections.EXE.INSERT,
                 ParameterCollections.KIND.MOBILE, ParameterCollections.KIND.SITE_VISIT,
                 codeid, name, mobileno, _type,
-                keeper, latitude, longitude, altitude, timesurveystarted,
+                keeper, latitude, longitude, timesurveystarted,
                 externaltemperature, idweathercondition,ownership,body00
         );
 

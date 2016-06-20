@@ -19,6 +19,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.squareup.okhttp.MediaType;
@@ -82,6 +84,7 @@ public class Tech_IP extends AppCompatActivity {
     List<RowData_Manufactur> name_manufactur;
     List<RowData_Model> name_model;
     String idManufacturParent, idModelParent;
+    @Bind(R.id.tv)TextView tv;
 
     @OnClick(R.id.btn)
     void sendData() {
@@ -92,7 +95,7 @@ public class Tech_IP extends AppCompatActivity {
         pDialog.show();
 
         String ran_idsitevisit, ran_idmanufacturer, ran_idmodel,ran_frequency,ran_configuration,ran_voltase,
-                ran_dcload;
+                ran_load, ran_current;
 
         ran_idsitevisit = id_site;
         ran_idmanufacturer = idManufacturParent;
@@ -100,19 +103,24 @@ public class Tech_IP extends AppCompatActivity {
 
         if(radio_volt_24.isChecked()){
             ran_voltase = getResources().getString(R.string.option_volt_24);
+            ran_current = "DC";
         }else if(radio_volt_48.isChecked()){
             ran_voltase = getResources().getString(R.string.option_volt_48);
+            ran_current = "DC";
         }else {
             ran_voltase = getResources().getString(R.string.option_volt_110);
+            ran_current = "AC";
+            tv.setText("AC Loads (Watt)");
         }
 
-        ran_dcload = ed_ac_loads.getText().toString();
+        ran_load = ed_ac_loads.getText().toString();
 
         RequestBody idsitevisit = RequestBody.create(MediaType.parse("text/plain"), ran_idsitevisit);
         RequestBody idmanufacturer = RequestBody.create(MediaType.parse("text/plain"), ran_idmanufacturer);
         RequestBody idmodel = RequestBody.create(MediaType.parse("text/plain"), ran_idmodel);
         RequestBody voltase = RequestBody.create(MediaType.parse("text/plain"), ran_voltase);
-        RequestBody dcload = RequestBody.create(MediaType.parse("text/plain"), ran_dcload);
+        RequestBody current = RequestBody.create(MediaType.parse("text/plain"), ran_current);
+        RequestBody loads = RequestBody.create(MediaType.parse("text/plain"), ran_load);
 
         final String apikey = getResources().getString(R.string.api_key);
         final String authkey = spf.getString(ParameterCollections.SH_AUTHKEY, "");
@@ -123,25 +131,32 @@ public class Tech_IP extends AppCompatActivity {
         API_Adapter adapter = PublicFunctions.initRetrofit();
 
         Observable<PojoResponseInsert> observable = adapter.insert_tech_ip(apikey, authkey, idsitevisit,
-                idmanufacturer, idmodel, voltase, dcload, body00);
+                idmanufacturer, idmodel, voltase, loads,current, body00);
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<PojoResponseInsert>() {
                     @Override
                     public void onCompleted() {
                         pDialog.dismiss();
+                        if(isSukses){
+                            DialogConfirmation pDialog_comfirm = new DialogConfirmation();
+                            pDialog_comfirm.setContext(getApplicationContext());
+                            pDialog_comfirm.setText("Add Additional IP");
+                            pDialog_comfirm.setFrom(7);
+                            pDialog_comfirm.setSh(spf);
+                            pDialog_comfirm.show(getSupportFragmentManager(), "");
+                        }else{
+                            Toast.makeText(getApplicationContext(), "Failed! Error = " + message, Toast.LENGTH_LONG).show();
+                        }
 
-                        DialogConfirmation pDialog_comfirm = new DialogConfirmation();
-                        pDialog_comfirm.setContext(getApplicationContext());
-                        pDialog_comfirm.setText("Add Additional IP");
-                        pDialog_comfirm.setFrom(7);
-                        pDialog_comfirm.setSh(spf);
-                        pDialog_comfirm.show(getSupportFragmentManager(), "");
+
                     }
 
                     @Override
                     public void onError(Throwable e) {
                         Log.e("Error", "Something Wrong");
+                        pDialog.dismiss();
+                        Toast.makeText(getApplicationContext(), "Something Wrong, = " + e.getMessage().toString(), Toast.LENGTH_LONG).show();
 
                     }
 
@@ -253,6 +268,7 @@ public class Tech_IP extends AppCompatActivity {
                     @Override
                     public void onError(Throwable e) {
                         Log.e("Error", "Eror");
+                        Toast.makeText(getApplicationContext(), e.getMessage().toString(), Toast.LENGTH_LONG).show();
 
                     }
 

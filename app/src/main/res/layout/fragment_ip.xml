@@ -86,6 +86,7 @@
                     android:orientation="horizontal">
                     <RadioButton
                         android:id="@+id/radio_volt_24"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="+24V" />
@@ -116,6 +117,7 @@
             android:padding="10dp">
 
             <TextView
+                android:id="@+id/tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="DC Load (Amps)" />

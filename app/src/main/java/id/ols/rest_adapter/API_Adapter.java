@@ -254,7 +254,7 @@ public interface API_Adapter {
             //idRegons ??
             @Part("sitevisit_latitude")RequestBody sitevisit_latitude,
             @Part("sitevisit_longitude")RequestBody sitevisit_longitude,
-            @Part("sitevisit_altitude")RequestBody site_altitude,
+//            @Part("sitevisit_altitude")RequestBody site_altitude,
             @Part("sitevisit_timesurveystarted")RequestBody site_timesurveystarted,
             @Part("sitevisit_externaltemperature")RequestBody site_externaltemperature,
             @Part("sitevisit_idweathercondition")RequestBody site_idweathercondition,
@@ -355,7 +355,8 @@ public interface API_Adapter {
             @Part("ip_idmanufacturer")RequestBody idmanufacturer,
             @Part("ip_idmodel")RequestBody idmodel,
             @Part("ip_voltase")RequestBody voltase,
-            @Part("ip_dcload")RequestBody dcload,
+            @Part("ip_loads")RequestBody dcload,
+            @Part("ip_current")RequestBody ip_current,
             @Part("ip_photo\"; filename=\"img0.png\" ")RequestBody img0
     );
 
@@ -387,7 +388,8 @@ public interface API_Adapter {
             @Part("superwifi_idmanufacturer")RequestBody idmanufacturer,
             @Part("superwifi_idmodel")RequestBody idmodel,
             @Part("superwifi_voltase")RequestBody voltase,
-            @Part("superwifi_dcload")RequestBody dcload,
+            @Part("superwifi_loads")RequestBody superwifi_loads,
+            @Part("superwifi_current")RequestBody superwifi_current,
             @Part("superwifi_photo\"; filename=\"img0.png\" ")RequestBody img0
     );
 
@@ -504,8 +506,8 @@ public interface API_Adapter {
             @Part("dcpower_idsitevisit")RequestBody dcpower_idsitevisit,
             @Part("dcpower_idmanufacturer")RequestBody dcpower_idmanufacturer,
             @Part("dcpower_idmodel")RequestBody dcpower_idmodel,
-            @Part("dcpower_controllermanufacturer")RequestBody dcpower_controllermanufacturer,
-            @Part("dcpower_controllermodel")RequestBody dcpower_controllermodel,
+//            @Part("dcpower_controllermanufacturer")RequestBody dcpower_controllermanufacturer,
+//            @Part("dcpower_controllermodel")RequestBody dcpower_controllermodel,
             @Part("dcpower_rectifiermodmanufacturer")RequestBody dcpower_rectifiermodmanufacturer,
             @Part("dcpower_rectifiermodmodel")RequestBody dcpower_rectifiermodmodel,
             @Part("dcpower_rectifiermodoutputrating")RequestBody dcpower_rectifiermodoutputrating,
@@ -577,7 +579,7 @@ public interface API_Adapter {
             @Part("griddetail_plnmetermodel")RequestBody griddetail_plnmetermodel,
             //idRegons ??
             @Part("griddetail_plnmetercondition")RequestBody griddetail_plnmetercondition,
-            @Part("griddetail_plnmeterdistancerectifier")RequestBody griddetail_plnmeterdistancerectifier,
+//            @Part("griddetail_plnmeterdistancerectifier")RequestBody griddetail_plnmeterdistancerectifier,
             @Part("griddetail_plnmeternumberofphases")RequestBody griddetail_plnmeternumberofphases,
             @Part("griddetail_plnphasemeasurement")RequestBody griddetail_plnphasemeasurement,
             @Part("griddetail_plnphasemeasurement3r")RequestBody griddetail_plnphasemeasurement3r,
@@ -595,6 +597,7 @@ public interface API_Adapter {
             @Part("griddetail_plnacpdbdistancepln")RequestBody griddetail_plnacpdbdistancepln,
 
             @Part("griddetail_plnmeterphoto\"; filename=\"img0.png\" ")RequestBody img0,
+            @Part("griddetail_plnmeterphoto_initial\"; filename=\"img4.png\" ")RequestBody img4,
             @Part("griddetail_plndayabreakerphoto\"; filename=\"img1.png\" ")RequestBody img1,
             @Part("griddetail_plnsurgeprotdevphoto\"; filename=\"img2.png\" ")RequestBody img2,
             @Part("griddetail_plnphaseacpdbphoto\"; filename=\"img3.png\" ")RequestBody img3

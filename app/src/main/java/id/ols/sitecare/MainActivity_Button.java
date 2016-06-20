@@ -198,6 +198,7 @@ public class MainActivity_Button extends AppCompatActivity implements View.OnCli
         boolean grid_submited = spf.getBoolean(ParameterCollections.SH_GRID_SUBMITTED, false);
         boolean battery_submited = spf.getBoolean(ParameterCollections.SH_BATTERY_SUBMITTED, false);
         boolean earth_submited = spf.getBoolean(ParameterCollections.SH_EARTH_SUBMITTED, false);
+        boolean dc_submited = spf.getBoolean(ParameterCollections.SH_DCPOWER_SUBMITTED, false);
         boolean ran_submited = spf.getBoolean(ParameterCollections.SH_RAN_SUBMITTED, false);
         boolean microwave_submited = spf.getBoolean(ParameterCollections.SH_MICROWAVE_SUBMITTED, false);
         boolean ip_submited = spf.getBoolean(ParameterCollections.SH_IP_SUBMITTED, false);
@@ -226,6 +227,11 @@ public class MainActivity_Button extends AppCompatActivity implements View.OnCli
             img_done_earthing.setVisibility(View.VISIBLE);
 //            images_Done.get(3).setVisibility(View.VISIBLE);
         }
+        if(dc_submited){
+            img_done_dc.setVisibility(View.VISIBLE);
+//            images_Done.get(3).setVisibility(View.VISIBLE);
+        }
+
         if(ran_submited){
             img_done_ran.setVisibility(View.VISIBLE);
 //            images_Done.get(4).setVisibility(View.VISIBLE);
