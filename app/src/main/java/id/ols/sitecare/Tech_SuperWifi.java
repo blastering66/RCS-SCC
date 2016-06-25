@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -196,6 +197,41 @@ public class Tech_SuperWifi extends AppCompatActivity {
         spf = getSharedPreferences(ParameterCollections.SH_NAME, MODE_PRIVATE);
         id_site = spf.getString(ParameterCollections.SH_ID_SITE, "1");
 
+        radio_volt_110.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    tv.setText("AC Load (Watt)");
+                }else{
+                    tv.setText("DC Load (Amps)");
+
+                }
+            }
+        });
+
+        radio_volt_24.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked || radio_volt_48.isChecked()){
+                    tv.setText("DC Load (Amps)");
+                }else{
+                    tv.setText("AC Load (Watt)");
+
+                }
+            }
+        });
+
+        radio_volt_48.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked || radio_volt_24.isChecked()){
+                    tv.setText("DC Load (Amps)");
+                }else{
+                    tv.setText("AC Load (Watt)");
+
+                }
+            }
+        });
         getManufactureData();
     }
 

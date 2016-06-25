@@ -95,11 +95,16 @@ public class Tech_DCPower extends AppCompatActivity {
     @Bind(R.id.ed_ac_input_rating) EditText ed_ac_input_rating;
 
     @Bind(R.id.ed_dc_input_breaker_rating) EditText ed_dc_input_breaker_rating;
-    @Bind(R.id.ed_dc_input_breaker_kuantiti) EditText ed_dc_input_breaker_kuantiti;
     @Bind(R.id.ed_dc_input_breaker_rating_2) EditText ed_dc_input_breaker_rating_2;
     @Bind(R.id.ed_dc_input_breaker_rating_3) EditText ed_dc_input_breaker_rating_3;
     @Bind(R.id.ed_dc_input_breaker_rating_4) EditText ed_dc_input_breaker_rating_4;
     @Bind(R.id.ed_dc_input_breaker_rating_5) EditText ed_dc_input_breaker_rating_5;
+
+    @Bind(R.id.ed_dc_input_breaker_kuantiti) EditText ed_dc_input_breaker_kuantiti;
+    @Bind(R.id.ed_dc_input_breaker_kuantiti_2) EditText ed_dc_input_breaker_kuantiti_2;
+    @Bind(R.id.ed_dc_input_breaker_kuantiti_3) EditText ed_dc_input_breaker_kuantiti_3;
+    @Bind(R.id.ed_dc_input_breaker_kuantiti_4) EditText ed_dc_input_breaker_kuantiti_4;
+    @Bind(R.id.ed_dc_input_breaker_kuantiti_5) EditText ed_dc_input_breaker_kuantiti_5;
 
     @Bind(R.id.ed_ac_loads) EditText ed_ac_loads;
 
@@ -138,12 +143,16 @@ public class Tech_DCPower extends AppCompatActivity {
         pDialog.show();
 
         String model,manufactur_controller, model_controller, rectifier_manufactur, rectifier_model,rectifier_rating,rectifier_kuantiti, rectifier_spareslot,
-                arrester_manufactur, arrester_model,ac_input_breaker_type,ac_input_rating,dc_input_breaker_rating,
-                dc_input_breaker_kuantiti,dc_input_breaker_rating_2,dc_input_breaker_rating_3,dc_input_breaker_rating_4,
-                dc_input_breaker_rating_5,ac_loads,dc_cooling_fan_manufactur,dc_cooling_fan_model,
+                arrester_manufactur, arrester_model,ac_input_breaker_type,ac_input_rating,
+                dc_input_breaker_rating, dc_input_breaker_rating_2,dc_input_breaker_rating_3,dc_input_breaker_rating_4, dc_input_breaker_rating_5,
+                dc_input_breaker_kuantiti,dc_input_breaker_kuantiti_2, dc_input_breaker_kuantiti_3, dc_input_breaker_kuantiti_4, dc_input_breaker_kuantiti_5,
+                ac_loads,dc_cooling_fan_manufactur,dc_cooling_fan_model,
                 idmanufacturer, idmodel;
 
-        model = ed_model.getText().toString();
+        String _dc_input_breaker_rating = "";
+        String _dc_input_breaker_kuantiti = "";
+
+                model = ed_model.getText().toString();
         manufactur_controller = ed_manufactur_controller.getText().toString();
         model_controller= ed_model_controller.getText().toString();
 
@@ -159,11 +168,49 @@ public class Tech_DCPower extends AppCompatActivity {
         ac_input_breaker_type = ed_ac_input_breaker_type.getText().toString();
         ac_input_rating = ed_ac_input_rating.getText().toString();
         dc_input_breaker_rating = ed_dc_input_breaker_rating.getText().toString();
-        dc_input_breaker_kuantiti = ed_dc_input_breaker_kuantiti.getText().toString();
         dc_input_breaker_rating_2 = ed_dc_input_breaker_rating_2.getText().toString();
         dc_input_breaker_rating_3 = ed_dc_input_breaker_rating_3.getText().toString();
         dc_input_breaker_rating_4 = ed_dc_input_breaker_rating_4.getText().toString();
         dc_input_breaker_rating_5 = ed_dc_input_breaker_rating_5.getText().toString();
+
+        dc_input_breaker_kuantiti = ed_dc_input_breaker_kuantiti.getText().toString();
+        dc_input_breaker_kuantiti_2 = ed_dc_input_breaker_kuantiti_2.getText().toString();
+        dc_input_breaker_kuantiti_3 = ed_dc_input_breaker_kuantiti_3.getText().toString();
+        dc_input_breaker_kuantiti_4 = ed_dc_input_breaker_kuantiti_4.getText().toString();
+        dc_input_breaker_kuantiti_5 = ed_dc_input_breaker_kuantiti_5.getText().toString();
+
+        if(!dc_input_breaker_rating.equals("")){
+            _dc_input_breaker_rating = dc_input_breaker_rating;
+        }
+        if(!dc_input_breaker_rating_2.equals("")){
+            _dc_input_breaker_rating = _dc_input_breaker_rating + ":" + dc_input_breaker_rating_2;
+        }
+        if(!dc_input_breaker_rating_3.equals("")){
+            _dc_input_breaker_rating = _dc_input_breaker_rating + ":" + dc_input_breaker_rating_3;
+        }
+        if(!dc_input_breaker_rating_4.equals("")){
+            _dc_input_breaker_rating = _dc_input_breaker_rating + ":" + dc_input_breaker_rating_4;
+        }
+        if(!dc_input_breaker_rating_5.equals("")){
+            _dc_input_breaker_rating = _dc_input_breaker_rating + ":" + dc_input_breaker_rating_5;
+        }
+
+        if(!dc_input_breaker_kuantiti.equals("")){
+            _dc_input_breaker_kuantiti= dc_input_breaker_kuantiti;
+        }
+        if(!dc_input_breaker_kuantiti_2.equals("")){
+            _dc_input_breaker_kuantiti= _dc_input_breaker_kuantiti + ":" + dc_input_breaker_kuantiti_2;
+        }
+        if(!dc_input_breaker_kuantiti_3.equals("")){
+            _dc_input_breaker_kuantiti= _dc_input_breaker_kuantiti + ":" + dc_input_breaker_kuantiti_3;
+        }
+        if(!dc_input_breaker_kuantiti_4.equals("")){
+            _dc_input_breaker_kuantiti= _dc_input_breaker_kuantiti + ":" + dc_input_breaker_kuantiti_4;
+        }
+        if(!dc_input_breaker_kuantiti_5.equals("")){
+            _dc_input_breaker_kuantiti= _dc_input_breaker_kuantiti + ":" + dc_input_breaker_kuantiti_5;
+        }
+
         ac_loads = ed_ac_loads.getText().toString();
         dc_cooling_fan_manufactur = ed_dc_cooling_fan_manufactur.getText().toString();
         dc_cooling_fan_model = ed_dc_cooling_fan_model.getText().toString();
@@ -187,12 +234,12 @@ public class Tech_DCPower extends AppCompatActivity {
         RequestBody _arrester_model = RequestBody.create(MediaType.parse("text/plain"), arrester_model);
         RequestBody _ac_input_breaker_type = RequestBody.create(MediaType.parse("text/plain"), ac_input_breaker_type);
         RequestBody _ac_input_rating = RequestBody.create(MediaType.parse("text/plain"), ac_input_rating);
-        RequestBody _dc_input_breaker_rating = RequestBody.create(MediaType.parse("text/plain"), dc_input_breaker_rating);
-        RequestBody _dc_input_breaker_kuantiti = RequestBody.create(MediaType.parse("text/plain"), dc_input_breaker_kuantiti);
-        RequestBody _dc_input_breaker_rating_2 = RequestBody.create(MediaType.parse("text/plain"), dc_input_breaker_rating_2);
-        RequestBody _dc_input_breaker_rating_3 = RequestBody.create(MediaType.parse("text/plain"), dc_input_breaker_rating_3);
-        RequestBody _dc_input_breaker_rating_4 = RequestBody.create(MediaType.parse("text/plain"), dc_input_breaker_rating_4);
-        RequestBody _dc_input_breaker_rating_5 = RequestBody.create(MediaType.parse("text/plain"), dc_input_breaker_rating_5);
+        RequestBody _dc_input_breaker_rating_ = RequestBody.create(MediaType.parse("text/plain"), _dc_input_breaker_rating);
+        RequestBody _dc_input_breaker_kuantiti_ = RequestBody.create(MediaType.parse("text/plain"), _dc_input_breaker_kuantiti);
+//        RequestBody _dc_input_breaker_rating_2 = RequestBody.create(MediaType.parse("text/plain"), dc_input_breaker_rating_2);
+//        RequestBody _dc_input_breaker_rating_3 = RequestBody.create(MediaType.parse("text/plain"), dc_input_breaker_rating_3);
+//        RequestBody _dc_input_breaker_rating_4 = RequestBody.create(MediaType.parse("text/plain"), dc_input_breaker_rating_4);
+//        RequestBody _dc_input_breaker_rating_5 = RequestBody.create(MediaType.parse("text/plain"), dc_input_breaker_rating_5);
         RequestBody _ac_loads = RequestBody.create(MediaType.parse("text/plain"), ac_loads);
         RequestBody _dc_cooling_fan_manufactur = RequestBody.create(MediaType.parse("text/plain"), dc_cooling_fan_manufactur);
         RequestBody _dc_cooling_fan_model = RequestBody.create(MediaType.parse("text/plain"), dc_cooling_fan_model);
@@ -218,7 +265,7 @@ public class Tech_DCPower extends AppCompatActivity {
                 //_controller_manufactur ,_controller_model,
                 _rectifier_manufactur, _rectifier_model, _rectifier_rating, _rectifier_kuantiti, _rectifier_spareslot,
                 _arrester_manufactur, _arrester_model, _ac_input_breaker_type,_ac_input_rating,
-                _dc_input_breaker_rating, _dc_input_breaker_kuantiti, _ac_loads,
+                _dc_input_breaker_rating_, _dc_input_breaker_kuantiti_, _ac_loads,
                 _dc_cooling_fan_manufactur, _dc_cooling_fan_model, body00, body01, body02, body03 );
 
         observable.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())

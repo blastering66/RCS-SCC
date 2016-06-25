@@ -5,7 +5,7 @@
 
     <string name="option_volt_24">+24V</string>
     <string name="option_volt_48">-48V</string>
-    <string name="option_volt_110">110/220 AC</string>
+    <string name="option_volt_110">110/220ac</string>
 
     <string name="option_digital">Digital</string>
     <string name="option_analog">Analog</string>

@@ -167,11 +167,12 @@ public class SiteDetail_New extends AppCompatActivity {
 //        site_phoneenginer = getIntent().getStringExtra("site_phoneenginer");
 
         Calendar c = Calendar.getInstance();
-        System.out.println("Current time => " + c.getTime());
 
         SimpleDateFormat df = new SimpleDateFormat("hh:mm:ss");
         String formattedDate = df.format(c.getTime());
         time_now = formattedDate;
+
+        Log.e("Time now", time_now);
         ed_time.setText(formattedDate);
 
         ed_site_id.addTextChangedListener(new TextWatcher() {

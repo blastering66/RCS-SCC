@@ -568,11 +568,11 @@
                     <EditText
                         android:id="@+id/ed_dc_input_breaker_kuantiti_2"
                         android:singleLine="true"
-                        android:inputType="numberDecimal"
+                        android:inputType="number"
                         android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="0.0" />
+                        android:hint="0" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -620,11 +620,11 @@
                     <EditText
                         android:id="@+id/ed_dc_input_breaker_kuantiti_3"
                         android:singleLine="true"
-                        android:inputType="numberDecimal"
+                        android:inputType="number"
                         android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="0.0" />
+                        android:hint="0" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -671,11 +671,11 @@
                     <EditText
                         android:id="@+id/ed_dc_input_breaker_kuantiti_4"
                         android:singleLine="true"
-                        android:inputType="numberDecimal"
+                        android:inputType="number"
                         android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="0.0" />
+                        android:hint="0" />
                 </LinearLayout>
 
             </LinearLayout>
