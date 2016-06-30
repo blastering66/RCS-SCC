@@ -161,6 +161,8 @@ public class SiteDetail_New extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         spf = getSharedPreferences(ParameterCollections.SH_NAME, MODE_PRIVATE);
 
+        tv_lat.setText(spf.getString(ParameterCollections.TAG_LATITUDE_NOW, "0.0"));
+        tv_longi.setText(spf.getString(ParameterCollections.TAG_LONGITUDE_NOW, "0.0"));
 
 //        site_nameenginer = getIntent().getStringExtra("site_nameenginer");
 //        site_emailenginer = getIntent().getStringExtra("site_emailenginer");
